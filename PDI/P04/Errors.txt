@@ -1,0 +1,7 @@
+error is that after they ask the user for the "searchInt" value, they don't use it again so the array program won't know what the user wants to search for.
+
+another error is that there is no else statement in the if statement
+
+redundency is the double delcaring of found as true wihout there being another option for found to be false anywhere.
+
+an efficiency is the layout of the algorithim. indents used inconsistently and variables not declared all at once.

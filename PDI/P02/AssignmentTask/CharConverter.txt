@@ -1,0 +1,7 @@
+BEGIN CharConverter
+    MAIN 
+    firstChar <- ASK USER WITH PROMPT("Please enter an uppercase character: ")
+    
+    firstAnswer <- firstChar convert to Integer
+    secondAnser <- firstAnswer + 32 then convert Char
+  

@@ -1,0 +1,155 @@
+CLASS Country
+      CLASS FIELDS:
+           iso3 (String)
+           continent (String)
+           countryName (String)
+           nuts (String)
+           latitude (Real Number)
+           longitude (Real Number)
+
+      CONSTRUCTOR with PARAMETERS
+      IMPORT: pIso3 (String), pContinent (String), pCountryName (String), pNuts (String), pLatitude (Real Number),pLongitude (Real Number)
+             EXPORT: none
+      ASSERTION: Create an object with imported values
+      ALGORITHM:
+          iso3 = pIso3
+          Continent = pContinent
+          countryName = pCountryName
+          nuts = pNuts
+          latitude = pLatitude
+          longitude = pLongitude
+
+      COPY CONSTRUCTOR
+      IMPORT: pCountry (Country)
+      EXPORT: none
+      ASSERTION: Create a Copy of the imported object
+      ALGORITHM: 
+          iso3 = pCountry.getIso3()
+          Continent = pCountry.getContinent()
+          countryName = pCountry.getCountryName()
+          nuts = pCountry.getNuts()
+          latitude = pCountry.getLatitude()
+          longitude = pCountry.getLongitude()
+
+      DEFAULT CONSTRUCTOR
+      IMPORT: none
+      EXPORT: none
+      ASSERTION: Create an object with the default values
+      ALGORITHM:
+          iso3 = LAS
+          Continent = GI
+          countryName = Lastation
+          nuts = LS
+          latitude = -16.574834
+          longitude = 100.490285
+
+
+      ACCESSOR: getIso3
+      IMPORT: none
+      EXPORT: iso3 (String)
+      ASSERTION: returned the iso3 value
+      ALGORITHM:
+          EXPORT COPY OF iso3
+
+      ACCESSOR: getContinent
+      IMPORT: none
+      EXPORT: continent (String)
+      ASSERTION: returned the continent value
+      ALGORITHM:
+          EXPORT COPY OF continent
+
+      ACCESSOR: getCountryName
+      IMPORT: none
+      EXPORT: countryName (String)
+      ASSERTION: returned the countryName value
+      ALGORITHM:
+          EXPORT COPY OF countryName
+
+      ACCESSOR: getNuts
+      IMPORT: none
+      EXPORT: nuts (String)
+      ASSERTION: returned the nuts value
+      ALGORITHM:
+          EXPORT COPY OF nuts
+
+      ACCESSOR: getLatitude
+      IMPORT: none
+      EXPORT: latitude (Real Number)
+      ASSERTION: returned the latitude value
+      ALGORITHM:
+          EXPORT COPY OF latitude
+
+      ACCESSOR: getLongitude
+      IMPORT: none
+      EXPORT: longitude (Real Number)
+      ASSERTION: returned the longitude value
+      ALGORITHM:
+          EXPORT COPY OF longitude
+
+      MUTATOR: setIso3
+      IMPORT: pIso3 (String)
+      EXPORT: none
+      ASSERTION: State of iso3 is updated to pIso3 value
+      ALGORITHM: 
+          iso3 = pIso3
+
+      MUTATOR: setContinent
+      IMPORT: pContinent (String)
+      EXPORT: none
+      ASSERTION: State of continent is updated to pContinent value
+      ALGORITHM: 
+          continent = pContinent
+
+      MUTATOR: setCountryName
+      IMPORT: pCountryName (String)
+      EXPORT: none
+      ASSERTION: State of countryName is updated to pCountryName value
+      ALGORITHM: 
+          countryName = pCountryName
+
+      MUTATOR: setNuts
+      IMPORT: pNuts (String)
+      EXPORT: none
+      ASSERTION: State of nuts is updated to pNuts value
+      ALGORITHM: 
+          nuts = pNuts
+
+      MUTATOR: setLatitude
+      IMPORT: pLatitude (String)
+      EXPORT: none
+      ASSERTION: State of latitude is updated to pLatitude value
+      ALGORITHM: 
+          Latitude = pLatitude
+
+      MUTATOR: setLongitude
+      IMPORT: pLongitude (String)
+      EXPORT: none
+      ASSERTION: State of longitude is updated to pLongitude value
+      ALGORITHM: 
+          longitude = pLongitude
+
+      ACCESSOR: toString
+      IMPORT: none
+      EXPORT: countryString (String)
+      ASSERTION: Returns a String representation of the object
+      ALGORITHM: 
+          countryString = iso3 + " " + continent + " " + countryName + " " + nuts + " " + latitude + " " + longitude
+
+
+      ACCESSOR: equals
+      IMPORT: inObject (Object)
+      EXPORT: isEqual (Boolean)
+      ASSERTION: Returns true if the two objects are equivalent
+      ALGORITHM:
+          isEqual = FALSE
+            IF inObject IS A Country THEN
+              TRANSFORM inObject TO Country NAMED inCountry
+              IF iso3 EQUALS inCountry.getIso3() THEN
+                IF continent EQUALS inPerson.getContinent() THEN
+                  IF countryName EQUALS inCountry.getCountryName() THEN
+                    IF nuts EQUALS inCountry.getNuts() THEN
+                      IF latitude EQUALS inCountry.getLatitude() THEN
+                        IF longitude EQUALS inCountry.getLongitude() THEN
+                          isEqual = TRUE
+
+END CLASS

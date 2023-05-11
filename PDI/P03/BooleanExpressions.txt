@@ -1,0 +1,12 @@
+1. crafting booleam expressions
+
+final double TOL = 0.001
+double sarah, tony
+int luke, scott, luca
+char jane, mathew
+
+a) (Luca%2==0) && (scott%2!=0)
+b)(jane=="S") || (matthew=="S")
+c) jane==matthew
+d)math.abs(sarah-matthew) < TOL
+e)(luke>0) || (sarah>=25.0) && (sarah<=125.0)

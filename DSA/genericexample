@@ -1,0 +1,10 @@
+class myclass<T>
+{
+    T data;
+
+    T getData()
+    setData(T inData)
+}
+
+
+LinkedList<String> mylist = new LinkedList<String>;

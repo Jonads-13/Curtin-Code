@@ -1,0 +1,52 @@
+2. Appropriate use of containers
+
+In most cases I found a List as the most appropriate container as I would need to iterate through it at some point later in the program
+
+The one place I didn't use a List was in the getCriteriaObject method in the Interactive class
+Here I used a HashMap. I used a HashMap because I wanted to be able to just "get" the specific object required 
+based on a String parameter. I found it best to have a HashMap containing each possible object required and then 
+use the String to only get the necessary object.
+
+3. Clear and distinct class/interface/method responsibilities
+
+I feel each class has a defined purpose and doesn't do more than it's name decribes. The only contentious one would be the 
+Interactive class which kind of encompasses most of the program. But most of the program is interactive so that's why I didn't
+try to refactor it. 
+
+I separtated out the Initialisation and Validation methods into their own classes it made sense to declutter the existing classes.
+I also decided to have a single App class specifcally for where the main executes to keep each class be individual and only be 
+instantiated by other classes.
+
+I Decided to have the strategy pattern base Criteria, an abstract class becasue it needed a class field and some default implementaion 
+in the Text and Regex abstract classes. I used an interface for the composite pattern base Entry class because it didn't need any 
+default implementaion or class fields. 
+
+4. Appropriate error handling and logging
+
+I kind of approached this is as if each separate function of the program was written by a different person and so,
+if any function required data provided previously by another function there would be a guard clause as a "just in case"
+
+The logging was tricky as I didn't want to be too verbose and have them end up acting like comments. I tried to only use
+them only when doing something new or when a variable is assigned a new value and of course in the case of exceptions.
+
+5. Appropriate use of the stategy pattern and/or template pattern
+
+I implemented the strategy pattern with the Criteria abstract class, Text and Regex abstract sub-classes, and the include and 
+exculde variant classes. The matches() method is the pratical application of the strategy pattern.
+
+I decided to have split the Text and Regex into separate sub-abstract classes as their matches() method is unique to each
+other, with one using contains() and the other using Pattern and Matcher objects respectively. 
+
+However I also needed to differentiate between exclude and include as to be able to apply exclude first then inlcude after 
+later on in the line filtering process, hence the boolean methods of isExclude() and isInclude(). I was unsure of how to 
+check only exclude first then only include after without having these methods.
+
+6. Appropriate use of the composite pattern
+
+Structuring the directories as the container nodes and the files as the leaf nodes seemed the obvious route to take.
+The Entry, Directory, and FileEntry Class relationships is the relevant data structre in the UML.
+
+I did not however know how to implement methods like addChild() or includeLine(), which are only applicable to one of the
+classes, in such a way that didn't involve the other class throwing an UnsupportedOperationException. The way the program is 
+structred, neither method would be called on the inappropriate class but it's still not ideal as also mentioned by David
+on piazza.

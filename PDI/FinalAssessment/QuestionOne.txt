@@ -1,0 +1,105 @@
+START MAIN
+    OUTPUT "Welcome to the array modification program"
+    OUTPUT "By what factor would you like to modify the array?"
+    OUTPUT "Please enter a number between 0.75 and 1.25 (Both inclusive):"
+
+    choice (double) = GET USER INPUT
+
+    IF choice < 0.75 OR choice > 1.25 THEN
+	OUTPUT "Error. User input was not between 0.75 and 1.25"
+
+    ELSE
+	theArray (int 2d array) = CALL arrayGenerator METHOD
+
+	modifiedArray = CALL modifyArray METHOD with theArray and choice as the ARGUMEMTS
+
+        OUTPUT "Here is the array modified by " + choice " times:"
+
+	FOR row = 0 to modifiedArray LENGTH, INCREASE row BY 1
+
+		FOR column = 0 to modifiedArray's first element LENGTH, INCREASE column BY 1
+    	   		OUTPUT modifiedArray[r][c] + " "
+		END FOR
+		OUTPUT new line
+    	END FOR	
+
+	CALL writeFile METHOD with modifedArray and "temp.txt" as the ARGUMENTS
+    END IF
+END MAIN
+
+	
+METHOD:     modifyArray
+IMPORT:     pArray (int 2d array), pChoice (double)
+EXPORT:     modifiedArray (int array)
+ASSERTION:  Modify all values in theArray by a factor equal to the user's choice
+ALGORITHM:
+    CREATE NEW double array "modifiedArray" with SIZE EQUAL to pArray
+
+    FOR row = 0 to pArray LENGTH, INCREASE row BY 1
+
+	FOR column = 0 to pArray's first element LENGTH, INCREASE column BY 1
+    	    modifiedArray[row][column] = pArray[row][column] * pChoice
+	    modifiedArray[row][column] = CALL checkNum METHOD with modifiedArray[row][column] as the ARGUMENT
+	END FOR
+    END FOR	
+
+    int array "finalArray" = CALL convertToIntArray METHOD with modifiedArray as the ARGUMENT
+
+    RETURN finalArray
+END modifyArray
+
+
+METHOD:    checkNum
+IMPORT:    pNum (double)
+EXPORT:    validNum (integer)
+ASSERTION: Import array value and round it, or make -1 if pNum is greater than 65536
+ALGORITHM:
+    IF pNum > 65536 THEN
+	validNum = -1
+    ELSE
+	validNum = ROUND pNum
+    END IF
+
+    RETURN validNum
+END checkNum
+
+
+METHOD:    convertToIntArray
+IMPORT:    pArray (double array)
+EXPORT:    newAray (int array)
+ASSERTION: Create an int array containing data from a double array
+ALGORITHM:
+    CREATE int array "newArray" with SIZE EQUAL to pArray
+    
+    FOR row = 0 TO pArray LENGTH, INCREASE row BY 1
+
+	FOR column = 0 TO pArray's first element LENGTH; INCREASE column BY 1
+	    newArray[row][column] = TYPECAST TO int the value of pArray[row][column] 
+	END FOR 
+    END FOR
+
+    RETURN newArray
+
+END convertToIntArray
+
+
+METHOD:    writeFile
+IMPORT:    pArray (int 2d array), pFileName (String)
+EXPORT:    none   
+ASSERTION: Write the contents of an imported array to a new file
+ALGORITHM: 
+
+    CREATE FILEWRITER
+    
+    FOR row = 0 to pArray LENGTH, INCREASE row BY 1
+
+	FOR column = 0 to pTheArray's first element LENGTH, INCREASE column BY 1
+	   PRINT pArray[row][column] + " " to pFileName
+	END FOR
+    END FOR
+
+    CLOSE FILEWRITER
+END writeFile
+	
+
+

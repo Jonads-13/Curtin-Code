@@ -1,0 +1,194 @@
+CLASS CovidRecord
+      CLASS FIELDS:
+          country (a Country object)
+          date (String)
+          cumulativePositive (Integer) 
+          cumulativeDeceased (Integer)
+          cumulativeRecovered (Integer)
+          currentlyPositive (Integer)
+          hospitalised (Integer)
+          intensiveCare (Integer)
+         
+      CONSTRUCTOR with PARAMETERS
+      IMPORT: pCountry (Country), pDate (String), pCumulativePositive (Integer), pCumulativeDeceased (Integer), pCumulativeRecovered (Integer), pCurrentlyPositive (Integer), pHospitalised (Integer), pIntensiveCare (Integer) 
+      EXPORT: none
+      ASSERTION: Created object with imported values
+      ALGORITHM:
+          country = pCountry
+          date = pDate
+          cumulativePositive = pCumulativePositive
+          cumulativeDeceased = pCumulativeDeceased
+          cumulativeRecovered = pCumulativeRecovered
+          currentlyPositive = pCurrentlyPositive
+          hospitalised = pHospitalised
+          intensiveCare = pIntensiveCare
+
+      COPY CONSTRUCTOR
+      IMPORT: pCovidRecord (CovidRecord)
+      EXPORT: none
+      ASSERTION: Created a Copy of the IMPORTed object
+      ALGORITHM: 
+          country = pCovidRecord.getCountry()
+          date = pCovidRecord.getDate()
+          cumulativePositive = pCovidRecord.getCumulativePositive()
+          cumulativeDeceased = pCovidRecord.getCumulativeDeceased()
+          cumulativeRecovered = pCovidRecord.getCumulativeRecovered()
+          currentlyPositive = pCovidRecord.getCurrentlyPositive()
+          hospitalised = pCovidRecord.getHospitalised()
+          intensiveCare = pCovidRecord.getIntensiveCare()
+
+      DEFAULT CONSTRUCTOR
+      IMPORT: none
+      EXPORT: none
+      ASSERTION: Creates and object with the default values
+      ALGORITHM:
+          country = ("LAS", "GI", "Lastation", "LS", -16.574834, 100.490285)
+          date = "17/11/2006"
+          cumulativePositive = 0
+          cumulativeDeceased = 0
+          cumulativeRecovered = 0
+          currentlyPositive = 0
+          hospitalised = 0
+          intensiveCare = 0
+
+
+
+      ACCESSOR: getCountry
+      IMPORT: none
+      EXPORT: country (Country)
+      ASSERTION: returned the country value
+      ALGORITHM:
+          EXPORT COPY OF country
+
+      ACCESSOR: getDate
+      IMPORT: none
+      EXPORT: date (String)
+      ASSERTION: returned the date value
+      ALGORITHM:
+          EXPORT COPY OF date
+
+      ACCESSOR: getCumulativePositive
+      IMPORT: none
+      EXPORT: cumulativePositive (Integer)
+      ASSERTION: returned the cumulativePositive value
+      ALGORITHM:
+          EXPORT COPY OF cumulativePositive
+
+      ACCESSOR: getCumulativeDeceased
+      IMPORT: none
+      EXPORT: cumulativeDeceased (Integer)
+      ASSERTION: returned the cumulativeDeceased value
+      ALGORITHM:
+          EXPORT COPY OF cumulativeDeceased
+
+      ACCESSOR: getCumulativeRecovered
+      IMPORT: none
+      EXPORT: cumulativeRecovered (Integer)
+      ASSERTION: returned the cumulativeRecovered value
+      ALGORITHM:
+          EXPORT COPY OF cumulativeRecovered
+
+      ACCESSOR: getCurrentlyPositive
+      IMPORT: none
+      EXPORT: currentlyPositive (Integer)
+      ASSERTION: returned the currentlyPositive value
+      ALGORITHM:
+          EXPORT COPY OF currentlyPositive
+
+      ACCESSOR: getHospitalised
+      IMPORT: none
+      EXPORT: hospitalised (Integer)
+      ASSERTION: returned the hospitalised value
+      ALGORITHM:
+          EXPORT COPY OF hospitalised
+
+      ACCESSOR: getIntensiveCare
+      IMPORT: none
+      EXPORT: intensiveCare (Integer)
+      ASSERTION: returned the intensiveCare value
+      ALGORITHM:
+          EXPORT COPY OF intensiveCare
+
+      MUTATOR: setCountry
+      IMPORT: pCountry (String)
+      EXPORT: none
+      ASSERTION: State of country is updated to pCountry value
+      ALGORITHM: 
+          country = pCountry
+
+      MUTATOR: setDate
+      IMPORT: pDate (String)
+      EXPORT: none
+      ASSERTION: State of date is updated to pDate value
+      ALGORITHM: 
+          date = pDate
+
+      MUTATOR: setCumulativePositive
+      IMPORT: pCumulativePositive (Integer)
+      EXPORT: none
+      ASSERTION: State of cumulativePositive is updated to pCumulativePositive value
+      ALGORITHM: 
+          cumulativePositive = pCumulativePositive
+
+      MUTATOR: setCumulativeDeceased
+      IMPORT: pCumulativeDeceased (Integer)
+      EXPORT: none
+      ASSERTION: State of cumulativeDeceased is updated to pCumulativeDeceased value
+      ALGORITHM: 
+          cumulativeDeceased = pCumulativeDeceased
+
+      MUTATOR: setCumulativeRecovered
+      IMPORT: pCumulativeRecovered (Integer)
+      EXPORT: none
+      ASSERTION: State of cumulativeRecovered is updated to pCumulativeRecovered value
+      ALGORITHM: 
+          cumulativeRecovered = pCumulativeRecovered
+
+      MUTATOR: setCurrentlyPositive
+      IMPORT: pCurrentlyPositive (Integer)
+      EXPORT: none
+      ASSERTION: State of currentlyPositive is updated to pCurrentlyPositive value
+      ALGORITHM: 
+          currentlyPositive = pCurrentlyPositive
+
+      MUTATOR: setHospitalised
+      IMPORT: pHospitalised (Integer)
+      EXPORT: none
+      ASSERTION: State of hospitalised is updated to pHospitalised value
+      ALGORITHM: 
+          hospitalised = pHospitalised
+
+      MUTATOR: setIntensiveCare
+      IMPORT: pIntensiveCare (Integer)
+      EXPORT: none
+      ASSERTION: State of intensiveCare is updated to pIntensiveCare value
+      ALGORITHM: 
+          intensiveCare = pIntensiveCare
+
+      ACCESSOR: toString
+      IMPORT: none
+      EXPORT: covidRecordString (String)
+      ASSERTION: Returns a String representation of the object
+      ALGORITHM: 
+          covidRecordString = country + " " + date + " " +  cumulativePositive + " " + cumulativeDeceased + " " + cumulativeRecovered + " " + currentlyPositive + " " + hospitalised + " " + intensiveCare
+
+
+      ACCESSOR: equals
+      IMPORT: inObject (CovidRecord)
+      EXPORT: isEqual (Boolean)
+      ASSERTION: Returns true if the two objects are equivalent
+      ALGORITHM:
+          isEqual = FALSE
+            IF inObject IS A CovidRecord THEN
+              TRANSFORM inObject TO CovidRecord NAMED inCovidRecord
+              IF country EQUALS inCovidRecord.getCountry() THEN
+                IF date EQUALS inCovidRecord.getDate() THEN
+                  IF cumulativePositive EQUALS inCovidRecord.getCumulativePositive() THEN
+                    IF cumulativeDeceased EQUALS inCovidRecord.getCumulativeDeceased() THEN
+                      IF cumulativeRecovered EQUALS inCovidRecord.getCumulativeRecovered() THEN
+                        IF currentlyPositive EQUALS inCovidRecord.getCurrentlyPositive() THEN
+                          IF hospitalised EQUALS inCovidRecord.getHospitalised() THEN
+                            IF intensiveCare EQUALS inCovidRecord.getIntensiveCare() THEN
+                              isEqual = TRUE
+
+END CLASS

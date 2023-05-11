@@ -1,0 +1,301 @@
+1.
+a) class is like a blueprint. Object is something made from that blueprint
+
+b) Accessors allows us to retrieve information form an object
+i) Accessors form the variables that define the class field
+ii) firstName (string). lastName (string). dayOfBirth (int). monthOfBirth (int). yearOfBirth (int), studentID (int)
+
+c) Mutators allows us to change data in a class field
+ii) Because not all class fields will be the same data type
+
+d) So that class field values are not negative where impossible
+
+UML
+
+--------------------------
+         Date
+--------------------------
+- day (Integer)
+- month (Integer)
+- year (Integer)
+- suffix (String)
+--------------------------
++ setDay(): void
++ setMonth(): void
++ setYear(): void
++ isLeapYear(): Boolean
+
++ getDay(): Integer
++ getMonth(): Integer
++ getYear(): Integer
++ getSuffix(): String
+-------------------------
+
+CLASS Date
+    CLASS FIELDS
+        day(int)
+        month(int)
+        year(int)
+        suffix(string)
+
+ACCESSOR: getDay
+IMPORT: none
+EXPORT: day(int)
+ASSERTION: Returned the day
+ALGORITHM:
+    RETURN COPY OF day
+
+ACCESSOR: getMonth
+IMPORT: none
+EXPORT: month(int)
+ASSERTION: Returned the month
+ALGORITHM: 
+    RETURN COPY OF month
+
+ACCESSOR: getYear
+IMPORT: none
+EXPORT: year(int)
+ASSERTION: Return the year
+ALGORITHM: 
+    RETURN COPY OF year
+
+MUTATOR: setDay
+IMPORT: pDay (int)
+EXPORT: none
+ASSERTION: State of day is updated to pDay value
+ALGORITHM: 
+    IF 1 > pDay > 31 THEN
+        ERROR "Vaslue must be between 1 and 31"
+    ELSE
+        day = pDay
+
+MUTATOR: setMonth
+IMPORT: pMonth
+EXPORT: none
+ASSERTION: State of month is updated to pMonth value
+ALGORITHM: 
+    IF 1 > pMonth > 12 THEN
+        ERROR "value must be between 1 and 12"
+    ELSE
+        month = pMonth
+
+MUTATOR: setYear
+IMPORT:pYear
+EXPORT: none
+ASSERTION: State of year is updated to pYear value
+ALGORITHM:
+    IF pYear < 1 THEN
+        ERROR "Value must be positive"
+    ELSE
+        year = pYear
+
+METHOD: isLeapYear
+IMPORT: pYear(int)
+EXPORT: isLeapYear (boolean)
+ASSERTION: Determine if year is a leap year
+ALGORITHM: 
+    IF pYear/4 remainder = 0 THEN
+        isLeapYear = true
+    ELSE
+        isLeapYear = false
+
+MUTATOR: setSuffix
+IMPORT: pDay
+EXPORT: suffix(string)
+ASSERTION: determine the suffix for each day
+ALGORITHM:
+    CASE pDay
+        CASE 1, 21, 31:
+            suffix = "st"
+        CASE 2, 22:
+            suffix = "nd"
+        CASE 3. 23:
+            suffix = "rd"
+        DEFAULT
+            suffix = "th"
+
+CONSTRUCTOR with PARAMETERS
+IMPORT: pDay (int), pMonth (int), pYear (int), pSetSuffix (string), pIsLeapYear (boolean)
+EXPORT: none
+ASSERTION: Create object with imported values
+ALGORITHM:
+    day = pDay
+    month = pMonth 
+    year = pYear
+    isLeapYear = pIsLeapYear
+    setSuffix = pSetSuffix
+
+
+
+ --------------------------
+          Date
+ --------------------------
+ - day (Integer)
+ - month (Integer)
+ - year (Integer)
+ - suffix (String)
+ --------------------------
+ + setDay(): void
+ + setMonth(): void
+ + setYear(): void
+ + isLeapYear(): Boolean
+ 
+ + getDay(): Integer
+ + getMonth(): Integer
+ + getYear(): Integer
+ + getSuffix(): String
+ -------------------------
+ 
+          ^
+          |
+
+--------------------------
+         Time
+--------------------------
+- hours (Integer)
+- minutes (Integer)
+- seconds (Integer)
+--------------------------
++ setHours(): void
++ setMinutes(): void
++ setSeconds(): void
+
++ getHours(): Integer
++ getMinutes(): Integer
++ getSeconds(): Integer
+-------------------------
+
+
+CLASS Time
+    CLASS FIELDS:
+        Inherits from date
+        hours(int)
+        minutes(int) 
+        seconds(int)
+
+ACCESSOR: getHours
+IMPORT: none
+EXPORT: hours(int)
+ASSERTION: Return the hours
+ALGORITHM:
+    RETURN COPY OF hours
+
+ACCESSOR: getMinutes
+IMPORT: none
+EXPORT: minutes(int)
+ASSERTION: Return the minutes
+ALGORITHM: 
+    RETURN COPY OF minutes
+
+ACCESSOR: getSeconds
+IMPORT: none
+EXPORT: seconds(int)
+ASSERTION: Return the seconds
+ALGORITHM:
+    RETURN COPY OF seconds
+
+MUTATOR: setHours
+IMPORT: pHours
+EXPORT: none
+ASSERTION: State of hours is updated to pHours value
+ALORITHM:
+    IF 0 > pHours > 24 THEN
+        ERROR "Value must be between 0 and 24"
+    ELSE
+        hours = pHours
+
+MUTATOR: setMinutes
+IMPORT: pMinutes
+EXPORT: none
+ASSERTION: State of minutes is updated to pMinutes value
+ALGORITHM:
+    IF 0 > pMinutes > 60 THEN
+        ERROR "Value must be between 0 and 60"
+    ELSE 
+        minutes = pMinutes
+
+MUTATOR: setSeconds
+IMPORT: pSeconds
+EXPORT: none
+ASSERTION: State of seconds is updating to pSeconds value
+ALGORITHM:
+    IF 0 > seconds > 60 THEN
+        ERROR "Value must be between 0 and 60"
+    ELSE
+        seconds = pSeconds
+
+CONSTRUCTOR with PARAMETERS
+IMPORT: super(date), pHours (int), pMinutes (int), pSeconds (int)
+EXPORT: none
+ASSERTION: Create an object with imported values
+ALGORITHM:
+    super(pDay, pMonth, pYear, pIsLeapYear, pSetSuffix)
+    hours = pHours
+    minutes = pMinutes
+    seconds = pSeconds
+
+
+--------------------------
+	 Door
+--------------------------
+- height (int)
+- width (int)
+- thickness (int)
+- material (string)
+- colour (string)
+--------------------------
++ setHeight(): void
++ setWidth(): void
++ setThickness(): void
++ setMaterial(): void
++ setColour(): void
+
++ getHeight(): int
++ getWidth(): int
++ getThickness(): int
++ getMaterial(): string
++ getColour(): string
+--------------------------
+
+
+--------------------------
+	 Book
+--------------------------
+- title (string)
+- author (string)
+- pageCount (int)
+--------------------------
++ setTitle(): void
++ setAuthor(): void
++ setPageCount(): void
+
++ getTitle(): string
++ getAuthor(): string
++ getPageCount(): int
+-------------------------
+
+
+-------------------------
+      Television
+-------------------------
+- length (int)
+- width (int)
+- size (int)
+- brand (string)
+- model (string)
+-------------------------
++ setLength(): void
++ setWidth(): void
++ setSize(): void
++ setBrand(): void
++ setModel(): void
+
++ getLength(): int
++ getWidth(): int
++ getSize(): int
++ getBrand(): string
++ getModel(): string
+-------------------------
+
+
+

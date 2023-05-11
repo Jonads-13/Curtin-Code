@@ -1,0 +1,27 @@
+BEGIN Converter
+    MAIN
+        tempChar <- ASK USER WITH PROMPT "Do you want to convert from Celsuis or Farenheit"
+
+        IF tempChar = C or c THEN
+
+            numCels <- ASK USER WITH PROMPT "Please enter the Celsius value: "
+        
+            answer <- numCels * (9.0/5.0) + 32
+        
+            PRINT "The temperature in Farenheit is: " + answer
+
+
+        ELSE IF tempChar = F or f
+
+            numFaren <- ASK USER WITH PROMPT "Please enter the Farenheit value: "
+ 
+            answer <- (numFaren - 32) * (5.0/9.0) 
+
+            PRINT "The temperature in Celsius is: " + answer
+
+        ELSE 
+            PRINT "Error, incorrect input"
+
+        END IF
+    END MAIN
+END

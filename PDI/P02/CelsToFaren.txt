@@ -1,0 +1,9 @@
+  1 BEGIN Converter
+  2     MAIN
+  3         numOne <- ASK USER WITH PROMPT "Please enter the Celsius value: "
+  4 
+  5         answer <- numOne * 9/5 + 32
+  6 
+  7         PRINT "The temperature in Farenheit is: " + answer
+  8     END MAIN
+  9 END

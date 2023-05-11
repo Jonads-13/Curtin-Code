@@ -1,0 +1,2092 @@
+Apr 26, 2023 12:44:02 PM projectsearcher.App main
+INFO: Using a user specified directory
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearch
+INFO: Beginning recursion
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ..
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Jonas_18439731_OOSE-Assignment.zip
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Jonas_18439731_OOSE-Assignment.zip
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: worksheet3_productviewer_java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: worksheet3_productviewer_java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: wrapper
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: wrapper
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle-wrapper.jar
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle-wrapper.jar
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle-wrapper.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle-wrapper.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradlew
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradlew
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: oose-pmd-rules.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: oose-pmd-rules.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: catalogue.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: catalogue.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: build.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: build.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: .gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: .gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: file-system.probe
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: file-system.probe
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: vcs-1
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: vcs-1
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: buildOutputCleanup
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: buildOutputCleanup
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: cache.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: cache.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: outputFiles.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: outputFiles.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: buildOutputCleanup.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: buildOutputCleanup.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: 7.6
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: 7.6
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: executionHistory
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: executionHistory
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: executionHistory.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: executionHistory.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: executionHistory.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: executionHistory.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileChanges
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileChanges
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: last-build.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: last-build.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: dependencies-accessors
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: dependencies-accessors
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: dependencies-accessors.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: dependencies-accessors.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: checksums
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: checksums
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: checksums.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: checksums.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: vcsMetadata
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: vcsMetadata
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileHashes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileHashes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileHashes.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileHashes.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileHashes.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileHashes.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: resourceHashesCache.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: resourceHashesCache.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: README.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: README.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: build
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: build
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: generated
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: generated
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: sources
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: sources
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: headers
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: headers
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: annotationProcessor
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: annotationProcessor
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: classes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: classes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: edu
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: edu
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: curtin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: curtin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: productviewer
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: productviewer
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ProductViewer.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ProductViewer.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: controller
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: controller
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Controller.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Controller.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ControllerException.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ControllerException.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: model
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: model
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ProductGroup.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ProductGroup.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Product.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Product.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: CatalogueException.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: CatalogueException.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Catalogue.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Catalogue.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: view
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: view
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: AddGroupDialog.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: AddGroupDialog.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: MainWindow.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: MainWindow.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: AddProductDialog.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: AddProductDialog.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: resources
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: resources
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: plus.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: plus.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: angle-up.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: angle-up.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: folder-plus.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: folder-plus.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: tmp
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: tmp
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: compileJava
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: compileJava
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: compileTransaction
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: compileTransaction
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: stash-dir
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: stash-dir
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: header-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: header-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: annotation-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: annotation-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: compile-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: compile-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: edu
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: edu
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: curtin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: curtin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: productviewer
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: productviewer
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ProductViewer.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ProductViewer.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: previous-compilation-data.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: previous-compilation-data.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradlew.bat
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradlew.bat
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: settings.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: settings.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: src
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: src
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: resources
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: resources
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: plus.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: plus.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: angle-up.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: angle-up.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: folder-plus.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: folder-plus.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ProductViewer.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ProductViewer.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: controller
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: controller
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ControllerException.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ControllerException.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Controller.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Controller.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: model
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: model
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: CatalogueException.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: CatalogueException.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Product.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Product.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ProductGroup.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ProductGroup.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Catalogue.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Catalogue.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: CatalogueEntry.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: CatalogueEntry.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: view
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: view
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: AddProductDialog.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: AddProductDialog.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: AddGroupDialog.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: AddGroupDialog.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: MainWindow.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: MainWindow.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: assignment
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: assignment
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: criteria.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: criteria.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: logging.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: logging.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: wrapper
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: wrapper
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle-wrapper.jar
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle-wrapper.jar
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle-wrapper.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle-wrapper.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradlew
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradlew
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: logs
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: logs
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: matheval0.log.lck
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: matheval0.log.lck
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: matheval0.log
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: matheval0.log
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: oose-pmd-rules.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: oose-pmd-rules.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: build.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: build.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: .gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: .gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: file-system.probe
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: file-system.probe
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: vcs-1
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: vcs-1
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: 7.4.1
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: 7.4.1
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: executionHistory
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: executionHistory
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: executionHistory.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: executionHistory.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: executionHistory.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: executionHistory.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileChanges
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileChanges
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: last-build.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: last-build.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: dependencies-accessors
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: dependencies-accessors
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: dependencies-accessors.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: dependencies-accessors.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: checksums
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: checksums
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: checksums.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: checksums.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: md5-checksums.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: md5-checksums.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: sha1-checksums.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: sha1-checksums.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: vcsMetadata
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: vcsMetadata
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileHashes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileHashes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileHashes.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileHashes.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileHashes.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileHashes.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: resourceHashesCache.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: resourceHashesCache.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: buildOutputCleanup
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: buildOutputCleanup
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: cache.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: cache.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: outputFiles.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: outputFiles.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: buildOutputCleanup.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: buildOutputCleanup.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: README.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: README.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: build
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: build
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: generated
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: generated
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: sources
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: sources
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: headers
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: headers
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: annotationProcessor
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: annotationProcessor
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: classes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: classes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: projectsearcher
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: projectsearcher
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Initiialise.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Initiialise.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: IncludeText.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: IncludeText.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ExcludeText.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ExcludeText.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Directory.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Directory.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Validate.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Validate.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: FileEntry.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: FileEntry.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Entry.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Entry.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ExcludeRegex.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ExcludeRegex.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Interactive.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Interactive.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Regex.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Regex.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Criteria.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Criteria.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: App.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: App.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: IncludeRegex.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: IncludeRegex.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Text.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Text.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: tmp
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: tmp
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: pmdTest
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: pmdTest
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: compileJava
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: compileJava
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: previous-compilation-data.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: previous-compilation-data.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: pmdMain
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: pmdMain
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: incremental.cache
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: incremental.cache
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: reports
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: reports
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: pmd
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: pmd
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main.html
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main.html
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: OOSE_Assignment_UML.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: OOSE_Assignment_UML.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradlew.bat
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradlew.bat
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: settings.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: settings.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: src
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: src
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: projectsearcher
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: projectsearcher
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: IncludeText.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: IncludeText.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Interactive.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Interactive.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Regex.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Regex.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Text.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Text.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Directory.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Directory.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ExcludeText.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ExcludeText.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Validate.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Validate.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Initiialise.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Initiialise.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: FileEntry.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: FileEntry.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: App.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: App.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ExcludeRegex.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ExcludeRegex.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: IncludeRegex.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: IncludeRegex.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Entry.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Entry.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Criteria.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Criteria.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: edu.curtin.imageviewer
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: edu.curtin.imageviewer
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Album.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Album.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: MainApplication.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: MainApplication.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: MainWindow.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: MainWindow.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ImageRecord.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ImageRecord.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: wrapper
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: wrapper
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle-wrapper.jar
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle-wrapper.jar
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle-wrapper.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle-wrapper.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradlew
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradlew
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: oose-pmd-rules.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: oose-pmd-rules.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: build.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: build.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: .gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: .gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: file-system.probe
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: file-system.probe
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: vcs-1
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: vcs-1
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: buildOutputCleanup
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: buildOutputCleanup
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: cache.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: cache.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: outputFiles.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: outputFiles.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: buildOutputCleanup.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: buildOutputCleanup.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: 7.6
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: 7.6
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: executionHistory
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: executionHistory
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: executionHistory.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: executionHistory.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: executionHistory.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: executionHistory.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileChanges
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileChanges
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: last-build.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: last-build.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: dependencies-accessors
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: dependencies-accessors
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: dependencies-accessors.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: dependencies-accessors.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: checksums
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: checksums
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: checksums.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: checksums.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: md5-checksums.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: md5-checksums.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: sha1-checksums.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: sha1-checksums.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: vcsMetadata
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: vcsMetadata
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileHashes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileHashes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileHashes.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileHashes.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileHashes.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileHashes.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: resourceHashesCache.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: resourceHashesCache.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: README.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: README.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: build
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: build
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: generated
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: generated
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: sources
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: sources
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: headers
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: headers
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: annotationProcessor
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: annotationProcessor
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: classes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: classes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: edu
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: edu
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: curtin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: curtin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: imageviewer
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: imageviewer
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Album.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Album.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: MainApplication.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: MainApplication.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: MainWindow.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: MainWindow.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ImageRecord.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ImageRecord.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: tmp
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: tmp
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: compileJava
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: compileJava
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: compileTransaction
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: compileTransaction
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: stash-dir
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: stash-dir
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: MainApplication.class.uniqueId0
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: MainApplication.class.uniqueId0
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: header-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: header-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: annotation-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: annotation-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: compile-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: compile-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: edu
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: edu
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: curtin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: curtin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: imageviewer
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: imageviewer
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: previous-compilation-data.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: previous-compilation-data.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: pmdMain
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: pmdMain
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: incremental.cache
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: incremental.cache
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: reports
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: reports
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: pmd
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: pmd
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main.html
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main.html
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradlew.bat
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradlew.bat
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: settings.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: settings.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: album
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: album
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: bing-cherries-ripe-red-fruit.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: bing-cherries-ripe-red-fruit.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: 800px-Ada_Lovelace_portrait.jpg
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: 800px-Ada_Lovelace_portrait.jpg
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: water-plant-green-fine-layers.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: water-plant-green-fine-layers.png
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: 800px-Size_planets_comparison.jpg
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: 800px-Size_planets_comparison.jpg
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: album.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: album.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: 800px-Cat_crying_(Lolcat).jpg
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: 800px-Cat_crying_(Lolcat).jpg
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: src
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: src
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Album.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Album.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: MainApplication.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: MainApplication.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ImageRecord.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ImageRecord.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: MainWindow.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: MainWindow.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Pracs
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Pracs
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ImageViewer.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ImageViewer.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ModifyImage.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ModifyImage.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Rotate.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Rotate.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: ImageData.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: ImageData.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: concurrent.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: concurrent.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: concurrent.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: concurrent.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Invert.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Invert.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Scale.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Scale.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: edu.curtin.addressbook
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: edu.curtin.addressbook
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: wrapper
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: wrapper
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle-wrapper.jar
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle-wrapper.jar
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle-wrapper.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle-wrapper.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradlew
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradlew
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: oose-pmd-rules.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: oose-pmd-rules.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: build.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: build.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: .gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: .gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: file-system.probe
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: file-system.probe
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: vcs-1
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: vcs-1
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: buildOutputCleanup
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: buildOutputCleanup
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: cache.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: cache.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: outputFiles.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: outputFiles.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: buildOutputCleanup.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: buildOutputCleanup.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: 7.6
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: 7.6
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: executionHistory
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: executionHistory
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: executionHistory.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: executionHistory.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: executionHistory.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: executionHistory.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileChanges
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileChanges
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: last-build.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: last-build.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: dependencies-accessors
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: dependencies-accessors
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gc.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: dependencies-accessors.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: dependencies-accessors.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: checksums
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: checksums
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: checksums.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: checksums.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: md5-checksums.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: md5-checksums.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: sha1-checksums.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: sha1-checksums.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: vcsMetadata
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: vcsMetadata
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileHashes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileHashes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileHashes.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileHashes.lock
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: fileHashes.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: fileHashes.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: resourceHashesCache.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: resourceHashesCache.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: addressbook.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: addressbook.txt
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradle.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradle.properties
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: build
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: build
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: generated
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: generated
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: sources
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: sources
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: headers
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: headers
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: annotationProcessor
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: annotationProcessor
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: classes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: classes
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: edu
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: edu
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: curtin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: curtin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: addressbook
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: addressbook
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: AddressBook.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: AddressBook.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: AddressBookApp.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: AddressBookApp.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Option.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Option.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Entry.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Entry.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: SearchByEmail.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: SearchByEmail.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: SearchByName.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: SearchByName.class
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: tmp
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: tmp
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: pmdTest
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: pmdTest
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: compileJava
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: compileJava
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: compileTransaction
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: compileTransaction
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: stash-dir
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: stash-dir
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: AddressBookApp.class.uniqueId1
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: AddressBookApp.class.uniqueId1
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: SearchByEmail.class.uniqueId0
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: SearchByEmail.class.uniqueId0
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: AddressBook.class.uniqueId2
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: AddressBook.class.uniqueId2
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: SearchByName.class.uniqueId3
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: SearchByName.class.uniqueId3
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: header-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: header-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: annotation-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: annotation-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: compile-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: compile-output
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: edu
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: edu
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: curtin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: curtin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: addressbook
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: addressbook
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: previous-compilation-data.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: previous-compilation-data.bin
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: pmdMain
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: pmdMain
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: incremental.cache
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: incremental.cache
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: reports
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: reports
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: pmd
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: pmd
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main.xml
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main.html
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main.html
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: gradlew.bat
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: gradlew.bat
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: settings.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: settings.gradle
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: src
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: src
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: main
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: .DS_Store
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: SearchByEmail.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: SearchByEmail.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Option.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Option.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: AddressBook.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: AddressBook.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: AddressBookApp.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: AddressBookApp.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: SearchByName.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: SearchByName.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current child: Entry.java
+Apr 26, 2023 12:44:02 PM projectsearcher.Initiialise directorySearchRec
+INFO: Current: Entry.java
+Apr 26, 2023 12:44:02 PM projectsearcher.App main
+INFO: Using directory: ..
+Apr 26, 2023 12:44:02 PM projectsearcher.Interactive getIntegerInput
+INFO: Aquiring user input
+Apr 26, 2023 12:44:12 PM projectsearcher.Interactive mainMenu
+INFO: User chose Report
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Jonas_18439731_OOSE-Assignment.zip
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: .DS_Store
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradle-wrapper.jar
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradle-wrapper.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradlew
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: oose-pmd-rules.xml
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: catalogue.txt
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: build.gradle
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: file-system.probe
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gc.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: cache.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: outputFiles.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: buildOutputCleanup.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: executionHistory.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: executionHistory.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gc.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: last-build.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gc.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: dependencies-accessors.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: checksums.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: fileHashes.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: fileHashes.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: resourceHashesCache.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: README.txt
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ProductViewer.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Controller.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ControllerException.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ProductGroup.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Product.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: CatalogueException.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Catalogue.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: AddGroupDialog.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: MainWindow.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: AddProductDialog.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: plus.png
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: angle-up.png
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: folder-plus.png
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ProductViewer.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: previous-compilation-data.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradlew.bat
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: settings.gradle
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: plus.png
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: angle-up.png
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: folder-plus.png
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ProductViewer.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ControllerException.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Controller.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: CatalogueException.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Product.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ProductGroup.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Catalogue.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: CatalogueEntry.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: AddProductDialog.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: AddGroupDialog.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: MainWindow.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: criteria.txt
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: logging.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: .DS_Store
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradle-wrapper.jar
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradle-wrapper.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradlew
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: matheval0.log.lck
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: matheval0.log
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: oose-pmd-rules.xml
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: build.gradle
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: file-system.probe
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gc.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: executionHistory.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: executionHistory.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gc.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: last-build.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gc.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: dependencies-accessors.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: checksums.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: md5-checksums.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: sha1-checksums.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: fileHashes.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: fileHashes.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: resourceHashesCache.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: cache.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: outputFiles.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: buildOutputCleanup.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: README.txt
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradle.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Initiialise.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: IncludeText.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ExcludeText.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Directory.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Validate.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: FileEntry.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Entry.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ExcludeRegex.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Interactive.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Regex.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Criteria.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: App.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: IncludeRegex.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Text.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: previous-compilation-data.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: incremental.cache
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: main.xml
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: main.html
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: OOSE_Assignment_UML.png
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradlew.bat
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: settings.gradle
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: .DS_Store
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: .DS_Store
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: IncludeText.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Interactive.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Regex.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Text.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Directory.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ExcludeText.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Validate.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Initiialise.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: FileEntry.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: App.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ExcludeRegex.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: IncludeRegex.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Entry.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Criteria.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Album.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: MainApplication.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: MainWindow.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ImageRecord.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradle-wrapper.jar
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradle-wrapper.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradlew
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: oose-pmd-rules.xml
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: build.gradle
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: file-system.probe
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gc.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: cache.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: outputFiles.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: buildOutputCleanup.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: executionHistory.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: executionHistory.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gc.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: last-build.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gc.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: dependencies-accessors.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: checksums.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: md5-checksums.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: sha1-checksums.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: fileHashes.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: fileHashes.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: resourceHashesCache.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: README.txt
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Album.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: MainApplication.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: MainWindow.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ImageRecord.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: MainApplication.class.uniqueId0
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: previous-compilation-data.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: incremental.cache
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: main.xml
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: main.html
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradlew.bat
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: settings.gradle
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: bing-cherries-ripe-red-fruit.png
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: 800px-Ada_Lovelace_portrait.jpg
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: water-plant-green-fine-layers.png
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: 800px-Size_planets_comparison.jpg
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: album.txt
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: 800px-Cat_crying_(Lolcat).jpg
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Album.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: MainApplication.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ImageRecord.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: MainWindow.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ImageViewer.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ModifyImage.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Rotate.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: ImageData.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: concurrent.class
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: concurrent.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Invert.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Scale.java
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: .DS_Store
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradle-wrapper.jar
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradle-wrapper.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradlew
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: oose-pmd-rules.xml
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: build.gradle
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: file-system.probe
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gc.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: cache.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: outputFiles.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: buildOutputCleanup.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: executionHistory.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: executionHistory.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gc.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: last-build.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gc.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: dependencies-accessors.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: checksums.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: md5-checksums.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: sha1-checksums.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: fileHashes.lock
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: fileHashes.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: resourceHashesCache.bin
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: addressbook.txt
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradle.properties
+Apr 26, 2023 12:44:12 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: AddressBook.class
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: AddressBookApp.class
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Option.class
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Entry.class
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: SearchByEmail.class
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: SearchByName.class
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: AddressBookApp.class.uniqueId1
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: SearchByEmail.class.uniqueId0
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: AddressBook.class.uniqueId2
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: SearchByName.class.uniqueId3
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: previous-compilation-data.bin
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: incremental.cache
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: main.xml
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: main.html
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: gradlew.bat
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: settings.gradle
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: .DS_Store
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: .DS_Store
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: SearchByEmail.java
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Option.java
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: AddressBook.java
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: AddressBookApp.java
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: SearchByName.java
+Apr 26, 2023 12:44:13 PM projectsearcher.FileEntry applyCriteria
+INFO: Reading file: Entry.java
+Apr 26, 2023 12:44:13 PM projectsearcher.Directory display
+INFO: Display option is Count
+Apr 26, 2023 12:44:13 PM projectsearcher.Interactive getIntegerInput
+INFO: Aquiring user input

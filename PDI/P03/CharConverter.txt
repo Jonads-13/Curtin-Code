@@ -1,0 +1,15 @@
+BEGIN CharConverter
+    MAIN 
+    char <- ASK USER WITH PROMPT("Please enter an alphabetical character: ")
+    
+    IF int(char) >= 65 && <=90 THEN
+
+        convert upper to lower
+
+    ELSE IF  int(char) >=97 && <=122 THEN
+        
+        convert lower to upper
+    
+    firstAnswer <- firstChar convert to Integer
+    secondAnser <- firstAnswer + 32 then convert Char
+  

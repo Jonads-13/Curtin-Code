@@ -1,0 +1,19 @@
+Question 1
+a) We must ensure our software works as intended so that any unforseen issues don't arise and nothing catastrophic happens.
+
+b)Airplane wasn't able to apply reverse thrust because the software didn't account for all possible situations
+
+c)Disasters are caused by logic errors
+
+d)Because they have been vetted to make sure they are safe to share
+
+Question 2
+True - The first bug ever found was a literal bug in a computer
+
+False - break statements should be used whenever a program desires to end
+
+False - A syntax error is an error that is discovered when a program runs but generates unexpected output
+
+True - Methods should contain only one single return statement
+
+True - System.out.println() is an unexpected but powerful debugging tool

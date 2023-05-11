@@ -1,0 +1,251 @@
+/* * * * * * * * * * * * * * * * * * *
+ * Title:   TaskOne                  *
+ * Author:  Jacob Jonas, 18439731    *
+ * Created:  05/04/2022              *
+ * Modified: 06/04/2022              *
+ * * * * * * * * * * * * * * * * * * *
+
+START MAIN
+	arrayDTS = create an array of length 10
+	arrayAnna = create an array of length 9
+	arrayBridgerton = create an array of length 8
+
+	OUTPUT Program name 
+
+	WHILE  NOT closeDTS DO
+		TRY
+			DO 
+			OUTPUT Prompt user for input
+			
+			FOR arrayElement = 0 TO arrayDTSlength INCREASE BY 1
+				viewCount = GET INPUT
+					IF viewCount < 100000 THEN
+						arrayValue = 1
+					ELSE 
+						arrayValue = viewCount
+					END IF
+			END FOR
+
+			FOR arrayElement = 0 TO arrayDTSlength INCREASE BY 1
+				OUTPUT array element values
+			END FOR
+
+			OUTPUT "Are these values correct"
+			IF yes THEN
+				closeDTS = TRUE
+				closeDTSCorrect = TRUE
+			ELSE IF no THEN
+				OUTPUT "Okay, restarting input process..."
+				closeDTSCorrect = TRUE
+			ELSE 
+				OUTPUT "Error. Invalid Input"
+				closeDTS = FALSE
+				closeDTSCorrect = FALSE 
+		 	END IF
+			WHILE NOT closeDTS
+
+		CATCH Mismatched data type input error
+			OUTPUT "Input Mismatch error. Please start from the beginning"
+	END WHILE 
+
+	WHILE  NOT closeAnna DO
+		TRY
+			DO 
+			OUTPUT Prompt user for input
+			
+			FOR arrayElement = 0 TO arrayAnnalength INCREASE BY 1
+				viewCount = GET INPUT
+					IF viewCount < 100000 THEN
+						arrayValue = 1
+					ELSE 
+						arrayValue = viewCount
+					END IF
+			END FOR
+
+			FOR arrayElement = 0 TO arrayAnnalength INCREASE BY 1
+				OUTPUT array element values
+			END FOR
+
+			OUTPUT "Are these values correct"
+			IF yes THEN
+				closeAnna = TRUE
+				closeAnnaCorrect = TRUE
+			ELSE IF no THEN
+				OUTPUT "Okay, restarting input process..."
+				closeAnnaCorrect = TRUE
+			ELSE 
+				OUTPUT "Error. Invalid Input"
+				closeAnna = FALSE
+				closeAnnaCorrect = FALSE 
+		 	END IF
+			WHILE NOT closeAnna
+
+		CATCH Mismatched data type input error
+			OUTPUT "Input Mismatch error. Please start from the beginning"
+	END WHILE 
+
+	WHILE  NOT closeBridgerton DO
+		TRY
+			DO 
+			OUTPUT Prompt user for input
+			
+			FOR arrayElement = 0 TO arrayBridgertonlength INCREASE BY 1
+				viewCount = GET INPUT
+					IF viewCount < 100000 THEN
+						arrayValue = 1
+					ELSE 
+						arrayValue = viewCount
+					END IF
+			END FOR
+
+			FOR arrayElement = 0 TO arrayBridgertonlength INCREASE BY 1
+				OUTPUT array element values
+			END FOR
+
+			OUTPUT "Are these values correct"
+			IF yes THEN
+				closeBridgerton = TRUE
+				closeBridgertonCorrect = TRUE
+			ELSE IF no THEN
+				OUTPUT "Okay, restarting input process..."
+				closeBridgertonCorrect = TRUE
+			ELSE 
+				OUTPUT "Error. Invalid Input"
+				closeBridgerton = FALSE
+				closeBridgertonCorrect = FALSE 
+		 	END IF
+			WHILE NOT closeBridgerton
+
+		CATCH Mismatched data type input error
+			OUTPUT "Input Mismatch error. Please start from the beginning"
+	END WHILE 
+
+		sumDTS = SumCalculation(arrayDTS, arrayDTSLength)
+		sumAnna = SumCalculation(arrayAnna, arrayAnnaLength)
+		sumBridgerton = SumCalculation(arrayBridgerton, arrayBridgertonLength)
+
+		averageDTS = AverageCalculation(sumDTS, arrayDTSLength)
+		averageAnna = AverageCalculation(sumAnna, arrayAnnaLength)
+		averageBridgerton = AverageCalculation(sumBridgerton, arrayBridgertonLength)
+
+		finaleDTS = arrayDTS value in last element
+		finaleAnna = arrayAnna value in last element
+		finaleBridgerton = arrayBridgerton value in last element
+
+
+	WHILE NOT closeMenu DO
+		TRY
+			DO
+			OUTPUT Menu
+				"What would you like to do?"	
+				"1. Display average view count for each series:"
+				"2. Display highest viewed episode from each series:"
+				"3. Display the most watched series:"
+				"4. Display the series with the highest viewed season finale:"
+				"5. Exit the program"
+
+				CASE choice
+
+				CASE 1 
+					OUTPUT averageDTS
+					OUTPUT averageAnna
+					OUTPUT averageBridgerton
+
+				CASE 2
+						episodeDTS = HighestValue(arrayDTS, arrayDTSLength)
+						episodeAnna = HighestValue(arrayAnna, arrayAnnaLength)
+						episodeBridgerton = HighestValue(arrayBridgerton, arrayBridgertonLength)
+						
+						OUTPUT episodeDTS
+						OUTPUT episodeBridgerton
+						OUTPUT episodeAnna
+
+				CASE 3
+					mostViewed = HighestTotal(sumDTS, sumAnna, sumBridgerton)
+					OUTPUT mostViewed
+
+				CASE 4
+					
+					highestFinale = HighestFinale(finaleDTS, finaleAnna, finaleBridgerton)
+					OUTPUT highestFinale
+
+				CASE 5
+					OUTPUT "Goodbye"
+
+				DEFAULT
+					OUTPUT "Error Invalid Input"
+			WHILE NOT closeMenu
+
+		CATCH Mismatched data type input error
+			OUTPUT "Input Mismatch error. Please try again"
+	END WHILE 
+END MAIN
+
+METHOD:   SumCalculation
+IMPORT:   array, arrayLength
+EXPORT:   sum
+ALGORITHM:
+
+	FOR arrayElement = 0 TO arrayLength; INCREASE BY 1
+		sum = sum + arrayValue
+	END FOR
+END SumCalculation		
+
+Method:   AverageCalculation
+Import:   sum, arrayLength
+Export:   average		
+ALGORITHM:	
+		
+	average = sum/arrayLength;	
+END AverageCalculation
+
+Method:   HighestValue
+Import:   array, arrayLength
+Export:   message
+ALGORITHM:
+
+		high = first array'S element's value
+		FOR arrayElement = 0 TO arrayLength INCREASE BY 1
+
+			IF current array's element value > high THEN
+				high = current array'S element'S value
+				highLocate =  current array's element + 1
+			END IF
+		END FOR
+		message = "peak viewership was " high " for episode " highLocate
+END HighestValue
+
+Method:   HighestTotal
+Import:   sumDTS, sumAnna, sumBridgerton
+Export:   message
+ALGORITHM:	
+
+	IF sumDTS > sumAnna AND sumDTS > sumBridgerton THEN
+		message = "Drive to Survive, season 4 had the highest viewership with" sumDTS "total views"
+
+	ELSE IF sumAnna > sumDTS AND sumDTS > sumBridgerton THEN
+		message = "Inventing Anna had the highest viewership with " sumAnna " total views"
+
+	ELSE
+		message = "Bridgerton, season 2 had the highest viewership with " sumBridgerton " total views"
+	END IF
+END HighestTotal
+
+Method:   HighestFinale
+Import:   finaleDTS, finaleAnna, finaleBridgerton
+Export:   message
+ALGORITHM:
+
+	IF finaleDTS > finaleAnna AND sumDTS > finaleBridgerton THEN
+			message = "Drive to Survive, season 4 had the most viewed finale with " finaleDTS " views"
+
+		ELSE IF finaleAnna > finaleDTS AND finaleDTS > finaleBridgerton THEN
+			message = "Inventing Anna had the most viewed finale with " finaleAnna " views"
+
+		ELSE
+			message = "Bridgerton season, 2 had the most viewed finale with " finaleBridgerton " views"
+		END IF
+END HighestFinale
+							
+
+

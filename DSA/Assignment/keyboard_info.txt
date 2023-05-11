@@ -1,0 +1,5 @@
+iView (wraps T|B|L|R)
+Netflix (no-wrap)
+Stan (wraps L|R)
+Switch (wraps T|B|L|R)
+Unknown (wraps T|B|L|R)

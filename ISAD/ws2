@@ -1,0 +1,55 @@
+1. 
+    a) Users, OS, keyboard, monitor
+    b) Buyers, sellers, warehouse, advertisers, payment services 
+    c) Students, teachers, admin, database
+    d) Users, database of area maps, business 
+    e) Drivers, cameras, pedestrians
+
+2. 
+    b) 
+        1. As a buyer, I want to be able to compare products so that I can make an informed descision.
+        2. As a seller, I want to be able to see buyer history so I can recommend them similar purchases from my store
+        3. As an advertiser, I want to see buyer history so I can market relevant products/services.
+        4. As a buyer I want to save my details so that my following purchaes are faster. 
+
+    c)
+        1. As a student, I want to view all prac classes so I can choose which one to attend.
+        2. As a student, I want to register for pracs so I don't miss out.
+        3. As an administrator, I want to add prac classes so there are classes available to students.
+        4. As an administrator, I want to remove classes so there aren't more than necessary.
+
+    d)
+        1. As a user I want to input my destination so that I can see routes available.
+        2. As a user, I want to be able to save commonly visted locations so I can navigate faster in the future.
+        3. As a user, I want the app to know my location so it will show me relevant maps.
+        4. As a business, I want my locations visble on the map so that users know where I'm located.
+
+4.
+    Goal: To allow a user to buy a product
+    Primary actor: Buyer
+    Seconary actors: Seller, payment services, warehouse
+    Precondition: Buyer has at least 1 item in their cart.
+    Trigger: Buyer selects "Check-out" option.
+
+        1.   Buyer enters delivery location information
+        2.   System recieves information
+        3.   System displays delivery options (Free, long time or paid but, shorter time etc.)
+        4.   Buyer choose the option they prefer.
+        5.   System displays payment options (Card, paypal etc.)
+        6.   Buyer chooses preferred payment method and inputs relevant information
+        7.   System confirms information is correct.
+        8.   Systems asks buyer to confirm all relevant details.
+        9.   Buyer selects the confirm option.
+        10.  System proccesses the transaction and provides a digital reciept for the buyer.
+
+    2A - Delivery location is not valid
+        1. System notifies buyer they don't ship to their location
+        2. Use case ends
+
+    7A - Payment information is not valid
+        1. System aks the user to input valid payment information
+        2. Use case resumes at step 6
+
+    10A - Buyer does not have sufficient funds to complete the transaction.
+        1. System notifes the buyer of this
+        2. Use resumes at step 6

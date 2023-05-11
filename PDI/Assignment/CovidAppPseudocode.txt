@@ -1,0 +1,785 @@
+START MAIN
+	CREATE CovidRecord array "covidArray" of length 1778
+
+	CALL METHOD readFile("CovidData.csv", covidArray)
+	
+	OUTPUT "Welcome to the JRC COVID-19 Analysis Program. There are a total of '1777' records loaded."
+
+	CALL METHOD mainMenu(covidArray)
+END MAIN
+
+
+METHOD: readFile
+IMPORT: filename (String), pArray (CovidRecord array)
+EXPORT: none 
+ASSERTION: read data from a file
+ALGORITHM:
+	theFile = OPENFILE filename
+	lineNum = -1
+	READ line FROM theFile    
+	WHILENOT(theFile=EOF)     
+		INCREASE lineNum BY 1
+		CALL METHOD populateArray(line, pArray, lineNum)       
+		READ line FROM theFile 
+	ENDWHILE 
+	CLOSEFILE theFile
+END readFile 
+
+METHOD: populateArray
+IMPORT: csvRow (String), pArray (CovidRecord array), lineNum(Integer)
+EXPORT: none
+ASSERTION: Parse the imported line and create a CovidRecord object in an array from the parsed line
+ALGORITHM: 
+	date (String) = ""
+	iso3 (String) = ""
+	continent (String) = ""
+	countryName (String) = ""
+	nuts (String) = ""
+	latitude (Double) = 0.0
+	longitude (Double) = 0.0
+	cumPos (Integer) = 0
+	cumDec (Integer) = 0
+	cumRec (Integer) = 0
+	urPos (Integer) = 0
+	hos (Integer) = 0
+	care (Integer) = 0
+
+	CREATE String array "splitLine"
+	splitLine = csvRow.split(",")
+
+	IF splitLine[0] EQUALS "" THEN
+		DO NOTHING
+	ELSE
+		date = splitLine[0]
+	END IF
+
+	IF splitLine[1] EQUALS "" THEN
+		DO NOTHING
+	ELSE
+		iso3 = splitLine[1]
+	END IF
+
+	IF splitLine[2] EQUALS "" THEN
+		DO NOTHING
+	ELSE
+		continent = splitLine[2]
+	END IF
+
+	IF splitLine[3] EQUALS "" THEN
+		DO NOTHING
+	ELSE
+		countryName = splitLine[3]
+	END IF
+
+	IF splitLine[4] EQUALS "" THEN
+		DO NOTHING
+	ELSE
+		latitude = CONVERT splitLine[4] INTO Double
+	END IF
+
+	IF splitLine[5] EQUALS "" THEN
+		DO NOTHING
+	ELSE
+		longitude = CONVERT splitLine[0] INTO Double
+	END IF
+
+	IF splitLine[6] EQUALS "" THEN
+		DO NOTHING
+	ELSE
+		cumPos = CONVERT splitLine[6] INTO Integer
+	END IF
+
+	IF splitLine[7] EQUALS "" THEN
+		DO NOTHING
+	ELSE
+		cumDec = CONVERT splitLine[7] INTO Integer
+	END IF
+
+	IF splitLine[8] EQUALS "" THEN
+		DO NOTHING
+	ELSE
+		cumRec = CONVERT splitLine[8] INTO Integer
+	END IF
+
+	IF splitLine[9] EQUALS "" THEN
+		DO NOTHING
+	ELSE
+		curPos = CONVERT splitLine[9] INTO Integer
+	END IF
+
+	IF splitLine[10] EQUALS "" THEN
+		DO NOTHING
+	ELSE
+		hos = CONVERT splitLine[10] INTO Integer
+	END IF
+
+	IF splitLine[11] EQUALS "" THEN
+		DO NOTHING
+	ELSE
+		care = CONVERT splitLine[11] INTO Integer
+	END IF
+
+	IF splitLine[12] EQUALS "" THEN
+		DO NOTHING
+	ELSE
+		nuts = splitLine[12]
+	END IF
+
+temp (Country) = (iso3, continent, countryName, nuts, latitude, longitude)
+
+pArray[pLineNum] = DEFAULT CovidRecord CONSTRUCTOR
+	pArray[pLineNum].setCountry(temp)
+	pArray[pLineNum].setDate(date)
+	pArray[pLineNum].setCumulativePositive(cumPos)
+	pArray[pLineNum].setCumulativeDeceased(cumDec)
+	pArray[pLineNum].setCumulativeRecovered(cumRec)
+	pArray[pLineNum].setCurrentlyPositive(curPos)
+	pArray[pLineNum].setHospitalised(hos)
+	pArray[pLineNum].setIntensiveCare(care)
+	
+END populateArray
+
+METHOD: mainMenu
+IMPORT: pMainArray (CovidRecord array)
+EXPORT: none
+ASSERTION: Display a menu for the user to allow them choose which section 		of data to view 
+ALGORITHM:
+	DO 	
+
+	OUTPUT "Please make a selection from the Menu below to choose which area (or date) to analyse:"
+	OUTPUT "> 1 All countries"
+	OUTOUT "> 2 Countries in South America"
+	OUTOUT "> 3 Countries in North America"
+	OUTPUT "> 4 Countries in Oceania"
+	OUTPUT "> 5 Countries in Asia"
+ 	OUTPUT "> 6 Countries in Africa"
+ 	OUTPUT "> 7 Countries in Europe"
+ 	OUTPUT "> 8 Enter a Country"
+ 	OUTPUT "> 9 Enter a Date"
+ 	OUTPUT "> 0 Exit"
+ 	OUTPUT "Enter selection:"
+
+	choice (Integer) = user INPUT
+
+	SWITCH(choice)
+
+	CASE 1:
+		CALL METHOD statisticsMenu(pMainArray, "in all countries")
+
+	CASE 2:
+		CALL METHOD southAmerica(pMainArray)
+
+	CASE 3:
+		CALL METHOD northAmerica(pMainArray)
+
+	CASE 4:
+		CALL METHOD oceania(pMainArray)
+
+	CASE 5:
+		CALL METHOD asia(pMainArray)
+
+	CASE 6:
+		CALL METHOD africa(pMainArray)
+
+	CASE 7: 
+		CALL METHOD europe(pMainArray)
+		
+	CASE 8:
+		CALL METHOD countryChoice(pMainArray)
+		
+	CASE 9:
+		CALL METHOD dateChoice(pMainArray)
+		
+	CASE 0:
+		OUTPUT "Thank you for using the JRC COVID-19 Analysis Program. Goodbye"
+		close = true
+
+	DEFAULT:
+		OUTPUT "Error, Invalid choice"
+
+	END SWITCH
+
+	WHILE NOT close
+END MainMenu
+
+METHOD: statisticsMenu
+IMPORT: pStatArray (CovidRecord array) pDataSetName (String)
+EXPORT: none
+ASSERTION: Display a menu for the user to allow them to select which statistic 
+	     to view. 
+ALGORITHM:
+	DO
+
+	OUTPUT "Please select from a statistic below:"
+	OUTPUT ">1 Total number of cumulatively positive cases" 	OUTPUT ">2 Total number of cumulatively deceased cases" 	OUTPUT ">3 Total number of cumulatively recovered cases" 	OUTPUT ">4 Average daily number of currently positive cases" 	OUTPUT ">5 Number and percentage of cumulatively positive cases recovered"
+	OUTPUT ">6 Number and percentage of cumulatively positive cases deceased" 
+	OUTPUT ">7 All of the above statistics"
+	OUTPUT ">0 Exit"
+ 	OUTPUT "Enter selection:"
+
+	choice (Integer) = user INPUT
+
+	SWITCH(choice)
+
+	CASE 1:
+		IF pStatArray[0].getCountry().getCountryName() EQUALS pStatArray[1].getCountry().getCountryName()
+			ans1 (integer) = CALL METHOD cumulativePostiveCountry(pStatArray)
+		ELSE
+			ans1 = CALL METHOD cumulativePositive(pStatArray)
+		END IF
+		strAns1 (String) = CALL METHOD createMessage(ans1)
+		OUTPUT "Cumulative number of positive cases" + pDataSetName + strAns1
+
+	CASE 2:
+		IF pStatArray[0].getCountry().getCountryName() EQUALS pStatArray[1].getCountry().getCountryName()
+			ans2 (Integer) = CALL METHOD cumulativeDeceasedCountry(pStatArray)
+		ELSE
+			ans2 = CALL METHOD cumulativeDeceased(pStatArray)
+		END IF
+		strAns2 (String) = CALL METHOD createMessage(ans2)
+		OUTPUT "Cumulative number of deceased cases" + pDataSetName + strAns2
+
+	CASE 3:
+		IF pStatArray[0].getCountry().getCountryName() EQUALS pStatArray[1].getCountry().getCountryName()
+			ans3 (Integer) = CALL METHOD cumulativeRecoveredCountry(pStatArray)
+		ELSE
+			ans3 = CALL METHOD cumulativeRecovered(pStatArray)
+		END IF
+		strAns3 (String) = CALL METHOD createMessage(ans3)
+		OUTPUT "Cumulative number of recovered cases" + pDataSetName + strAns3
+
+	CASE 4:
+		ans4 (Integer) = CALL METHOD currentlyPositiveAverage(pStatArray)
+		OUTPUT "The average number of daily cases" + pDataSetName + ans4
+
+	CASE 5:
+		ans5 (String)= CALL METHOD cumulativeRecoveredPercentage(pStatArray)
+		OUTPUT ans5 + " of recovered cases " + pDataSetName 
+
+	CASE 6:
+		ans6 (String) = CALL METHOD cumulativeDeceasedPercentage(pStatArray)
+		OUTPUT ans6 + " of deceased cases " + pDataSetName
+
+	CASE 7: 
+		IF pStatArray[0].getCountry().getCountryName() EQUALS pStatArray[1].getCountry().getCountryName()
+			ans1 = CALL METHOD cumulativePostiveCountry(pStatArray)
+			ans2 = CALL METHOD cumulativeDeceasedCountry(pStatArray)
+			ans3 = CALL METHOD cumulativeRecoveredCountry(pStatArray)
+		ELSE
+			ans1 = CALL METHOD CumulativePositive(pStatArray)
+			ans2 = CALL METHOD CumulativeDeceased(pStatArray)
+			ans3 = CALL METHOD CumulativeRecovered(pStatArray)
+		END IF
+
+		strAns1 = CALL METHOD createMessage(ans1)
+		strAns2 = CALL METHOD createMessage(ans2)
+		strAns3 = CALL METHOD createMessage(ans3)
+
+		ans4 (Integer) = CALL METHOD CurrentlyPositiveAverage(pStatArray)
+		ans5 (String = CALL METHOD CumulativeRecoveredPercentage(pStatArray)
+		ans6 (String) = CALL METHOD CumulativeDeceasedPercentage(pStatArray)
+
+		OUTPUT "Cumulative number of positive cases" + pDataSetName + ans1
+		OUTPUT "Cumulative number of deceased cases" + pDataSetName + ans2
+		OUTPUT "Cumulative number of recovered cases" + pDataSetName + ans3
+		OUTPUT "The average number of daily cases" + pDataSetName + ans4
+		OUTPUT ans5 + " of recovered cases " + pDataSetName
+		OUTPUT ans6 + " of deceased cases " + pDataSetName
+		
+	CASE 0:
+		OUTPUT "GOODBYE"
+		close = true
+
+	DEFAULT:
+		OUTPUT "Error, Invalid choice"
+
+	END SWITCH
+
+	WHILE NOT close
+END statisticsMenu
+
+METHOD: southAmerica
+IMPORT: pMainArray (CovidRecord array)
+EXPORT: none
+ASSERTION: Create an array containing only data from South America
+ALGORITHM:
+	CREATE CovidRecord array "southArray" of LENGTH equal to pMainArray LENGTH
+
+	southArray = CALL METHOD filterArrayContinent(southArray, pMainArray, "SA")
+	
+	southArray = CALL METHOD fillArray(southArray)
+
+	CALL METHOD statisticsMenu(southArray, "in South America")
+END southAmerica
+
+METHOD: NorthAmerica
+IMPORT: pMainArray (CovidRecord array)
+EXPORT: none
+ASSERTION: Create an array containing only data from North America
+ALGORITHM:
+	CREATE CovidRecord array "northArray" of LENGTH equal to pMainArray LENGTH
+
+	northArray = CALL METHOD filterArrayContinent(northArray, pMainArray, "NA")
+	northArray = CALL METHOD fillArray(northArray)
+
+	CALL METHOD statisticsMenu(northArray, "in North America")
+END NorthAmerica
+
+METHOD: Oceania
+IMPORT: pMainArray (CovidRecord array)
+EXPORT: none
+ASSERTION: Create an array containing only data from Oceania
+ALGORITHM:
+	CREATE CovidRecord array "oceaniaArray" of LENGTH equal to pMainArray LENGTH
+
+	oceaniaArray = CALL METHOD filterArrayContinent(oceaniaArray, pMainArray, "OC")
+
+	oceaniaArray = CALL METHID fillArray(oceaniaArray)
+
+	CALL METHOD statisticsMenu(oceaniaArray, "in Oceania")
+END oceania
+
+METHOD: asia
+IMPORT: pMainArray (CovidRecord array)
+EXPORT: none
+ASSERTION: Create an array containing only data from Asia
+ALGORITHM:
+	CREATE CovidRecord array "asiaArray" of LENGTH equal to pMainArray LENGth
+
+	asiaArray = CALL METHOD filterArrayContinent(asiaArray, pMainArray, "AS")
+
+	asiaArray = CALL METHOD fillArray(asiaArray)
+
+	CALL METHOD statisticsMenu(asiaArray, "in Asia")
+END Asia
+
+METHOD: Africa
+IMPORT: pMainArray (CovidRecord array)
+EXPORT: none
+ASSERTION: Create an array containing only data from Africa
+ALGORITHM:
+	CREATE CovidRecord array "africaArray" of LENGTH equal to pMainArray LENGTH
+
+	africaArray = CALL METHOD filterArrayContinent(africaArray, pMainArray, "AF")
+
+	africaArray = CALL METHOD fillArray(africaArray)
+
+	CALL METHOD StatisticsMenu(africaArray, "in Africa")
+END Africa
+
+METHOD: Europe
+IMPORT: pMainArray (CovidRecord array)
+EXPORT: none
+ASSERTION: Create an array containing only data from Europe
+ALGORITHM:
+	CREATE CovidRecord array "europeArray" of LENGTH equal to pMainArray LENGTH
+
+	europeArray = CALL METHOD filterArrayContinent(europeArray, pMainArray, "EU")
+
+	europeArray = CALL METHOD fillArray(europeArray)
+
+	CALL METHOD StatisticsMenu(europeArray, "in Europe")
+END Europe
+
+METHOD: CountryChoice
+IMPORT: pMainArray (CovidRecord array)
+EXPORT: none
+ASSERTION: Create an array containing only data from a country of the 
+		user's choice
+ALGORITHM:
+	DO
+
+	OUTPUT "Which country would you like to view data from?"
+
+	choice (String) = user INPUT
+
+	CREATE CovidRecord array "countryArray" of LENGTH equal to pMainArray LENGTH
+
+	countryArray = CALL METHOD filterArrayCountry(countryArray, pMainArray, choice)
+
+	countryArray = fillArray(countryArray)
+
+	IF countryArray [0] is NULL THEN
+		OUTPUT "The country you entered was not found in the records. Please make sure you spelled it correctly with capital letters where appropriate."
+	ELSE
+		close = true
+	END IF
+
+	WHILE NOT close
+
+	CALL METHOD statisticsMenu(countryArray, "in" + choice)
+END countryChoice
+
+METHOD: dateChoice
+IMPORT: pMainArray (CovidRecord array)
+EXPORT: none
+ASSERTION: Create an array containing only data from a date of the user's choice
+ALGORITHM:
+	DO
+	
+	OUTPUT "Which date would you like to view data from?
+
+	choice (String) = user INPUT
+
+	CREATE CovidRecord array "dateArray" of LENGTH equal to pMainArray LENGTH
+
+	dateArray = CALL METHOD  filterArrayDate(dateArray, pMainArray, choice)
+
+	IF dateArray[0] is NULL THEN
+		OUTPUT "The date you entered was not found in the records. Please enter your choice in the dd/m/yyyy format. Eg January is 1, December is 12. Note that the only dates available are the last of each month for the year 2021"
+
+	ELSE
+		close = true
+	END IF
+
+	WHILE NOT close
+
+	CALL METHOD statisticsMenu(dateArray, "on" + dateArray[0].getDate)
+END dateChoice
+
+METHOD: filterArrayCountry
+IMPORT: pFilteredArray (CovidRecord array), pMainArray (CovidRecord array), pCountry (String)
+EXPORT: pFilteredArray (CovidRecord array)
+ASSERTION: Filter an array with data only coming from the selected country
+ALGORITHM:
+	j (Integer) = 0
+
+	FOR index = 0 TO pMainArray LENGTH, INCREASE index BY 1
+		IF pMainArray[i].getCountry().getCountryName().equals(pCountry) THEN
+			pFilteredArray[i-j] = pMainArray[i]
+		ELSE
+			INCREASE j BY 1
+		END IF
+	END FOR
+
+	RETURN pFilteredArray
+END filterArrayCountry
+
+METHOD: filterArrayDate
+IMPORT: pFilteredArray (CovidRecord array), pMainArray (CovidRecord array), pDate (String)
+EXPORT: pFilteredArray (CovidRecord array)
+ASSERTION: Filter an array with data only coming from the selected date
+ALGORITHM:
+	j (Integer) = 0
+
+	FOR index = 0 TO pMainArray LENGTH, INCREASE index BY 1
+		IF pMainArray[i].getDate.equals(pDate) THEN
+			pFilteredArray[i-j] = pMainArray[i]
+		ELSE
+			INCREASE j BY 1
+		END IF
+	END FOR
+
+	RETURN pFilteredArray
+END filterArrayDate
+
+METHOD: filterArrayContinent
+IMPORT: pFilteredArray (CovidRecord array), pMainArray (CovidRecord array), pContinent (String)
+EXPORT: pFilteredArray (CovidRecord array)
+ASSERTION: Filter an array with data only coming from the selected country
+ALGORITHM:
+	j (Integer) = 0
+
+	FOR index = 0 TO pMainArray LENGTH, INCREASE index BY 1
+		IF pMainArray[i].getCountry().getContinent().equals(pContinent) THEN
+			pFilteredArray[i-j] = pMainArray[i]
+		ELSE
+			INCREASE j BY 1
+		END IF
+	END FOR
+
+	RETURN pFilteredArray
+END filterArrayContinent
+
+METHOD: fillArray
+IMPORT: pArray(CovidRecord array)
+EXPORT: pArray(CovidRecord array)
+ASSERTION: Fill all null elements in an array with default values
+	FOR index = 1 TO pArray LENGTH, INCREASE index BY 1
+		IF pArray[index] is NULL THEN
+			pArray[index] = DEFAULT CovidRecord CONSTRUCTOR
+		ELSE
+			DO NOTHING
+		END IF
+	END FOR
+
+	RETURN pArray
+END fillArray
+		
+		
+
+METHOD: cumulativePositive
+IMPORT: pArray (CovidRecord array)
+Export: sum (Integer)
+ASSERTION: Calculate the total number of positive cases and return it
+ALGORITHM:
+	sum (Integer) = 0
+	FOR index = 0 TO pArray LENGTH, INCREASE index BY 1
+		IF pArray[index].getCumulativePositive > 0 THEN
+			sum = sum + pArray[index].getCumulativePositive
+		END IF
+	END FOR
+
+	RETURN sum
+END cumulativePositive
+
+METHOD: cumulativePositiveCountry
+IMPORT: pArray (CovidRecord array)
+EXPORT: value (Integer)
+ASSERTION: Find the total cumulative positive value and return it
+ALGORITHM:
+	FOR index = 0 TO pArray LENGTH, INCREASE index BY 1
+		IF pArray[index].getDate EQUALS "31/12/2021" THEN
+			value (Integer) = pArray[index].getCumulativePositive
+		ELSE IF pArray[index].getDate EQUALS "30/11/2021" THEN
+			value = pArray[index].getCumulativePositive
+		ELSE IF pArray[index].getDate EQUALS "31/10/2021" THEN
+			value = pArray[index].getCumulativePositive
+		ELSE IF pArray[index].getDate EQUALS "30/9/2021" THEN
+			value = pArray[index].getCumulativePositive
+		ELSE IF pArray[index].getDate EQUALS "31/8/2021" THEN
+			value = pArray[index].getCumulativePositive
+		ELSE IF pArray[index].getDate EQUALS "31/7/2021" THEN
+			value = pArray[index].getCumulativePositive
+		ELSE IF pArray[index].getDate EQUALS "30/6/2021" THEN
+			value = pArray[index].getCumulativePositive
+		ELSE IF pArray[index].getDate EQUALS "31/5/2021" THEN
+			value = pArray[index].getCumulativePositive
+		ELSE IF pArray[index].getDate EQUALS "30/4/2021" THEN
+			value = pArray[index].getCumulativePositive
+		ELSE IF pArray[index].getDate EQUALS "31/3/2021" THEN
+			value = pArray[index].getCumulativePositive
+		ELSE IF pArray[index].getDate EQUALS "28/2/2021" THEN
+			value = pArray[index].getCumulativePositive
+		ELSE IF pArray[index].getDate EQUALS "31/1/2021" THEN
+			value = pArray[index].getCumulativePositive
+		END IF
+	END FOR
+	RETURN value
+END cumulativePositiveCountry
+
+
+METHOD: cumulativeDeceased
+IMPORT: pArray (CovidRecord array)
+Export: sum (Integer)
+ASSERTION: Calculate the total number of deceased cases and return it
+ALGORITHM:
+	sum (Integer) = 0
+	FOR index = 0 TO pArray LENGTH, INCREASE index BY 1
+		IF pArray[index].getCumulativeDeceased > 0 THEN
+			sum = sum + Array[index].getCumulativeDeceased
+		END IF
+	END FOR
+
+	RETURN sum
+END cumulativeDeceased
+
+METHOD: cumulativeDeceasedCountry
+IMPORT: pArray (CovidRecord array)
+EXPORT: value (Integer)
+ASSERTION: Find the total cumulative deceased value and return it
+ALGORITHM:
+	FOR index = 0 TO pArray LENGTH, INCREASE index BY 1
+		IF pArray[index].getDate EQUALS "31/12/2021" THEN
+			value (Integer) = pArray[index].getCumulativeDeceased
+		ELSE IF pArray[index].getDate EQUALS "30/11/2021" THEN
+			value = pArray[index].getCumulativeDeceased
+		ELSE IF pArray[index].getDate EQUALS "31/10/2021" THEN
+			value = pArray[index].getCumulativeDeceased
+		ELSE IF pArray[index].getDate EQUALS "30/9/2021" THEN
+			value = pArray[index].getCumulativeDeceased
+		ELSE IF pArray[index].getDate EQUALS "31/8/2021" THEN
+			value = pArray[index].getCumulativeDeceased
+		ELSE IF pArray[index].getDate EQUALS "31/7/2021" THEN
+			value = pArray[index].getCumulativeDeceased
+		ELSE IF pArray[index].getDate EQUALS "30/6/2021" THEN
+			value = pArray[index].getCumulativeDeceased
+		ELSE IF pArray[index].getDate EQUALS "31/5/2021" THEN
+			value = pArray[index].getCumulativeDeceased
+		ELSE IF pArray[index].getDate EQUALS "30/4/2021" THEN
+			value = pArray[index].getCumulativeDeceased
+		ELSE IF pArray[index].getDate EQUALS "31/3/2021" THEN
+			value = pArray[index].getCumulativeDeceased
+		ELSE IF pArray[index].getDate EQUALS "28/2/2021" THEN
+			value = pArray[index].getCumulativeDeceased
+		ELSE IF pArray[index].getDate EQUALS "31/1/2021" THEN
+			value = pArray[index].getCumulativeDeceased
+		END IF
+	END FOR
+	RETURN value
+END cumulativeDeceasedCountry
+
+METHOD: cumulativeRecovered
+IMPORT: pArray (CovidRecord array)
+Export: sum (Integer)
+ASSERTION: Calculate the total number of recovered cases and return it
+ALGORITHM:
+	sum (Integer) = 0
+	FOR index = 0 TO pArray LENGTH, INCREASE index BY 1
+		IF pArray[index].getCumulativeRecovered > 0 THEN
+			sum = sum + Array[index].getCumulativeRecovered
+		END IF
+	END FOR
+
+	RETURN sum
+END cumulativeRecovered
+
+METHOD: cumulativeRecoveredCountry
+IMPORT: pArray (CovidRecord array)
+EXPORT: value (Integer)
+ASSERTION: Find the total cumulative recovered value and return it
+ALGORITHM:
+	FOR index = 0 TO pArray LENGTH, INCREASE index BY 1
+		IF pArray[index].getDate EQUALS "31/12/2021" THEN
+			value (Integer) = pArray[index].getCumulativeRecovered
+		ELSE IF pArray[index].getDate EQUALS "30/11/2021" THEN
+			value = pArray[index].getCumulativeRecovered
+		ELSE IF pArray[index].getDate EQUALS "31/10/2021" THEN
+			value = pArray[index].getCumulativeRecovered
+		ELSE IF pArray[index].getDate EQUALS "30/9/2021" THEN
+			value = pArray[index].getCumulativeRecovered
+		ELSE IF pArray[index].getDate EQUALS "31/8/2021" THEN
+			value = pArray[index].getCumulativeRecovered
+		ELSE IF pArray[index].getDate EQUALS "31/7/2021" THEN
+			value = pArray[index].getCumulativeRecovered
+		ELSE IF pArray[index].getDate EQUALS "30/6/2021" THEN
+			value = pArray[index].getCumulativeRecovered
+		ELSE IF pArray[index].getDate EQUALS "31/5/2021" THEN
+			value = pArray[index].getCumulativeRecovered
+		ELSE IF pArray[index].getDate EQUALS "30/4/2021" THEN
+			value = pArray[index].getCumulativeRecovered
+		ELSE IF pArray[index].getDate EQUALS "31/3/2021" THEN
+			value = pArray[index].getCumulativeRecovered
+		ELSE IF pArray[index].getDate EQUALS "28/2/2021" THEN
+			value = pArray[index].getCumulativeRecovered
+		ELSE IF pArray[index].getDate EQUALS "31/1/2021" THEN
+			value = pArray[index].getCumulativeRecovered
+		END IF
+	END FOR
+	RETURN value
+END cumulativeRecoveredCountry
+
+
+METHOD: currentlyPositiveAverage
+IMPORT: pArray (CovidRecord array)
+EXPORT: averageString (String)
+ASSERTION: Calculate the average number of current cases and return it
+ALGORITHM:
+	total (Double) = CALL METHOD calculateTotal(pArray)
+
+	numToDivide = 12
+	IF total > 0 THEN
+		average (Double) = total/numToDivide
+
+		averageString(String) = average rounded to 2 decimal places
+
+	ELSE IF total EQUALS 0
+		averageString = "No data available"
+	END IF
+
+	return averageString
+END currentlyPositiveAverage
+
+METHOD: calculateTotal
+IMPORT: pArray (CovidRecord array)
+EXPORT: total double
+ASSERTION calculate the total currently positive cases and return that value
+ALGORITHM: 
+	FOR index = 0 TO pArray LENGTH, INCREASE index BY 1
+		IF pArray[index].getDate EQUALS "31/1/2021"
+			sumJan (Integer) = sumJan + pArray[index].getCurrentlyPositive
+		ELSE IF pArray[index].getDate EQUALS "28/2/2021"
+			sumFeb (Integer) = sumFeb + pArray[index].getCurrentlyPositive
+		ELSE IF pArray[index].getDate EQUALS "31/3/2021"
+			sumMar (Integer) = sumMar + pArray[index].getCurrentlyPositive
+		ELSE IF pArray[index].getDate EQUALS "30/4/2021"
+			sumApr (Integer) = sumApr + pArray[index].getCurrentlyPositive
+		ELSE IF pArray[index].getDate EQUALS "31/5/2021"
+			sumMay (Integer) = sumMay + pArray[index].getCurrentlyPositive
+		ELSE IF pArray[index].getDate EQUALS "30/6/2021"
+			sumJun (Integer) = sumJun + pArray[index].getCurrentlyPositive
+		ELSE IF pArray[index].getDate EQUALS "31/7/2021"
+			sumJul (Integer) = sumJul + pArray[index].getCurrentlyPositive
+		ELSE IF pArray[index].getDate EQUALS "31/8/2021"
+			sumAug (Integer) = sumAug + pArray[index].getCurrentlyPositive
+		ELSE IF pArray[index].getDate EQUALS "30/9/2021"
+			sumSep (Integer) = sumSep + pArray[index].getCurrentlyPositive
+		ELSE IF pArray[index].getDate EQUALS "31/10/2021"
+			sumOct (Integer) = sumOct + pArray[index].getCurrentlyPositive
+		ELSE IF pArray[index].getDate EQUALS "30/11/2021"
+			sumNov (Integer) = sumNov + pArray[index].getCurrentlyPositive
+		ELSE IF pArray[index].getDate EQUALS "31/12/2021"
+			sumDec(Integer) = sumDec + pArray[index].getCurrentlyPositive
+		END IF
+	END FOR
+
+	RETURN total
+END calculateTotal
+
+METHOD: cumulativeRecoveredPercentage
+IMPORT: pArray
+EXPORT: ansString (String)
+ASSERTION: Calculate the percentage of recovered cases and return it
+ALGORITHM:
+	IF pArray[0].getCountry.getCountryName EQUALS pArray[1].getCountry.getCountryName THEN
+		sumPos (double) = CALL METHOD cumulativePositiveCountry(pArray)
+		sumRec (double) = CALL METHOD cumulativeRecoveredCountry(pArray)
+	ELSE
+		sumPos = CALL METHOD cumulativePositive (pArray)
+		sumRec = CALL METHOD cumulativeRecovered(pArray)
+	END IF
+
+	ansString (String) = CALL METHOD percentageMessage(sumRec, sumPos)
+
+	RETURN ansString
+END cumulaticeRecoveredPercentage
+
+METHOD: cumulativeRecoveredPercentage
+IMPORT: pArray
+EXPORT: ansString (String)
+ASSERTION: Calculate the percentage of recovered cases and return it
+ALGORITHM:
+	IF pArray[0].getCountry.getCountryName EQUALS pArray[1].getCountry.getCountryName THEN
+		sumPos (double) = CALL METHOD cumulativePositiveCountry(pArray)
+		sumDec (double) = CALL METHOD cumulativeDeceasedCountry(pArray)
+	ELSE
+		sumPos = CALL METHOD cumulativePositive (pArray)
+		sumRec = CALL METHOD cumulativeDeceased(pArray)
+	END IF
+
+	ansString (String) = CALL METHOD percentageMessage(sumDec, sumPos)
+
+	RETURN ansString
+END cumulaticeDeceasedPercentage
+
+METHOD: percentageMessage
+IMPORT: num1 (Double), num2 (Double)
+EXPORT: ansString (String)
+ASSERTION: Calculate percentage and convert it to string message for display
+ALGORITHM:
+	IF num1 > 0 AND num2 > 0 THEN
+		ans (Double) = (num1/num2) x 100
+
+		ansRound (String) = ans rounded to 2 decimal places
+	
+		ansString = ansRound + "% (" + num1 + "/" + num2 + ") of"
+
+	ELSE IF 
+
+	return ansString
+	END IF
+END percentageMessage
+
+METHOD: createMessage
+IMPORT: pNum (Integer)
+EXPORT: ans (String)
+ASSERTION: Convert an integer into a string to display a more meaningful message
+ALGORITHM:
+	IF pNum > 0 THEN
+		ans (String) = "" + pNum
+	ELSE IF pNum EQUALS 0 THEN
+		ans = "No data available"
+	END IF
+
+	RETURN ans
+END createMessage
