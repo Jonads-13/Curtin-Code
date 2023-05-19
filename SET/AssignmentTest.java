@@ -12,6 +12,22 @@ public class AssignmentTest
         assertThat(parse("text/plain;boundary=foo;charset=utf-8").hashCode()).isEqualTo((long) mediaType.hashCode());
     }
 
+
+    private MediaType parse(String string) {
+        return useGet
+            ? MediaType.get(string)
+            : MediaType.parse(string);
+      }
+
+    
+
+
+
+
+
+
+
+
     @Test 
     public void addParsing() 
     {
@@ -31,3 +47,5 @@ public class AssignmentTest
     
     
 }
+
+
