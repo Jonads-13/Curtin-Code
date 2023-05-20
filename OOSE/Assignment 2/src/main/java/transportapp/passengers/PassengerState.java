@@ -1,4 +1,4 @@
-package passengers;
+package transportapp.passengers;
 
 public class PassengerState 
 {

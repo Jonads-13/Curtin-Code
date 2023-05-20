@@ -1,4 +1,4 @@
-package passengers;
+package transportapp.passengers;
 
 public class PassengerFactory
 {
@@ -14,7 +14,7 @@ public class PassengerFactory
         }
         else
         {
-            return new NonBinary();
+            return new Other();
         }
     }    
 }

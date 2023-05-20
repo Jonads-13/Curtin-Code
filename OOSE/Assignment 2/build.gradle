@@ -9,7 +9,7 @@ repositories {
 }
 
 application {
-    mainClass = 'smartrider.App'
+    mainClass = 'transportapp.App'
 }
 
 tasks.run.configure {
