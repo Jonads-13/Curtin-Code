@@ -11,6 +11,7 @@ public class Offboard implements BoardedState
 {
     public Offboard() {} // Constructor
 
+    @Override
     public void tapCard(Passenger p, Vehicle v)
     {
         try
@@ -22,7 +23,7 @@ public class Offboard implements BoardedState
 
             for(PassengerObserver obsvr : observers) 
             {
-                obsvr.update(p, "boarded", v);
+                obsvr.updateBoarded(p, v);
             }
 
         }

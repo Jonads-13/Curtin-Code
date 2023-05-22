@@ -10,6 +10,7 @@ public class Onboard implements BoardedState
 {
     public Onboard() {} // Constructor
 
+    @Override
     public void tapCard(Passenger p, Vehicle v)
     {
         p.deductPayment(2); // For simplicity fee for all travel is 2
@@ -20,7 +21,7 @@ public class Onboard implements BoardedState
 
         for(PassengerObserver obsvr : observers) 
         {
-            obsvr.update(p, "disembarked", v);    
+            obsvr.updateDisembarked(p, v);    
         }
     }
 }

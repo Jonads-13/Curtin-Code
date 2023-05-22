@@ -7,8 +7,15 @@ public class PassengerObserver
 {
     public PassengerObserver() {}
 
-    public void update(Passenger p, String msg, Vehicle v)
+    public void updateBoarded(Passenger p, Vehicle v)
     {
-        System.out.println("Passenger: " + p.getId() + " has " + msg + " " + v.getType() + ": " + v.getId() + " at: " + System.nanoTime());
+        System.out.println("Passenger: " + p.getId() + " has boarded " + v.getType() + ": " + v.getId() + " at: " + System.nanoTime());
+        v.addPassenger(p);
+    }
+
+    public void updateDisembarked(Passenger p, Vehicle v)
+    {
+        System.out.println("Passenger: " + p.getId() + " has disembarked " + v.getType() + ": " + v.getId() + " at: " + System.nanoTime());
+        v.removePassenger(p.getId());
     }
 }

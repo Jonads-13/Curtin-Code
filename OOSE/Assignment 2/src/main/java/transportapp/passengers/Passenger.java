@@ -13,6 +13,7 @@ public class Passenger
     private int balance;
     private AccountState accState;
     private BoardedState brdState;
+    private List<Integer> itinerary;
     private Set<PassengerObserver> obs;
 
     public Passenger(int id, int balance, AccountState aState, BoardedState bState)
@@ -21,6 +22,7 @@ public class Passenger
         this.balance = balance;
         this.accState = aState;
         this.brdState = bState;
+        this.itinerary = new LinkedList<>();
         this.obs = new HashSet<>();
     }
 
@@ -67,6 +69,16 @@ public class Passenger
     public void deductPayment(int fee)
     {
         accState.deductPayment(this, fee);
+    }
+
+    public void addToItinerary(int legOfJourney)
+    {
+        itinerary.add(legOfJourney);
+    }
+
+    public List<Integer> getItinerary()
+    {
+        return itinerary;
     }
 
     public void addObserver(PassengerObserver newObs)

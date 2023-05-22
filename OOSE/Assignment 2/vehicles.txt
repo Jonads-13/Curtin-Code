@@ -1,0 +1,13 @@
+Bus;106
+Bus;881
+Bus;940
+Bus;501
+Bus;100
+Bus;101
+Train;1
+Train;2
+Train;3
+Train;4
+Train;5
+Ferry;25
+Ferry:50

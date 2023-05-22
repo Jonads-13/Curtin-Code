@@ -11,11 +11,13 @@ public class Debt implements AccountState
         numTimesDededucted = 0;
     }
 
+    @Override
     public void tapCard(Passenger p)
     {
-        // Empty
+       System.out.println("Enter an amount of money to move your standing out of debt");
     }
 
+    @Override
     public void deductPayment(Passenger p, int fee)
     {
         p.setBalance(p.getBalance() - fee);
