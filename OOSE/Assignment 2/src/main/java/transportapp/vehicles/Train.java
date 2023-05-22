@@ -2,8 +2,8 @@ package transportapp.vehicles;
 
 public class Train extends Vehicle
 {
-    public Train(int id)
+    public Train(int id, String type, int fee)
     {
-        super(id);
+        super(id, type, fee);
     }
 }
