@@ -5,11 +5,13 @@ import transportapp.passengers.Passenger;
 
 public class Debt implements AccountState
 {
-    private int numTimesDededucted;
+    private int numTimesDededucted; // Trigger for when to cancel an account
+    private int maxTimes;
 
-    public Debt()
+    public Debt() // Constructor
     {
-        numTimesDededucted = 0;
+        numTimesDededucted = 0; 
+        maxTimes = 3; // Abritrary number can be whatever
     }
 
     @Override
@@ -18,7 +20,7 @@ public class Debt implements AccountState
         UserInput ui = new UserInput();
         System.out.println("Enter an amount of money to move " + p.getId() + "\'s standing out of debt");
         System.out.println(p.getId() + "\'s current balance is: " + p.getBalance());
-        System.out.println(p.getId() + " has " + (3 - numTimesDededucted) + " travels left before cancellation");
+        System.out.println(p.getId() + " has " + (maxTimes - numTimesDededucted) + " travels left before cancellation");
 
         p.addBalance(ui.getIntegerInput());
     }
@@ -34,7 +36,7 @@ public class Debt implements AccountState
         {
             p.setAccState(new GoodStanding());
         }
-        else if(numTimesDededucted == 3)
+        else if(numTimesDededucted == maxTimes) // Trigger to cancel account
         {
             p.setAccState(new Cancelled());
         }

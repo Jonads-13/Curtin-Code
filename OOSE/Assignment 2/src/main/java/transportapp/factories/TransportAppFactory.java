@@ -16,22 +16,22 @@ public class TransportAppFactory
     @SuppressWarnings("PMD.FieldNamingConventions")
     private static final Logger logger = Logger.getLogger(TransportAppFactory.class.getName());
 
-    public static Vehicle createVehicle(String name, int id)
+    public static Vehicle createVehicle(String name, int id, int fee)
     {
         if(name.equals("Bus"))
         {
-            logger.info(()-> "Bus created with " + id + " id");
-            return new Bus(id, name, 1);
+            logger.info(()-> "Bus created with id: " + id);
+            return new Bus(id, name, fee);
         }
         else if(name.equals("Train"))
         {
-            logger.info(()-> "Train created with " + id + " id");
-            return new Train(id, name, 2);
+            logger.info(()-> "Train created with id: " + id);
+            return new Train(id, name, fee);
         }
         else if(name.equals("Ferry"))
         {
-            logger.info(()-> "Ferry created with " + id + " id");
-            return new Ferry(id, name, 5);
+            logger.info(()-> "Ferry created with id: " + id);
+            return new Ferry(id, name, fee);
         }
         else
         {
