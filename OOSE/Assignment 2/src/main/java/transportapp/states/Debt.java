@@ -16,8 +16,10 @@ public class Debt implements AccountState
     public void tapCard(Passenger p)
     {
         UserInput ui = new UserInput();
-        System.out.println("Enter an amount of money to move your standing out of debt");
+        System.out.println("Enter an amount of money to move " + p.getId() + "\'s standing out of debt");
         System.out.println(p.getId() + "\'s current balance is: " + p.getBalance());
+        System.out.println(p.getId() + " has " + (3 - numTimesDededucted) + " travels left before cancellation");
+
         p.addBalance(ui.getIntegerInput());
     }
 

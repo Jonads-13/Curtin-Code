@@ -64,11 +64,15 @@ public class App
                 logger.warning(()-> "Passenger: " + p.getId() + "\'s journey ended early as their account was cancelled");
             }
         }
+
+        System.out.println("Simulation finished");
+        logger.info("Simulation finished");
     }
     
     public void simulateJourney(Passenger p, Map<Integer, Vehicle> vehicles)
     {
         logger.info(()-> "Beginning simulation of Passenger: " + p.getId());
+        System.out.println("\n\nBeginning simulation of Passenger: " + p.getId());
         List<Integer> itinerary = p.getItinerary();
 
         for(int legOfJourney : itinerary) 
@@ -85,6 +89,7 @@ public class App
             p.tapOff(v); // Disembarking
         }
 
-        logger.info(()-> "Passenger: " + p.getId() + "\'s journey has successfully completed");
+        logger.info(()-> "Passenger " + p.getId() + "\'s journey has successfully completed");
+        System.out.println("Passenger " + p.getId() + "\'s journey has successfully completed\n\n");
     }
 }

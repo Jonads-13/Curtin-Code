@@ -9,7 +9,7 @@ public class OffboardObserver implements PassengerObserver
     @Override
     public void update(Passenger p, Vehicle v)
     {
-        System.out.println("Passenger: " + p.getId() + " has boarded " + v.getType() + ": " + v.getId() + " at: " + System.nanoTime());
+        System.out.println("Passenger " + p.getId() + " has boarded " + v.getType() + " " + v.getId() + " at: " + System.nanoTime());
         v.addPassenger(p);
     }
 }
