@@ -2,26 +2,35 @@ package transportapp;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.Logger;
 
 import transportapp.vehicles.*;
+import transportapp.exceptions.CancelledAccountException;
+import transportapp.exceptions.MissingVehicleException;
 import transportapp.fileio.ParseSetupFiles;
+import transportapp.interactive.UserInput;
 import transportapp.passengers.Passenger;
 
 public class App
 {
+    @SuppressWarnings("PMD.FieldNamingConventions")
+    private static final Logger logger = Logger.getLogger(App.class.getName());
+
     public App() {}
+
     public static void main(String[] args)
     {
         ParseSetupFiles fileParser = new ParseSetupFiles();
         App app = new App();
+        UserInput ui = new UserInput();
 
-        try(Scanner sc = new Scanner(System.in))
+        try
         {
-            String vehicleFile = app.getFilename("vehicle", sc);
+            String vehicleFile = ui.getFilename("vehicle");
     
             Map<Integer, Vehicle> vehicles = fileParser.readVehicleFile(vehicleFile);   
     
-            String passengerFile = app.getFilename("passenger", sc);
+            String passengerFile = ui.getFilename("passenger");
             
             List<Passenger> passengers = fileParser.readPassengerFile(passengerFile);
 
@@ -30,35 +39,52 @@ public class App
         catch(IOException e)
         {
             System.out.println(e.getMessage());
+            logger.warning(()-> "Error in file reading: " + e.getMessage());
         }
-    }
 
-    public String getFilename(String type, Scanner sc)
-    {
-        System.out.println("Please enter the name of the " + type + "file to use: ");
-        System.out.println("Note: default is: " + type + "s.txt");
-        return sc.nextLine();
+        ui.closeScanner();
     }
 
     public void beginSimulation(Map<Integer, Vehicle> vehicles, List<Passenger> passengers)
     {
         for (Passenger p : passengers) 
         {
-            simulateJourney(p, vehicles);
+            try
+            {
+                simulateJourney(p, vehicles);
+            }
+            catch(MissingVehicleException e)
+            {
+                System.out.println(e.getMessage());
+                logger.warning(()-> e.getMessage());
+            }
+            catch(CancelledAccountException e2)
+            {
+                System.out.println("Passenger: " + p.getId() + "\'s journey ended early as their account was cancelled");
+                logger.warning(()-> "Passenger: " + p.getId() + "\'s journey ended early as their account was cancelled");
+            }
         }
     }
-
+    
     public void simulateJourney(Passenger p, Map<Integer, Vehicle> vehicles)
     {
+        logger.info(()-> "Beginning simulation of Passenger: " + p.getId());
         List<Integer> itinerary = p.getItinerary();
 
-        for (int legOfJourney : itinerary) 
+        for(int legOfJourney : itinerary) 
         {
             Vehicle v = vehicles.get(legOfJourney);
 
-            
+            if(v == null)
+            {
+                throw new MissingVehicleException(legOfJourney + " is not valid as it could not be found. Please ensure it is in the vehicle file");
+            }
 
-
+            p.tapOn(v); // Boarding
+            // Pretend there is travel time here
+            p.tapOff(v); // Disembarking
         }
+
+        logger.info(()-> "Passenger: " + p.getId() + "\'s journey has successfully completed");
     }
 }

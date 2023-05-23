@@ -1,5 +1,6 @@
 package transportapp.states;
 
+import transportapp.interactive.UserInput;
 import transportapp.passengers.Passenger;
 
 public class Debt implements AccountState
@@ -14,7 +15,10 @@ public class Debt implements AccountState
     @Override
     public void tapCard(Passenger p)
     {
-       System.out.println("Enter an amount of money to move your standing out of debt");
+        UserInput ui = new UserInput();
+        System.out.println("Enter an amount of money to move your standing out of debt");
+        System.out.println(p.getId() + "\'s current balance is: " + p.getBalance());
+        p.addBalance(ui.getIntegerInput());
     }
 
     @Override

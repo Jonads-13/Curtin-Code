@@ -19,12 +19,13 @@ public class ParseSetupFiles
         try(BufferedReader br = new BufferedReader(new FileReader(filename)))
         {
             line = br.readLine();
+
             while(line != null)
             {
                 String[] split = line.split(";", 2);
-                int id = Integer.parseInt(split[0]);
+                int id = Integer.parseInt(split[1]);
 
-                Vehicle v = TransportAppFactory.createVehicle(split[1], id);
+                Vehicle v = TransportAppFactory.createVehicle(split[0], id);
                 vehicles.put(id, v);
 
                 line = br.readLine();
@@ -48,6 +49,8 @@ public class ParseSetupFiles
                 Passenger p = parsePassenger(line);
 
                 passengers.add(p);
+
+                line = br.readLine();
             }
         }
         catch(IOException e)
@@ -66,15 +69,7 @@ public class ParseSetupFiles
         int balance = Integer.parseInt(split[1]);
         String itinerary = split[2];
         
-        Passenger p = TransportAppFactory.createPassenger(id, balance);
-        
-        String[] splitItinerary = itinerary.split("-");
-
-        for(String legOfJourney : splitItinerary) 
-        {
-            int leg = Integer.parseInt(legOfJourney);
-            p.addToItinerary(leg);
-        }
+        Passenger p = TransportAppFactory.createPassenger(id, balance, itinerary);
 
         return p;
     }
