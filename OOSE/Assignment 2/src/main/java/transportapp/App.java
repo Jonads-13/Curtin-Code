@@ -6,6 +6,8 @@ import java.util.logging.Logger;
 
 import transportapp.vehicles.*;
 import transportapp.exceptions.CancelledAccountException;
+import transportapp.exceptions.InvalidPassengerException;
+import transportapp.exceptions.InvalidVehicleException;
 import transportapp.exceptions.MissingVehicleException;
 import transportapp.fileio.ParseSetupFiles;
 import transportapp.interactive.UserInput;
@@ -40,6 +42,18 @@ public class App
         {
             System.out.println(e.getMessage());
             logger.warning(()-> "Error in file reading: " + e.getMessage());
+        }
+        catch(InvalidPassengerException ipe)
+        {
+            System.out.println(ipe.getMessage());
+        }
+        catch(InvalidVehicleException ive)
+        {
+            System.out.println(ive.getMessage());
+        }
+        catch(NumberFormatException nfe)
+        {
+            System.out.println(nfe.getMessage());
         }
 
         ui.closeScanner();

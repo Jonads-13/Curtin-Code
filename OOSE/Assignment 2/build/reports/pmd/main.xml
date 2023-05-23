@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.43.0" timestamp="2023-05-23T18:21:18.422">
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.43.0" timestamp="2023-05-23T22:40:28.621">
+<file name="/Users/jake/Code/Curtin Code/OOSE/Assignment 2/src/main/java/transportapp/fileio/ParseSetupFiles.java">
+<violation beginline="43" endline="43" begincolumn="13" endcolumn="123" rule="GuardLogStatement" ruleset="Best Practices" package="transportapp.fileio" class="ParseSetupFiles" method="readVehicleFile" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_bestpractices.html#guardlogstatement" priority="2">
+Logger calls should be surrounded by log level guards.
+</violation>
+<violation beginline="45" endline="48" begincolumn="9" endcolumn="9" rule="EmptyCatchBlock" ruleset="Error Prone" package="transportapp.fileio" class="ParseSetupFiles" method="readVehicleFile" externalInfoUrl="https://pmd.github.io/pmd-6.43.0/pmd_rules_java_errorprone.html#emptycatchblock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
 </pmd>
