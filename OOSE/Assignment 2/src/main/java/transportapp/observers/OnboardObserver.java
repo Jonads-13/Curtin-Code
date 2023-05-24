@@ -8,7 +8,7 @@ import transportapp.vehicles.Vehicle;
 
 public class OnboardObserver implements PassengerObserver
 {
-    @SuppressWarnings("PMD.FieldnamingConventions")
+    @SuppressWarnings("PMD.FieldNamingConventions")
     private static final Logger logger = Logger.getLogger(OnboardObserver.class.getName());
 
     @Override

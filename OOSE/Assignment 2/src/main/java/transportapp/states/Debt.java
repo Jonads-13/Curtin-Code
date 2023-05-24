@@ -29,6 +29,12 @@ public class Debt implements AccountState
 
         p.addBalance(ui.getIntegerInput());
         logger.info(()-> "Passenger " + p.getId() + "\'s balance after adding to it: " + p.getBalance());
+
+        if(p.getBalance() >= 0)
+        {
+            p.setAccState(new GoodStanding());
+            logger.info(()-> "Passenger " + p.getId() + " has moved to good standing");
+        }
     }
 
     @Override
@@ -39,13 +45,7 @@ public class Debt implements AccountState
 
         numTimesDededucted++;
 
-        if(p.getBalance() > 0)
-        {
-            p.setAccState(new GoodStanding());
-            logger.info(()-> "Passenger " + p.getId() + " has moved to good standing");
-            
-        }
-        else if(numTimesDededucted == maxTimes) // Guard to cancel account
+        if(numTimesDededucted == maxTimes) // Guard to cancel account
         {
             p.setAccState(new Cancelled());
             logger.info(()-> "Passenger " + p.getId() + " has had their account cancelled");
