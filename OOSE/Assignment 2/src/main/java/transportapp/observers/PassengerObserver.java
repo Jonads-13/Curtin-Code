@@ -1,5 +1,10 @@
 package transportapp.observers;
 
+/**
+ * @Author    Jacob Jonas, 18439731
+ * @Assertion Observer interface
+ **/
+
 import transportapp.passengers.Passenger;
 import transportapp.vehicles.Vehicle;
 

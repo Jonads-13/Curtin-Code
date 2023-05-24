@@ -39,7 +39,7 @@ public class UserInput
         System.out.println("Please enter the name of the " + type + "file to use: ");
         System.out.println("Note: default is: " + type + "s.txt");
         return SC.nextLine();
-    }
+    } // End getFilename()
 
 
 
@@ -93,5 +93,5 @@ public class UserInput
      public void closeScanner()
      {
         SC.close();
-     }
+     } // End closeScanner
 }
