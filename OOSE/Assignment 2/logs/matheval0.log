@@ -1,62 +1,60 @@
-May 23, 2023 5:56:34 PM transportapp.factories.TransportAppFactory createVehicle
-INFO: Bus created with 106 id
-May 23, 2023 5:56:34 PM transportapp.factories.TransportAppFactory createVehicle
-INFO: Bus created with 881 id
-May 23, 2023 5:56:34 PM transportapp.factories.TransportAppFactory createVehicle
-INFO: Bus created with 940 id
-May 23, 2023 5:56:34 PM transportapp.factories.TransportAppFactory createVehicle
-INFO: Bus created with 501 id
-May 23, 2023 5:56:34 PM transportapp.factories.TransportAppFactory createVehicle
-INFO: Bus created with 100 id
-May 23, 2023 5:56:34 PM transportapp.factories.TransportAppFactory createVehicle
-INFO: Bus created with 101 id
-May 23, 2023 5:56:34 PM transportapp.factories.TransportAppFactory createVehicle
-INFO: Train created with 1 id
-May 23, 2023 5:56:34 PM transportapp.factories.TransportAppFactory createVehicle
-INFO: Train created with 2 id
-May 23, 2023 5:56:34 PM transportapp.factories.TransportAppFactory createVehicle
-INFO: Train created with 3 id
-May 23, 2023 5:56:34 PM transportapp.factories.TransportAppFactory createVehicle
-INFO: Train created with 4 id
-May 23, 2023 5:56:34 PM transportapp.factories.TransportAppFactory createVehicle
-INFO: Train created with 5 id
-May 23, 2023 5:56:34 PM transportapp.factories.TransportAppFactory createVehicle
-INFO: Ferry created with 25 id
-May 23, 2023 5:56:34 PM transportapp.factories.TransportAppFactory createVehicle
-INFO: Ferry created with 50 id
-May 23, 2023 5:56:40 PM transportapp.App simulateJourney
+May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+INFO: Bus created with id: 106 and a fee of: 1
+May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+INFO: Bus created with id: 881 and a fee of: 1
+May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+INFO: Bus created with id: 940 and a fee of: 1
+May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+INFO: Bus created with id: 501 and a fee of: 1
+May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+INFO: Bus created with id: 100 and a fee of: 1
+May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+INFO: Bus created with id: 101 and a fee of: 1
+May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+INFO: Train created with id: 1 and a fee of: 2
+May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+INFO: Train created with id: 2 and a fee of: 2
+May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+INFO: Train created with id: 3 and a fee of: 2
+May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+INFO: Train created with id: 4 and a fee of: 2
+May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+INFO: Train created with id: 5 and a fee of: 2
+May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+INFO: Ferry created with id: 25 and a fee of: 5
+May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+INFO: Ferry created with id: 50 and a fee of: 5
+May 24, 2023 2:11:45 PM transportapp.factories.TransportAppFactory createPassenger
+INFO: Passenger 7275 created with starting balance of: 10
+May 24, 2023 2:11:45 PM transportapp.factories.TransportAppFactory createPassenger
+INFO: Passenger 7148 created with starting balance of: 3
+May 24, 2023 2:11:45 PM transportapp.factories.TransportAppFactory createPassenger
+INFO: Passenger 2340 created with starting balance of: 5
+May 24, 2023 2:11:45 PM transportapp.factories.TransportAppFactory createPassenger
+INFO: Passenger 1946 created with starting balance of: 0
+May 24, 2023 2:11:45 PM transportapp.factories.TransportAppFactory createPassenger
+INFO: Passenger 5837 created with starting balance of: 7
+May 24, 2023 2:11:45 PM transportapp.App simulateJourney
 INFO: Beginning simulation of Passenger: 7275
-May 23, 2023 5:56:40 PM transportapp.App simulateJourney
-INFO: Passenger: 7275's journey has successfully completed
-May 23, 2023 5:56:40 PM transportapp.App simulateJourney
+May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 7275's balance after deduction: 9
+May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 7275's balance after deduction: 7
+May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 7275's balance after deduction: 5
+May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 7275's balance after deduction: 4
+May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 7275's balance after deduction: 3
+May 24, 2023 2:11:45 PM transportapp.App simulateJourney
+INFO: Passenger 7275's journey has successfully completed
+May 24, 2023 2:11:45 PM transportapp.App simulateJourney
 INFO: Beginning simulation of Passenger: 7148
-May 23, 2023 5:56:40 PM transportapp.interactive.UserInput getIntegerInput
+May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 7148's balance after deduction: 1
+May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 7148's balance after deduction: -4
+May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 7148 has moved into debt
+May 24, 2023 2:11:45 PM transportapp.interactive.UserInput getIntegerInput
 INFO: Aquiring user input
-May 23, 2023 5:57:33 PM transportapp.interactive.UserInput getIntegerInput
-INFO: Aquiring user input
-May 23, 2023 5:57:35 PM transportapp.interactive.UserInput getIntegerInput
-INFO: Aquiring user input
-May 23, 2023 5:57:37 PM transportapp.App simulateJourney
-INFO: Passenger: 7148's journey has successfully completed
-May 23, 2023 5:57:37 PM transportapp.App simulateJourney
-INFO: Beginning simulation of Passenger: 2340
-May 23, 2023 5:57:37 PM transportapp.App simulateJourney
-INFO: Passenger: 2340's journey has successfully completed
-May 23, 2023 5:57:37 PM transportapp.App simulateJourney
-INFO: Beginning simulation of Passenger: 1946
-May 23, 2023 5:57:37 PM transportapp.interactive.UserInput getIntegerInput
-INFO: Aquiring user input
-May 23, 2023 5:58:02 PM transportapp.interactive.UserInput getIntegerInput
-INFO: Aquiring user input
-May 23, 2023 5:58:04 PM transportapp.interactive.UserInput getIntegerInput
-INFO: Aquiring user input
-May 23, 2023 5:58:07 PM transportapp.states.Cancelled tapCard
-SEVERE: Passenger: 1946 has had their account cancelled due to outstanding debt
-May 23, 2023 5:58:07 PM transportapp.App beginSimulation
-WARNING: Passenger: 1946's journey ended early as their account was cancelled
-May 23, 2023 5:58:07 PM transportapp.App simulateJourney
-INFO: Beginning simulation of Passenger: 5837
-May 23, 2023 5:58:07 PM transportapp.interactive.UserInput getIntegerInput
-INFO: Aquiring user input
-May 23, 2023 5:59:18 PM transportapp.App simulateJourney
-INFO: Passenger: 5837's journey has successfully completed

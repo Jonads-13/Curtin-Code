@@ -1,6 +1,7 @@
 package transportapp.vehicles;
 
-import java.util.*;
+import java.util.Map;
+import java.util.HashMap;
 
 import transportapp.passengers.Passenger;
 

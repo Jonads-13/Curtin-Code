@@ -1,5 +1,10 @@
 package transportapp.interactive;
 
+/**
+ * @Author    Jacob Jonas, 18439731
+ * @Assertion Handles input from the user
+ **/
+
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -10,25 +15,46 @@ public class UserInput
     
     private static final Scanner SC = new Scanner(System.in);
 
-    public UserInput() {}
+    public UserInput() {} // Constructor
+    
+
+    
+    
+    
+    
+    
+    /**
+     * @author    Jacob Jonas, 18439731
+     *
+     * @assertion Aquires a filename from the user
+     *
+     * @param     type The type of file that the filename represents
+     *
+     * @returns   filename entered by the user
+     **/
     
     public String getFilename(String type)
     {
+        logger.info(()-> "Aquiring " + type + " filename from the user");
         System.out.println("Please enter the name of the " + type + "file to use: ");
         System.out.println("Note: default is: " + type + "s.txt");
         return SC.nextLine();
     }
 
-      /**
-     * @Author    Jacob Jonas, 18439731
-     * @Created   30/03/2023
-     * @Modified  06/04/2023
+
+
+
+
+    
+
+    /**
+     * @author    Jacob Jonas, 18439731
      *
-     * @Assertion Process integer input from the user
+     * @assertion Process integer input from the user
      *
      * @param     void
      * 
-     * @Returns:  A single integer input from the user
+     * @returns:  A single integer input from the user
      **/
     
      public int getIntegerInput()
@@ -37,7 +63,7 @@ public class UserInput
          {
              try
              {
-                 logger.info("Aquiring user input");
+                 logger.info("Aquiring user input for an Intger");
                  int choice = Integer.parseInt(SC.nextLine());
                  return choice;
              }
@@ -48,6 +74,21 @@ public class UserInput
              }
          }
      } // End getIntergerInput()
+
+     
+     
+     
+     
+     
+     /**
+      * @author    Jacob Jonas, 18439731
+      *
+      * @assertion close scanner used in the class
+      *
+      * @param     void
+      *
+      * @returns   void
+      **/
 
      public void closeScanner()
      {

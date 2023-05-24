@@ -1,14 +1,12 @@
 package transportapp;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Map;
+import java.util.List;
 import java.util.logging.Logger;
 
 import transportapp.vehicles.*;
-import transportapp.exceptions.CancelledAccountException;
-import transportapp.exceptions.InvalidPassengerException;
-import transportapp.exceptions.InvalidVehicleException;
-import transportapp.exceptions.MissingVehicleException;
+import transportapp.exceptions.*;
 import transportapp.fileio.ParseSetupFiles;
 import transportapp.interactive.UserInput;
 import transportapp.passengers.Passenger;
@@ -45,15 +43,15 @@ public class App
         }
         catch(InvalidPassengerException ipe)
         {
-            System.out.println(ipe.getMessage());
+            System.out.println("Passenger file is incorrect. Please check and ensure the format is correct. Specific details in the README");
         }
         catch(InvalidVehicleException ive)
         {
-            System.out.println(ive.getMessage());
+            System.out.println("Vehicle file is incorrect. Please check and ensure the format is correct. Specific details in the README");
         }
         catch(NumberFormatException nfe)
         {
-            System.out.println(nfe.getMessage());
+            System.out.println("Please check and ensure the file format is correct. Specific details in the README");
         }
 
         ui.closeScanner();

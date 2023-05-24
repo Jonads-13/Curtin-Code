@@ -21,22 +21,22 @@ public class TransportAppFactory
     {
         if(name.equals("Bus"))
         {
-            logger.info(()-> "Bus created with id: " + id);
+            logger.info(()-> "Bus created with id: " + id + " and a fee of: " + fee);
             return new Bus(id, name, fee);
         }
         else if(name.equals("Train"))
         {
-            logger.info(()-> "Train created with id: " + id);
+            logger.info(()-> "Train created with id: " + id + " and a fee of: " + fee);
             return new Train(id, name, fee);
         }
         else if(name.equals("Ferry"))
         {
-            logger.info(()-> "Ferry created with id: " + id);
+            logger.info(()-> "Ferry created with id: " + id + " and a fee of: " + fee);
             return new Ferry(id, name, fee);
         }
         else
         {
-            logger.severe(()-> "name: " + name + ", must be either \"Bus\" or \"Train\" or \"Ferry\"");
+            logger.severe(()-> "name: " + name + " is invalid. Must be either \"Bus\" or \"Train\" or \"Ferry\"");
             throw new InvalidVehicleException( "name: " + name + ", must be either \"Bus\" or \"Train\" or \"Ferry\"");
         }
     } 
@@ -47,9 +47,9 @@ public class TransportAppFactory
 
         String[] splitItinerary = itinerary.split("-");
 
-        if(splitItinerary.length < 1)
+        if(splitItinerary.length == 1)
         {
-            throw new InvalidPassengerException("Itinerary is not separated by \'-\'");
+            throw new InvalidPassengerException("Itinerary must be separated by \'-\' and must have at least 2 vehicle id\'s");
         }
 
         for(String legOfJourney : splitItinerary) 
@@ -60,6 +60,8 @@ public class TransportAppFactory
 
         p.addOffObserver(new OffboardObserver());
         p.addOnObserver(new OnboardObserver());
+
+        logger.info(()-> "Passenger " + id + " created with starting balance of: " + balance);
 
         return p;
     }

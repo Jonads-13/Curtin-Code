@@ -15,7 +15,7 @@ public class Cancelled implements AccountState
     @Override
     public void tapCard(Passenger p)
     {
-        logger.severe(() -> "Passenger: " + p.getId() + " has had their account cancelled due to outstanding debt");
+        logger.warning(() -> "Passenger: " + p.getId() + " has had their account cancelled due to outstanding debt");
         throw new CancelledAccountException("Passenger: " + p.getId() + " has had their account cancelled due to outstanding debt");
     }
     
