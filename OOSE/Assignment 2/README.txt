@@ -1,7 +1,7 @@
 Jacob Jonas, 18439731 README for Assignment 2, OOSE
 ======================================================
 
-This is a simple simulation program designed to simulate a journey of a passenger and how their account might change during that journey
+This is a simple simulation program designed to simulate the journeys of passengers and how their accounts might change during that journey
 
 This program utilises two types of files in the setup of the program: A vehilces file and a passengers file
 One of each of these have been provided for ease of use called vehilces.txt and passengers.txt, however you are also able to make your own
