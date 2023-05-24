@@ -26,19 +26,19 @@ public class App
     public static void main(String[] args)
     {
         ParseSetupFiles fileParser = new ParseSetupFiles();
+        UserInput input = new UserInput();
         App app = new App();
-        UserInput ui = new UserInput();
 
         try
         {
             // Get filename from the user to use to create the vehicles
-            String vehicleFile = ui.getFilename("vehicle");
+            String vehicleFile = input.getFilename("vehicle");
     
             // Create Map from the provided file
             Map<Integer, Vehicle> vehicles = fileParser.readVehicleFile(vehicleFile);   
     
             // Get filename from the user to use to create the passnegers
-            String passengerFile = ui.getFilename("passenger");
+            String passengerFile = input.getFilename("passenger");
             
             // Create List from the provided file
             List<Passenger> passengers = fileParser.readPassengerFile(passengerFile);
@@ -64,7 +64,7 @@ public class App
             System.out.println("Please check and ensure the file format is correct. Specific details in the README");
         }
 
-        ui.closeScanner(); // Closes the scanner used in the UserInput class
+        input.closeScanner(); // Closes the scanner used in the UserInput class
     } // End main()
 
     

@@ -42,12 +42,13 @@ public class Debt implements AccountState
     @Override
     public void tapCard(Passenger p)
     {
-        UserInput ui = new UserInput();
+        UserInput input = new UserInput();
+        
         System.out.println("Enter an amount of money to move " + p.getId() + "\'s standing out of debt");
         System.out.println(p.getId() + "\'s current balance is: " + p.getBalance());
         System.out.println(p.getId() + " has " + (maxTimes - numTimesDededucted) + " travel(s) left before cancellation");
 
-        p.addBalance(ui.getIntegerInput());
+        p.addBalance(input.getIntegerInput());
         logger.info(()-> "Passenger " + p.getId() + "\'s balance after adding to it: " + p.getBalance());
 
         if(p.getBalance() >= 0)
