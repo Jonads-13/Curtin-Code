@@ -46,10 +46,10 @@ public class App
             // Start simulating passenger journeys
             app.beginSimulation(vehicles, passengers);
         }
-        catch(IOException e) // Possible file error ie doesn't exist or missing permissions
+        catch(IOException ioe) // Possible file error ie doesn't exist or missing permissions
         {
-            System.out.println(e.getMessage());
-            logger.warning(()-> "Error in file reading: " + e.getMessage());
+            System.out.println("Error in file reading: " + ioe.getMessage());
+            logger.warning(()-> "Error in file reading: " + ioe.getMessage());
         }
         catch(InvalidVehicleException ive) // Something went wrong with the vehicle file
         {
@@ -93,8 +93,8 @@ public class App
             }
             catch(MissingVehicleException mve) // Vehicle specified in passenger itinerary wasn't in vehicles 
             {
-                System.out.println(mve.getMessage());
-                logger.warning(()-> mve.getMessage());
+                System.out.println("A vehicle in " + p.getId() + "\'s itinerary was missing: " + mve.getMessage());
+                logger.warning(()-> "A vehicle in " + p.getId() + "\'s itinerary was missing: " + mve.getMessage());
             }
             catch(CancelledAccountException cae) // Passenger had their accoutn cancelled
             {
