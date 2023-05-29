@@ -17,11 +17,13 @@ public class Debt implements AccountState
 
     private int numTimesDededucted; // Keeps track of amount of times travelled in debt state
     private int maxTimes; // Max travels in debt state before cancellation
+    private UserInput input; // Used to get input to raise balance
 
-    public Debt() // Constructor
+    public Debt(UserInput input) // Constructor
     {
         numTimesDededucted = 0; 
         maxTimes = 3; // Abritrary number, can be whatever
+        this.input = input;
     }
 
     
@@ -42,8 +44,6 @@ public class Debt implements AccountState
     @Override
     public void tapCard(Passenger p)
     {
-        UserInput input = new UserInput();
-        
         System.out.println("Enter an amount of money to move " + p.getId() + "\'s standing out of debt");
         System.out.println(p.getId() + "\'s current balance is: " + p.getBalance());
         System.out.println(p.getId() + " has " + (maxTimes - numTimesDededucted) + " travel(s) left before cancellation");

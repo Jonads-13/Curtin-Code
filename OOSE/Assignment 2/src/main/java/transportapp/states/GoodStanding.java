@@ -2,6 +2,7 @@ package transportapp.states;
 
 import java.util.logging.Logger;
 
+import transportapp.interactive.UserInput;
 import transportapp.passengers.Passenger;
 
 /**
@@ -63,7 +64,7 @@ public class GoodStanding implements AccountState
 
         if(p.getBalance() < 0)
         {
-            p.setAccState(new Debt());
+            p.setAccState(new Debt(new UserInput()));
             logger.info(()-> "Passenger " + p.getId() + " has moved into debt");
         }
     } // End deductPayment()
