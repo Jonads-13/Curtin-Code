@@ -1,60 +1,248 @@
-May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+May 30, 2023 1:37:17 AM transportapp.interactive.UserInput getFilename
+INFO: Aquiring vehicle filename from the user
+May 30, 2023 1:37:27 AM transportapp.factories.TransportAppFactory createVehicle
 INFO: Bus created with id: 106 and a fee of: 1
-May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+May 30, 2023 1:37:27 AM transportapp.factories.TransportAppFactory createVehicle
 INFO: Bus created with id: 881 and a fee of: 1
-May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+May 30, 2023 1:37:27 AM transportapp.factories.TransportAppFactory createVehicle
 INFO: Bus created with id: 940 and a fee of: 1
-May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+May 30, 2023 1:37:27 AM transportapp.factories.TransportAppFactory createVehicle
 INFO: Bus created with id: 501 and a fee of: 1
-May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+May 30, 2023 1:37:27 AM transportapp.factories.TransportAppFactory createVehicle
 INFO: Bus created with id: 100 and a fee of: 1
-May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+May 30, 2023 1:37:27 AM transportapp.factories.TransportAppFactory createVehicle
 INFO: Bus created with id: 101 and a fee of: 1
-May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+May 30, 2023 1:37:27 AM transportapp.factories.TransportAppFactory createVehicle
 INFO: Train created with id: 1 and a fee of: 2
-May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+May 30, 2023 1:37:27 AM transportapp.factories.TransportAppFactory createVehicle
 INFO: Train created with id: 2 and a fee of: 2
-May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+May 30, 2023 1:37:27 AM transportapp.factories.TransportAppFactory createVehicle
 INFO: Train created with id: 3 and a fee of: 2
-May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+May 30, 2023 1:37:27 AM transportapp.factories.TransportAppFactory createVehicle
 INFO: Train created with id: 4 and a fee of: 2
-May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+May 30, 2023 1:37:27 AM transportapp.factories.TransportAppFactory createVehicle
 INFO: Train created with id: 5 and a fee of: 2
-May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+May 30, 2023 1:37:27 AM transportapp.factories.TransportAppFactory createVehicle
 INFO: Ferry created with id: 25 and a fee of: 5
-May 24, 2023 2:11:41 PM transportapp.factories.TransportAppFactory createVehicle
+May 30, 2023 1:37:27 AM transportapp.factories.TransportAppFactory createVehicle
 INFO: Ferry created with id: 50 and a fee of: 5
-May 24, 2023 2:11:45 PM transportapp.factories.TransportAppFactory createPassenger
+May 30, 2023 1:37:27 AM transportapp.interactive.UserInput getFilename
+INFO: Aquiring passenger filename from the user
+May 30, 2023 1:37:33 AM transportapp.factories.TransportAppFactory createPassenger
 INFO: Passenger 7275 created with starting balance of: 10
-May 24, 2023 2:11:45 PM transportapp.factories.TransportAppFactory createPassenger
+May 30, 2023 1:37:33 AM transportapp.factories.TransportAppFactory createPassenger
 INFO: Passenger 7148 created with starting balance of: 3
-May 24, 2023 2:11:45 PM transportapp.factories.TransportAppFactory createPassenger
+May 30, 2023 1:37:33 AM transportapp.factories.TransportAppFactory createPassenger
 INFO: Passenger 2340 created with starting balance of: 5
-May 24, 2023 2:11:45 PM transportapp.factories.TransportAppFactory createPassenger
+May 30, 2023 1:37:33 AM transportapp.factories.TransportAppFactory createPassenger
 INFO: Passenger 1946 created with starting balance of: 0
-May 24, 2023 2:11:45 PM transportapp.factories.TransportAppFactory createPassenger
+May 30, 2023 1:37:33 AM transportapp.factories.TransportAppFactory createPassenger
 INFO: Passenger 5837 created with starting balance of: 7
-May 24, 2023 2:11:45 PM transportapp.App simulateJourney
+May 30, 2023 1:37:33 AM transportapp.App simulateJourney
 INFO: Beginning simulation of Passenger: 7275
-May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+May 30, 2023 1:37:33 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 7275 has boarded Bus 106 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.states.GoodStanding deductPayment
 INFO: Passenger 7275's balance after deduction: 9
-May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+May 30, 2023 1:37:33 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 7275 has disembarked Bus 106 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 7275 has boarded Train 2 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.states.GoodStanding deductPayment
 INFO: Passenger 7275's balance after deduction: 7
-May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+May 30, 2023 1:37:33 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 7275 has disembarked Train 2 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 7275 has boarded Train 5 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.states.GoodStanding deductPayment
 INFO: Passenger 7275's balance after deduction: 5
-May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+May 30, 2023 1:37:33 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 7275 has disembarked Train 5 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 7275 has boarded Bus 881 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.states.GoodStanding deductPayment
 INFO: Passenger 7275's balance after deduction: 4
-May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+May 30, 2023 1:37:33 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 7275 has disembarked Bus 881 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 7275 has boarded Bus 100 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.states.GoodStanding deductPayment
 INFO: Passenger 7275's balance after deduction: 3
-May 24, 2023 2:11:45 PM transportapp.App simulateJourney
+May 30, 2023 1:37:33 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 7275 has disembarked Bus 100 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.App simulateJourney
 INFO: Passenger 7275's journey has successfully completed
-May 24, 2023 2:11:45 PM transportapp.App simulateJourney
+May 30, 2023 1:37:33 AM transportapp.App simulateJourney
 INFO: Beginning simulation of Passenger: 7148
-May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+May 30, 2023 1:37:33 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 7148 has boarded Train 1 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.states.GoodStanding deductPayment
 INFO: Passenger 7148's balance after deduction: 1
-May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+May 30, 2023 1:37:33 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 7148 has disembarked Train 1 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 7148 has boarded Ferry 25 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.states.GoodStanding deductPayment
 INFO: Passenger 7148's balance after deduction: -4
-May 24, 2023 2:11:45 PM transportapp.states.GoodStanding deductPayment
+May 30, 2023 1:37:33 AM transportapp.states.GoodStanding deductPayment
 INFO: Passenger 7148 has moved into debt
-May 24, 2023 2:11:45 PM transportapp.interactive.UserInput getIntegerInput
-INFO: Aquiring user input
+May 30, 2023 1:37:33 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 7148 has disembarked Ferry 25 at: 1:37:33
+May 30, 2023 1:37:33 AM transportapp.interactive.UserInput getIntegerInput
+INFO: Aquiring user input for an Intger
+May 30, 2023 1:37:45 AM transportapp.states.Debt tapCard
+INFO: Passenger 7148's balance after adding to it: -4
+May 30, 2023 1:37:45 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 7148 has boarded Train 2 at: 1:37:45
+May 30, 2023 1:37:45 AM transportapp.states.Debt deductPayment
+INFO: Passenger 7148's balance after deduction: -6
+May 30, 2023 1:37:45 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 7148 has disembarked Train 2 at: 1:37:45
+May 30, 2023 1:37:45 AM transportapp.interactive.UserInput getIntegerInput
+INFO: Aquiring user input for an Intger
+May 30, 2023 1:37:54 AM transportapp.states.Debt tapCard
+INFO: Passenger 7148's balance after adding to it: -6
+May 30, 2023 1:37:54 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 7148 has boarded Bus 501 at: 1:37:54
+May 30, 2023 1:37:54 AM transportapp.states.Debt deductPayment
+INFO: Passenger 7148's balance after deduction: -7
+May 30, 2023 1:37:54 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 7148 has disembarked Bus 501 at: 1:37:54
+May 30, 2023 1:37:54 AM transportapp.interactive.UserInput getIntegerInput
+INFO: Aquiring user input for an Intger
+May 30, 2023 1:37:56 AM transportapp.states.Debt tapCard
+INFO: Passenger 7148's balance after adding to it: -7
+May 30, 2023 1:37:56 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 7148 has boarded Bus 101 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.states.Debt deductPayment
+INFO: Passenger 7148's balance after deduction: -8
+May 30, 2023 1:37:56 AM transportapp.states.Debt deductPayment
+INFO: Passenger 7148 has had their account cancelled
+May 30, 2023 1:37:56 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 7148 has disembarked Bus 101 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.App simulateJourney
+INFO: Passenger 7148's journey has successfully completed
+May 30, 2023 1:37:56 AM transportapp.App simulateJourney
+INFO: Beginning simulation of Passenger: 2340
+May 30, 2023 1:37:56 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 2340 has boarded Bus 881 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 2340's balance after deduction: 4
+May 30, 2023 1:37:56 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 2340 has disembarked Bus 881 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 2340 has boarded Bus 940 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 2340's balance after deduction: 3
+May 30, 2023 1:37:56 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 2340 has disembarked Bus 940 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 2340 has boarded Bus 106 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 2340's balance after deduction: 2
+May 30, 2023 1:37:56 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 2340 has disembarked Bus 106 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 2340 has boarded Bus 501 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 2340's balance after deduction: 1
+May 30, 2023 1:37:56 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 2340 has disembarked Bus 501 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 2340 has boarded Bus 101 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 2340's balance after deduction: 0
+May 30, 2023 1:37:56 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 2340 has disembarked Bus 101 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.App simulateJourney
+INFO: Passenger 2340's journey has successfully completed
+May 30, 2023 1:37:56 AM transportapp.App simulateJourney
+INFO: Beginning simulation of Passenger: 1946
+May 30, 2023 1:37:56 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 1946 has boarded Train 1 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 1946's balance after deduction: -2
+May 30, 2023 1:37:56 AM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 1946 has moved into debt
+May 30, 2023 1:37:56 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 1946 has disembarked Train 1 at: 1:37:56
+May 30, 2023 1:37:56 AM transportapp.interactive.UserInput getIntegerInput
+INFO: Aquiring user input for an Intger
+May 30, 2023 1:38:08 AM transportapp.states.Debt tapCard
+INFO: Passenger 1946's balance after adding to it: -2
+May 30, 2023 1:38:08 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 1946 has boarded Train 2 at: 1:38:8
+May 30, 2023 1:38:08 AM transportapp.states.Debt deductPayment
+INFO: Passenger 1946's balance after deduction: -4
+May 30, 2023 1:38:08 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 1946 has disembarked Train 2 at: 1:38:8
+May 30, 2023 1:38:08 AM transportapp.interactive.UserInput getIntegerInput
+INFO: Aquiring user input for an Intger
+May 30, 2023 1:38:09 AM transportapp.states.Debt tapCard
+INFO: Passenger 1946's balance after adding to it: -4
+May 30, 2023 1:38:09 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 1946 has boarded Train 3 at: 1:38:9
+May 30, 2023 1:38:09 AM transportapp.states.Debt deductPayment
+INFO: Passenger 1946's balance after deduction: -6
+May 30, 2023 1:38:09 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 1946 has disembarked Train 3 at: 1:38:9
+May 30, 2023 1:38:09 AM transportapp.interactive.UserInput getIntegerInput
+INFO: Aquiring user input for an Intger
+May 30, 2023 1:38:11 AM transportapp.states.Debt tapCard
+INFO: Passenger 1946's balance after adding to it: -6
+May 30, 2023 1:38:11 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 1946 has boarded Train 4 at: 1:38:11
+May 30, 2023 1:38:11 AM transportapp.states.Debt deductPayment
+INFO: Passenger 1946's balance after deduction: -8
+May 30, 2023 1:38:11 AM transportapp.states.Debt deductPayment
+INFO: Passenger 1946 has had their account cancelled
+May 30, 2023 1:38:11 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 1946 has disembarked Train 4 at: 1:38:11
+May 30, 2023 1:38:11 AM transportapp.states.Cancelled tapCard
+WARNING: Passenger: 1946 has had their account cancelled due to outstanding debt
+May 30, 2023 1:38:11 AM transportapp.App beginSimulation
+WARNING: Passenger: 1946's journey ended early as their account was cancelled
+May 30, 2023 1:38:11 AM transportapp.App simulateJourney
+INFO: Beginning simulation of Passenger: 5837
+May 30, 2023 1:38:11 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 5837 has boarded Train 3 at: 1:38:11
+May 30, 2023 1:38:11 AM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 5837's balance after deduction: 5
+May 30, 2023 1:38:11 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 5837 has disembarked Train 3 at: 1:38:11
+May 30, 2023 1:38:11 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 5837 has boarded Bus 881 at: 1:38:11
+May 30, 2023 1:38:11 AM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 5837's balance after deduction: 4
+May 30, 2023 1:38:11 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 5837 has disembarked Bus 881 at: 1:38:11
+May 30, 2023 1:38:11 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 5837 has boarded Ferry 50 at: 1:38:11
+May 30, 2023 1:38:11 AM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 5837's balance after deduction: -1
+May 30, 2023 1:38:11 AM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 5837 has moved into debt
+May 30, 2023 1:38:11 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 5837 has disembarked Ferry 50 at: 1:38:11
+May 30, 2023 1:38:11 AM transportapp.interactive.UserInput getIntegerInput
+INFO: Aquiring user input for an Intger
+May 30, 2023 1:38:40 AM transportapp.states.Debt tapCard
+INFO: Passenger 5837's balance after adding to it: 6
+May 30, 2023 1:38:40 AM transportapp.states.Debt tapCard
+INFO: Passenger 5837 has moved to good standing
+May 30, 2023 1:38:40 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 5837 has boarded Bus 940 at: 1:38:40
+May 30, 2023 1:38:40 AM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 5837's balance after deduction: 5
+May 30, 2023 1:38:40 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 5837 has disembarked Bus 940 at: 1:38:40
+May 30, 2023 1:38:40 AM transportapp.observers.OffboardObserver update
+INFO: Passenger 5837 has boarded Bus 106 at: 1:38:40
+May 30, 2023 1:38:40 AM transportapp.states.GoodStanding deductPayment
+INFO: Passenger 5837's balance after deduction: 4
+May 30, 2023 1:38:40 AM transportapp.observers.OnboardObserver update
+INFO: Passenger 5837 has disembarked Bus 106 at: 1:38:40
+May 30, 2023 1:38:40 AM transportapp.App simulateJourney
+INFO: Passenger 5837's journey has successfully completed
+May 30, 2023 1:38:40 AM transportapp.App beginSimulation
+INFO: Simulation finished
