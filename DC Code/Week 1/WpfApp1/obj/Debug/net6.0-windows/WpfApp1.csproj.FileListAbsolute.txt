@@ -1,0 +1,75 @@
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.exe
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.deps.json
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.runtimeconfig.json
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.dll
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.pdb
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1_MarkupCompile.cache
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1_MarkupCompile.lref
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.g.resources
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.AssemblyInfoInputs.cache
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.AssemblyInfo.cs
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.dll
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\refint\WpfApp1.dll
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.pdb
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.genruntimeconfig.cache
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\ref\WpfApp1.dll
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\bin\Debug\net6.0-windows\ConsoleApp1.exe
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\bin\Debug\net6.0-windows\ConsoleApp1.pdb
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\bin\Debug\net6.0-windows\ConsoleApp1.exe.config
+C:\Users\283602K\Downloads\DC Materials\Lecture-1\DC_Lecture1_Demo\ConsoleApp1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.csproj.CopyComplete
+C:\Users\Jake\Desktop\DC Code\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.exe
+C:\Users\Jake\Desktop\DC Code\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.deps.json
+C:\Users\Jake\Desktop\DC Code\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.runtimeconfig.json
+C:\Users\Jake\Desktop\DC Code\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.dll
+C:\Users\Jake\Desktop\DC Code\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.pdb
+C:\Users\Jake\Desktop\DC Code\WpfApp1\bin\Debug\net6.0-windows\ConsoleApp1.exe
+C:\Users\Jake\Desktop\DC Code\WpfApp1\bin\Debug\net6.0-windows\ConsoleApp1.pdb
+C:\Users\Jake\Desktop\DC Code\WpfApp1\bin\Debug\net6.0-windows\ConsoleApp1.exe.config
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\WpfApp1_MarkupCompile.cache
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\WpfApp1_MarkupCompile.lref
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.g.resources
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.AssemblyInfoInputs.cache
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.AssemblyInfo.cs
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.csproj.CopyComplete
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.dll
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\refint\WpfApp1.dll
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.pdb
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.genruntimeconfig.cache
+C:\Users\Jake\Desktop\DC Code\WpfApp1\obj\Debug\net6.0-windows\ref\WpfApp1.dll
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.exe
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.deps.json
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.runtimeconfig.json
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.dll
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\bin\Debug\net6.0-windows\WpfApp1.pdb
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\bin\Debug\net6.0-windows\ConsoleApp1.exe
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\bin\Debug\net6.0-windows\ConsoleApp1.pdb
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\bin\Debug\net6.0-windows\ConsoleApp1.exe.config
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1_MarkupCompile.cache
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1_MarkupCompile.lref
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.g.resources
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.AssemblyInfoInputs.cache
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.AssemblyInfo.cs
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.csproj.CopyComplete
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.dll
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\refint\WpfApp1.dll
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.pdb
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\WpfApp1.genruntimeconfig.cache
+C:\Users\Jake\Desktop\DC Code\Week 1\WpfApp1\obj\Debug\net6.0-windows\ref\WpfApp1.dll
