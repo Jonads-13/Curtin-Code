@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Werror -ansi -pedantic -g
+CFLAGS = -g
 OBJ = main.o random.o terminal.o setup.o map.o color.o runtime.o movement.o newSleep.o free.o
 EXEC = ant
 
