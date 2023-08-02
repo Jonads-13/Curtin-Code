@@ -7,14 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="FirstName" Text="First Name" HorizontalAlignment="Left" Height="20" Margin="292,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-        <TextBox x:Name="LastName" Text="Last Name" HorizontalAlignment="Left" Height="20" Margin="292,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-        <TextBox x:Name="AccNo" Text="Account Number" HorizontalAlignment="Left" Height="20" Margin="292,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-        <TextBox x:Name="Pin" Text="Pin" HorizontalAlignment="Left" Height="20" Margin="292,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-        <TextBox x:Name="Balance" Text="Balance" HorizontalAlignment="Left" Height="20" Margin="292,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
-        <Label Content="Student Index" HorizontalAlignment="Left" Margin="180,289,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.124,0.506"/>
-        <TextBox x:Name="StudentIndex" HorizontalAlignment="Left" Height="26" Margin="292,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64"/>
-        <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Height="26" Margin="423,289,0,0" VerticalAlignment="Top" Width="63" Click="SearchButton_Click"/>
+        <TextBox x:Name="FirstName" Text="First Name" HorizontalAlignment="Center" Height="20" Margin="0,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="LastName" Text="Last Name" HorizontalAlignment="Center" Height="20" Margin="0,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="AccNo" Text="Account Number" HorizontalAlignment="Center" Height="20" Margin="0,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="Pin" Text="Pin" HorizontalAlignment="Center" Height="20" Margin="0,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="Balance" Text="Balance" HorizontalAlignment="Center" Height="20" Margin="0,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+        <Label x:Name="IndexSearchLabel" Content="Item Index" HorizontalAlignment="Center" Margin="0,250,255,0" VerticalAlignment="Top" RenderTransformOrigin="-2.124,0.506"/>
+        <TextBox x:Name="ItemIndex" HorizontalAlignment="Center" Height="25" Margin="0,250,100,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+        <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Center" Height="26" Margin="100,250,0,0" VerticalAlignment="Top" Width="60" Click="SearchButton_Click"/>
+        <Label x:Name="TotalLabel" Content="Total Items" HorizontalAlignment="Center" Margin="0,300,255,0" VerticalAlignment="Top" RenderTransformOrigin="-2.124,0.506"/>
+        <TextBox x:Name="TotalNum" Text="" HorizontalAlignment="Center" Height="25" Margin="0,300,100,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
 
 
     </Grid>

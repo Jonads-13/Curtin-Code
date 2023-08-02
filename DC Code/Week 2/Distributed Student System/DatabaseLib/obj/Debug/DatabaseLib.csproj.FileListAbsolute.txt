@@ -1,0 +1,6 @@
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DatabaseLib\bin\Debug\DatabaseLib.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DatabaseLib\bin\Debug\DatabaseLib.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DatabaseLib\obj\Debug\DatabaseLib.csproj.AssemblyReference.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DatabaseLib\obj\Debug\DatabaseLib.csproj.CoreCompileInputs.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DatabaseLib\obj\Debug\DatabaseLib.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DatabaseLib\obj\Debug\DatabaseLib.pdb

@@ -42,3 +42,5 @@ C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\obj\Debug\DesktopClient.csproj.CopyComplete
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\obj\Debug\DesktopClient.exe
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\obj\Debug\DesktopClient.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\DatabaseLib.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\DatabaseLib.pdb

@@ -5,25 +5,45 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using DatabaseLib;
+
 
 namespace Student_System_Server
 {
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, UseSynchronizationContext = false)]
     public class DatabaseInterfaceImpl : DatabaseInterface
     {
-        public DatabaseInterfaceImpl() { }
+        private DatabaseClass db;
+        public DatabaseInterfaceImpl() 
+        {
+            db = new DatabaseClass();
+        }
 
         public int GetNumEntries()
         {
-            return StudentList.Students().Count;
+            return db.GetNumRecords();
         }
 
-        public void GetValuesForEntry(int index, out string name, out int id, out string university)
+        public void GetValuesForEntry(int index, out uint accNo, out uint pin, out int bal, out string fname, out string lname )
         {
-            List<Student> slist = StudentList.Students();
-            name = slist[index - 1].Name;
-            id = slist[index - 1].Id;
-            university = slist[index - 1].University;
+            Console.WriteLine("Aquiring next item for display");
+
+            try
+            {
+                accNo = db.GetAccNoByIndex(index);
+                pin = db.GetPINByIndex(index);
+                bal = db.GetBalanceByIndex(index);
+                fname = db.GetFirstNameByIndex(index);
+                lname = db.GetLastNameByIndex(index);
+            }
+            catch (ArgumentOutOfRangeException ioore)
+            {
+                accNo = 0;
+                pin = 0;
+                bal = 0;
+                fname = "Index Out of bounds";
+                lname = "No Match Found";
+            }
         }
     }
 }

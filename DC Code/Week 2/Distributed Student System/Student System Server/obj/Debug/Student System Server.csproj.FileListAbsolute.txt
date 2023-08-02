@@ -20,3 +20,5 @@ C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\obj\Debug\Student System Server.csproj.CopyComplete
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\obj\Debug\Student System Server.exe
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\obj\Debug\Student System Server.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\bin\Debug\DatabaseLib.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\bin\Debug\DatabaseLib.pdb

@@ -54,6 +54,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatabaseLib\DatabaseLib.csproj">
+      <Project>{d335b132-4bfa-44b7-885f-a1934c4abbfb}</Project>
+      <Name>DatabaseLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StudentDatabaseDLL\StudentDLL.csproj">
       <Project>{03cf0362-bca5-4cdd-bd1b-02761c58aedb}</Project>
       <Name>StudentDLL</Name>

@@ -13,7 +13,9 @@ namespace Student_System_Server
     {
         [OperationContract]
         int GetNumEntries();
+
         [OperationContract]
-        void GetValuesForEntry(int index, out string name, out int id, out string university);
+        [FaultContract(typeof(IndexOutOfRangeException))]
+        void GetValuesForEntry(int index, out uint accNo, out uint pin, out int bal, out string fname, out string lname);
     }
 }

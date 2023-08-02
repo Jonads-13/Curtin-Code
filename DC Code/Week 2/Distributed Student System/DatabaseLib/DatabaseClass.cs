@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
@@ -7,20 +8,23 @@ namespace DatabaseLib
     public class DatabaseClass
     {
         List<DataStruct> dataStruct;
+        DatabaseGenerator dbg;
 
         public DatabaseClass() 
         {
-            dataStruct = new List<DatabaseLib.DataStruct>();
+            dataStruct = new List<DataStruct>();
+            dbg = new DatabaseGenerator();
+
             for (int i = 0; i < 1000000; i++) 
             {
                 string tempFirst, tempLast;
                 uint tempPin, tempAccNo;
                 int tempBalance;
-                DatabaseGenerator dbg = new DatabaseGenerator();
                 dbg.GetNextAccount(out tempFirst, out tempLast, out tempPin, out tempAccNo, out tempBalance);
-                
                 dataStruct.Add(new DataStruct(tempAccNo, tempPin, tempBalance, tempFirst, tempLast));
+
             }
+            Console.WriteLine("Created Database");
         }
 
         public uint GetAccNoByIndex(int i) 
@@ -52,7 +56,5 @@ namespace DatabaseLib
         {
             return dataStruct.Count;
         }
-
-
     }
 }
