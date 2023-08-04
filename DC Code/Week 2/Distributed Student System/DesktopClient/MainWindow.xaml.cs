@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
+using System.Runtime.Serialization;
 
 using Student_System_Server;
 using System.ServiceModel;
@@ -43,19 +44,29 @@ namespace DesktopClient
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Search Button Clicked");
             string fname = null, lname = null;
             int bal = 0, index;
             uint accNo = 0, pin = 0;
 
             if(int.TryParse(ItemIndex.Text, out index))
             {
-                foob.GetValuesForEntry(index, out accNo, out pin, out bal, out fname, out lname);
-                FirstName.Text = fname;
-                LastName.Text = lname;
-                AccNo.Text = accNo.ToString();
-                Pin.Text = pin.ToString();
-                Balance.Text = bal.ToString();
+                try
+                {
+                    foob.GetValuesForEntry(index, out accNo, out pin, out bal, out fname, out lname);
+                    FirstName.Text = fname;
+                    LastName.Text = lname;
+                    AccNo.Text = accNo.ToString();
+                    Pin.Text = pin.ToString();
+                    Balance.Text = bal.ToString();
+                }
+                catch(FaultException<IndexError> ie)
+                {
+                    FirstName.Text = ie.Message ;
+                    LastName.Text = "";
+                    AccNo.Text = "";
+                    Pin.Text = "";
+                    Balance.Text = "";
+                }
             }
             else
             {

@@ -15,7 +15,7 @@ namespace DatabaseLib
             dataStruct = new List<DataStruct>();
             dbg = new DatabaseGenerator();
 
-            for (int i = 0; i < 1000000; i++) 
+            for (int i = 0; i < 10000; i++) 
             {
                 string tempFirst, tempLast;
                 uint tempPin, tempAccNo;

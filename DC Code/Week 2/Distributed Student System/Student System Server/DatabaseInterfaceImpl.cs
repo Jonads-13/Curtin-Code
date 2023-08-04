@@ -5,6 +5,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 using DatabaseLib;
 
 
@@ -14,7 +15,7 @@ namespace Student_System_Server
     public class DatabaseInterfaceImpl : DatabaseInterface
     {
         private DatabaseClass db;
-        public DatabaseInterfaceImpl() 
+        public DatabaseInterfaceImpl()
         {
             db = new DatabaseClass();
         }
@@ -24,7 +25,7 @@ namespace Student_System_Server
             return db.GetNumRecords();
         }
 
-        public void GetValuesForEntry(int index, out uint accNo, out uint pin, out int bal, out string fname, out string lname )
+        public void GetValuesForEntry(int index, out uint accNo, out uint pin, out int bal, out string fname, out string lname)
         {
             Console.WriteLine("Aquiring next item for display");
 
@@ -36,14 +37,11 @@ namespace Student_System_Server
                 fname = db.GetFirstNameByIndex(index);
                 lname = db.GetLastNameByIndex(index);
             }
-            catch (ArgumentOutOfRangeException ioore)
+            catch (ArgumentOutOfRangeException)
             {
-                accNo = 0;
-                pin = 0;
-                bal = 0;
-                fname = "Index Out of bounds";
-                lname = "No Match Found";
+                throw new FaultException<IndexError>(new IndexError("Index out of Bounds"));
             }
         }
     }
 }
+

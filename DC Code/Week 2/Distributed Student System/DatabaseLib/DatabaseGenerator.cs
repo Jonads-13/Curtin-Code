@@ -9,7 +9,7 @@ namespace DatabaseLib
     internal class DatabaseGenerator
     {
         private Random rand = new Random();
-        private string[] FirstNames = { "Jacob", "Nick", "Justin", "Tyler", "Christian", "Jarrid", "Caroline", "Stanley", "Tri", "Jordan", "Joleen", "Bec", "Clarissa", "Lauren", "Sam", "Oliver", "Wari" };
+        private string[] FirstNames = { "Jake", "Nick", "Justin", "Tyler", "Christian", "Jarrid", "Caroline", "Stanley", "Tri", "Jordan", "Joleen", "Bec", "Clarissa", "Lauren", "Sam", "Oliver", "Wari" };
         private string[] LastNames = { "Jonas", "Wright", "Pan", "Milbourne", "Dao", "Twomney", "Lee", "Smith", "Tan", "Johnson", "Jones", "Lambie", "Cooper", "Herman", "Pang", "Gregorovich", "Dumbledore"};
 
         public DatabaseGenerator() { }
@@ -35,12 +35,12 @@ namespace DatabaseLib
 
         private uint GetPin()
         {
-            return (uint)rand.Next(-1,10000);
+            return (uint)rand.Next(999,10000);
         }
 
         private uint GetAccNo()
         {
-            return (uint)rand.Next(-1,10000000);
+            return (uint)rand.Next(999999,10000000);
         }
 
         private int GetBalance()
