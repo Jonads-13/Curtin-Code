@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Windows.Media.Imaging;
 
 namespace DatabaseLib
 {
@@ -15,13 +16,14 @@ namespace DatabaseLib
             dataStruct = new List<DataStruct>();
             dbg = new DatabaseGenerator();
 
-            for (int i = 0; i < 10000; i++) 
+            for (int i = 0; i < 100; i++) 
             {
                 string tempFirst, tempLast;
                 uint tempPin, tempAccNo;
                 int tempBalance;
-                dbg.GetNextAccount(out tempFirst, out tempLast, out tempPin, out tempAccNo, out tempBalance);
-                dataStruct.Add(new DataStruct(tempAccNo, tempPin, tempBalance, tempFirst, tempLast));
+                byte[] tempPP;
+                dbg.GetNextAccount(out tempFirst, out tempLast, out tempPin, out tempAccNo, out tempBalance, out tempPP);
+                dataStruct.Add(new DataStruct(tempAccNo, tempPin, tempBalance, tempFirst, tempLast, tempPP));
 
             }
             Console.WriteLine("Created Database");
@@ -50,6 +52,11 @@ namespace DatabaseLib
         public string GetLastNameByIndex(int i)
         {
             return dataStruct[i].lastName;
+        }
+
+        public byte[] GetPPByIndex(int i)
+        {
+            return dataStruct[i].profilePicture;
         }
 
         public int GetNumRecords()

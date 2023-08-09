@@ -1,15 +1,13 @@
-﻿using StudentDLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-using System.Runtime.Serialization;
 using DatabaseLib;
+using System.Windows.Media.Imaging;
 
-
-namespace Student_System_Server
+namespace DBInterface
 {
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, UseSynchronizationContext = false)]
     public class DatabaseInterfaceImpl : DatabaseInterface
@@ -25,7 +23,7 @@ namespace Student_System_Server
             return db.GetNumRecords();
         }
 
-        public void GetValuesForEntry(int index, out uint accNo, out uint pin, out int bal, out string fname, out string lname)
+        public void GetValuesForEntry(int index, out uint accNo, out uint pin, out int bal, out string fname, out string lname, out byte[] pp)
         {
             Console.WriteLine("Aquiring next item for display");
 
@@ -36,10 +34,13 @@ namespace Student_System_Server
                 bal = db.GetBalanceByIndex(index);
                 fname = db.GetFirstNameByIndex(index);
                 lname = db.GetLastNameByIndex(index);
+                pp = db.GetPPByIndex(index);
+
             }
             catch (ArgumentOutOfRangeException)
             {
-                throw new FaultException<IndexError>(new IndexError("Index out of Bounds"));
+                Console.WriteLine("Specified index was out of bounds");
+                throw new FaultException<IndexError>(new IndexError(), "Index out of bounds");
             }
         }
     }

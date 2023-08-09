@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
 using System.Runtime.Serialization;
+using System.Windows.Media.Imaging;
 
-namespace Student_System_Server
+namespace DBInterface
 {
     [ServiceContract]
     public interface DatabaseInterface
@@ -16,19 +17,6 @@ namespace Student_System_Server
 
         [OperationContract]
         [FaultContract(typeof(IndexError))]
-        void GetValuesForEntry(int index, out uint accNo, out uint pin, out int bal, out string fname, out string lname);
+        void GetValuesForEntry(int index, out uint accNo, out uint pin, out int bal, out string fname, out string lname, out byte[] pp);
     }
-
-    [DataContract]
-    public class IndexError
-    {
-        [DataMember]
-        public string message { set; get; }
-
-        public IndexError(string message)
-        {
-            this.message = message;
-        }
-    }
-
 }

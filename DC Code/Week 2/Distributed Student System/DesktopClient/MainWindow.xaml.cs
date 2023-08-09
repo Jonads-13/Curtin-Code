@@ -16,10 +16,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
-using System.Runtime.Serialization;
 
-using Student_System_Server;
+using DBInterface;
 using System.ServiceModel;
+using System.IO;
+
 namespace DesktopClient
 {
     /// <summary>
@@ -47,25 +48,30 @@ namespace DesktopClient
             string fname = null, lname = null;
             int bal = 0, index;
             uint accNo = 0, pin = 0;
+            byte[] picture;
+            BitmapImage pp;
 
             if(int.TryParse(ItemIndex.Text, out index))
             {
                 try
                 {
-                    foob.GetValuesForEntry(index, out accNo, out pin, out bal, out fname, out lname);
+                    foob.GetValuesForEntry(index-1, out accNo, out pin, out bal, out fname, out lname, out picture);
                     FirstName.Text = fname;
                     LastName.Text = lname;
                     AccNo.Text = accNo.ToString();
                     Pin.Text = pin.ToString();
                     Balance.Text = bal.ToString();
+                    pp = DecodeImage(picture);
+                    ProfilePicture.Source = pp;
                 }
                 catch(FaultException<IndexError> ie)
                 {
-                    FirstName.Text = ie.Message ;
+                    FirstName.Text = ie.Message;
                     LastName.Text = "";
                     AccNo.Text = "";
                     Pin.Text = "";
                     Balance.Text = "";
+                    ProfilePicture.Source = null;
                 }
             }
             else
@@ -75,7 +81,23 @@ namespace DesktopClient
                 AccNo.Text = "Use";
                 Pin.Text = "Numbers";
                 Balance.Text = "Please";
+                ProfilePicture.Source = null;
             }
         }
+
+        public BitmapImage DecodeImage(byte[] picture)
+        {
+            BitmapImage image = new BitmapImage();
+
+            using (MemoryStream memoryStream = new MemoryStream(picture))
+            {
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.StreamSource = memoryStream;
+                image.EndInit();
+            }
+            return image;
+        }
+
     }
 }

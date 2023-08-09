@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -96,9 +98,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Student System Server\Student System Server.csproj">
-      <Project>{83a7c4b8-14c0-49e6-ac28-14210394eecc}</Project>
-      <Name>Student System Server</Name>
+    <ProjectReference Include="..\DatabaseInterface\DBInterface.csproj">
+      <Project>{f499288b-9ef2-46b5-b73f-4a24746b7727}</Project>
+      <Name>DBInterface</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

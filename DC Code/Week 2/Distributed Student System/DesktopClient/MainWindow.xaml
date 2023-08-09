@@ -17,6 +17,7 @@
         <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Center" Height="26" Margin="100,250,0,0" VerticalAlignment="Top" Width="60" Click="SearchButton_Click"/>
         <Label x:Name="TotalLabel" Content="Total Items" HorizontalAlignment="Center" Margin="0,300,255,0" VerticalAlignment="Top" RenderTransformOrigin="-2.124,0.506"/>
         <TextBox x:Name="TotalNum" Text="" HorizontalAlignment="Center" Height="25" Margin="0,300,100,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+        <Image x:Name="ProfilePicture" HorizontalAlignment="Left" Height="100" Margin="184,70,0,0" VerticalAlignment="Top" Width="100"/>
 
 
     </Grid>

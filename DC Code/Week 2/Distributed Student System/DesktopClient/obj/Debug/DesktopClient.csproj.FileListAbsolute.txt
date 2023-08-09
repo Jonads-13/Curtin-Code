@@ -23,11 +23,6 @@ C:\Users\283602K\Downloads\DotNET-DLL-Remoting\Distributed Student System\Deskto
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\DesktopClient.exe.config
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\DesktopClient.exe
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\DesktopClient.pdb
-C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\Student System Server.exe
-C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\StudentDatabaseDLL.dll
-C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\Student System Server.pdb
-C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\Student System Server.exe.config
-C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\StudentDatabaseDLL.pdb
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\obj\Debug\DesktopClient.csproj.AssemblyReference.cache
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\obj\Debug\DesktopClient.csproj.SuggestedBindingRedirects.cache
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\obj\Debug\MainWindow.g.cs
@@ -44,3 +39,5 @@ C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\obj\Debug\DesktopClient.pdb
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\DatabaseLib.dll
 C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\DatabaseLib.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\DatabaseInterface.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\DesktopClient\bin\Debug\DatabaseInterface.pdb
