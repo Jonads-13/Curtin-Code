@@ -17,8 +17,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 
-using Student_System_Server;
+using DBInterface;
 using System.ServiceModel;
+using System.IO;
+
 namespace DesktopClient
 {
     /// <summary>
@@ -38,18 +40,64 @@ namespace DesktopClient
             foobFactory = new ChannelFactory<DatabaseInterface>(tcp, URL);
             foob = foobFactory.CreateChannel();
             //Also, tell me how many entries are in the DB.
-            StudentIndex.Text = foob.GetNumEntries().ToString();
+            TotalNum.Text = foob.GetNumEntries().ToString();
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            string name = null;
-            int id = 0;
-            string universityName = null;
-            foob.GetValuesForEntry(Int32.Parse(StudentIndex.Text), out name, out id, out universityName);
-            StudentId.Text = id.ToString();
-            StudentName.Text = name;
-            StudentUni.Text = universityName;
+            string fname = null, lname = null;
+            int bal = 0, index;
+            uint accNo = 0, pin = 0;
+            byte[] picture;
+            BitmapImage pp;
+
+            if(int.TryParse(ItemIndex.Text, out index))
+            {
+                try
+                {
+                    foob.GetValuesForEntry(index-1, out accNo, out pin, out bal, out fname, out lname, out picture);
+                    FirstName.Text = fname;
+                    LastName.Text = lname;
+                    AccNo.Text = accNo.ToString();
+                    Pin.Text = pin.ToString();
+                    Balance.Text = bal.ToString();
+                    pp = DecodeImage(picture);
+                    ProfilePicture.Source = pp;
+                }
+                catch(FaultException<IndexError> ie)
+                {
+                    FirstName.Text = ie.Message;
+                    LastName.Text = "";
+                    AccNo.Text = "";
+                    Pin.Text = "";
+                    Balance.Text = "";
+                    ProfilePicture.Source = null;
+                }
+            }
+            else
+            {
+                FirstName.Text = "Invalid";
+                LastName.Text = "Search";
+                AccNo.Text = "Use";
+                Pin.Text = "Numbers";
+                Balance.Text = "Please";
+                ProfilePicture.Source = null;
+            }
         }
+
+        public BitmapImage DecodeImage(byte[] picture)
+        {
+            BitmapImage image = new BitmapImage();
+
+            using (MemoryStream memoryStream = new MemoryStream(picture))
+            {
+                image.BeginInit();
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.StreamSource = memoryStream;
+                image.EndInit();
+            }
+            return image;
+        }
+
     }
 }

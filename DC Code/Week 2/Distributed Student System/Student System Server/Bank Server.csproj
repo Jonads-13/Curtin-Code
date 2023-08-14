@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,19 +45,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseInterface.cs" />
-    <Compile Include="DatabaseInterfaceImpl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StudentDatabaseDLL\StudentDLL.csproj">
-      <Project>{03cf0362-bca5-4cdd-bd1b-02761c58aedb}</Project>
-      <Name>StudentDLL</Name>
+    <ProjectReference Include="..\DatabaseInterface\DBInterface.csproj">
+      <Project>{f499288b-9ef2-46b5-b73f-4a24746b7727}</Project>
+      <Name>DBInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatabaseLib\DatabaseLib.csproj">
+      <Project>{d335b132-4bfa-44b7-885f-a1934c4abbfb}</Project>
+      <Name>DatabaseLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

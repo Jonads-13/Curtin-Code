@@ -1,0 +1,13 @@
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\obj\Debug\Bank Server.csproj.AssemblyReference.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\obj\Debug\Bank Server.csproj.SuggestedBindingRedirects.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\obj\Debug\Bank Server.csproj.CoreCompileInputs.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\obj\Debug\Student System Server.exe
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\obj\Debug\Student System Server.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\bin\Debug\Student System Server.exe.config
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\bin\Debug\Student System Server.exe
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\bin\Debug\Student System Server.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\bin\Debug\DatabaseInterface.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\bin\Debug\DatabaseLib.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\bin\Debug\DatabaseInterface.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\bin\Debug\DatabaseLib.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 2\Distributed Student System\Student System Server\obj\Debug\Bank Server.csproj.CopyComplete
