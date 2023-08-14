@@ -1,0 +1,66 @@
+(gdb) disassemble func
+Dump of assembler code for function func:
+   0x0000000000401156 <+0>:	endbr64 
+   0x000000000040115a <+4>:	push   %rbp
+   0x000000000040115b <+5>:	mov    %rsp,%rbp
+   0x000000000040115e <+8>:	sub    $0x20,%rsp
+   0x0000000000401162 <+12>:	mov    %edi,-0x14(%rbp)
+   0x0000000000401165 <+15>:	mov    %esi,-0x18(%rbp)
+   0x0000000000401168 <+18>:	mov    -0x14(%rbp),%edx
+   0x000000000040116b <+21>:	mov    -0x18(%rbp),%eax
+   0x000000000040116e <+24>:	add    %edx,%eax
+   0x0000000000401170 <+26>:	mov    %eax,-0x4(%rbp)
+   0x0000000000401173 <+29>:	mov    -0x4(%rbp),%eax
+   0x0000000000401176 <+32>:	mov    %eax,%esi
+   0x0000000000401178 <+34>:	lea    0xe85(%rip),%rdi        # 0x402004
+   0x000000000040117f <+41>:	mov    $0x0,%eax
+   0x0000000000401184 <+46>:	callq  0x401050 <printf@plt>
+   0x0000000000401189 <+51>:	nop
+   0x000000000040118a <+52>:	leaveq 
+   0x000000000040118b <+53>:	retq 
+
+  (gdb) info registers
+rax            0x5                 5
+rbx            0x401220            4198944
+rcx            0x0                 0
+rdx            0xa                 10
+rsi            0xa                 10
+rdi            0x5                 5
+rbp            0x7fffffffdf90      0x7fffffffdf90
+rsp            0x7fffffffdf70      0x7fffffffdf70
+r8             0x1999999999999999  1844674407370955161
+r9             0x0                 0
+r10            0x7ffff7f60ac0      140737353484992
+r11            0x7ffff7f613c0      140737353487296
+r12            0x401070            4198512
+r13            0x7fffffffe0b0      140737488347312
+r14            0x0                 0
+r15            0x0                 0
+rip            0x401168            0x401168 <func+18>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+
+    (gdb) x/40wx $rsp
+0x7fffffffdf70:	0xffffe0b0	0x00007fff	0x0000000a	0x00000005
+0x7fffffffdf80:	0x00000000	0x00000000	0xf7e095c4	0x00007fff
+0x7fffffffdf90:	0xffffdfc0	0x00007fff	0x0040120c	0x00000000
+0x7fffffffdfa0:	0xffffe0b8	0x00007fff	0x00401070	0x00000003
+0x7fffffffdfb0:	0xffffe0b0	0x00007fff	0x00000005	0x0000000a
+0x7fffffffdfc0:	0x00000000	0x00000000	0xf7de9083	0x00007fff
+0x7fffffffdfd0:	0xf7ffc620	0x00007fff	0xffffe0b8	0x00007fff
+0x7fffffffdfe0:	0x00000000	0x00000003	0x0040118c	0x00000000
+0x7fffffffdff0:	0x00401220	0x00000000	0x2aadba23	0xa06522af
+0x7fffffffe000:	0x00401070	0x00000000	0xffffe0b0	0x00007fff
+
+    (gdb) x/10gx $rsp
+0x7fffffffdf70:	0x00007fffffffe0b0	0x000000050000000a
+0x7fffffffdf80:	0x0000000000000000	0x00007ffff7e095c4
+0x7fffffffdf90:	0x00007fffffffdfc0	0x000000000040120c < this one
+0x7fffffffdfa0:	0x00007fffffffe0b8	0x0000000300401070
+0x7fffffffdfb0:	0x00007fffffffe0b0	0x0000000a00000005
+
