@@ -3,7 +3,7 @@
 #include"random.h"
 
 /*call this function just ONCE at the beginning of your program before using the random number generator */
-void initRandom()
+void initRandom(void)
 {
     srand(time(NULL));
 }
