@@ -9,6 +9,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class NoteActivity extends AppCompatActivity {
+
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_note_activity);
@@ -18,8 +19,8 @@ public class NoteActivity extends AppCompatActivity {
 
         Intent data = getIntent();
 
-        String note = data.getStringExtra(MainActivity.NOTE_CONTENT);
-        int index = data.getIntExtra(MainActivity.INDEX, -1);
+        String note = MainActivity.getStringFromIntent(data);
+        int index = MainActivity.getIntFromIntent(data);
         if(note != null) {
             noteBox.setText(note);
         }
@@ -28,9 +29,7 @@ public class NoteActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.putExtra(MainActivity.NOTE_CONTENT, noteBox.getText().toString());
-                intent.putExtra(MainActivity.INDEX, index);
+                Intent intent = MainActivity.getMainActivityIntent(noteBox.getText().toString(), index);
                 setResult(RESULT_OK, intent);
                 finish();
             }

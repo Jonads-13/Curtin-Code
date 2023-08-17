@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +19,10 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> notes = new ArrayList<>();
     private Button[] buttons = new Button[5];
     private boolean[] buttonVisibility = {true, false, false, false, false};
-    public static final String NOTE_CONTENT = "noteContent";
-    public static final String INDEX = "index";
+    private static final String NOTE_CONTENT = "noteContent";
+    private static final String INDEX = "index";
+    private static final String VISIBILITY_ARRAY = "visibilityArray";
+    private static final String NOTES_LIST = "notesList";
 
 
     @Override
@@ -57,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         if(savedInstanceState!= null) {
-            buttonVisibility = savedInstanceState.getBooleanArray("visibilityArray");
-            notes = savedInstanceState.getStringArrayList("notesList");
+            buttonVisibility = savedInstanceState.getBooleanArray(VISIBILITY_ARRAY);
+            notes = savedInstanceState.getStringArrayList(NOTES_LIST);
             int i = 0;
             for(Button button: buttons) {
                 if(!buttonVisibility[i]) {
@@ -88,10 +91,8 @@ public class MainActivity extends AppCompatActivity {
         buttons[1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, NoteActivity.class);
                 int index = 0;
-                intent.putExtra(NOTE_CONTENT, notes.get(index));
-                intent.putExtra(INDEX, index);
+                Intent intent = getNoteActivityIntent(MainActivity.this, notes.get(index), index);
                 editNoteActivityLauncher.launch(intent);
 
             }
@@ -101,10 +102,8 @@ public class MainActivity extends AppCompatActivity {
         buttons[2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, NoteActivity.class);
                 int index = 1;
-                intent.putExtra(NOTE_CONTENT, notes.get(index));
-                intent.putExtra(INDEX, index);
+                Intent intent = getNoteActivityIntent(MainActivity.this, notes.get(index), index);
                 editNoteActivityLauncher.launch(intent);
 
             }
@@ -114,10 +113,8 @@ public class MainActivity extends AppCompatActivity {
         buttons[3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, NoteActivity.class);
                 int index = 2;
-                intent.putExtra(NOTE_CONTENT, notes.get(index));
-                intent.putExtra(INDEX, index);
+                Intent intent = getNoteActivityIntent(MainActivity.this, notes.get(index), index);
                 editNoteActivityLauncher.launch(intent);
 
             }
@@ -127,20 +124,45 @@ public class MainActivity extends AppCompatActivity {
         buttons[4].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, NoteActivity.class);
                 int index = 3;
-                intent.putExtra(NOTE_CONTENT, notes.get(index));
-                intent.putExtra(INDEX, index);
+                Intent intent = getNoteActivityIntent(MainActivity.this, notes.get(index), index);
                 editNoteActivityLauncher.launch(intent);
 
             }
         });
     }
 
+    public static Intent getNoteActivityIntent(Context c, String note, int index)
+    {
+        Intent intent = new Intent(c, NoteActivity.class);
+        intent.putExtra(NOTE_CONTENT, note);
+        intent.putExtra(INDEX, index);
+        return intent;
+    }
+
+    public static Intent getMainActivityIntent(String note, int index)
+    {
+        Intent intent = new Intent();
+        intent.putExtra(NOTE_CONTENT, note);
+        intent.putExtra(INDEX, index);
+        return intent;
+
+    }
+
+    public static String getStringFromIntent(Intent intent)
+    {
+        return intent.getStringExtra(NOTE_CONTENT);
+    }
+
+    public static int getIntFromIntent(Intent intent)
+    {
+        return intent.getIntExtra(INDEX, -1);
+    }
+
     @Override
     public void onSaveInstanceState(@NotNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putBooleanArray("visibilityArray", buttonVisibility);
+        outState.putBooleanArray(VISIBILITY_ARRAY, buttonVisibility);
         outState.putStringArrayList("notesList", notes);
     }
 }
