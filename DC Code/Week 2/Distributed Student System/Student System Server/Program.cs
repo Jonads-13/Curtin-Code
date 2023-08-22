@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DBInterface;
 
-namespace Student_System_Server
+namespace Bank_Server
 {
     internal class Program
     {
