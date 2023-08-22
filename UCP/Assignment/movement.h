@@ -10,5 +10,4 @@ int moveDown(char**, int*, int*);
 int moveLeft(char**, int*, int*);
 int moveRight(char**, int*, int*);
 
-
 #endif

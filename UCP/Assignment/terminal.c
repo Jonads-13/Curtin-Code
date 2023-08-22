@@ -2,7 +2,7 @@
 #include<termios.h>
 #include"terminal.h"
 
-void disableBuffer()
+void disableBuffer(void)
 {
     struct termios mode;
 
@@ -11,7 +11,7 @@ void disableBuffer()
     tcsetattr(0, TCSANOW, &mode);
 }
 
-void enableBuffer()
+void enableBuffer(void)
 {
     struct termios mode;
 
