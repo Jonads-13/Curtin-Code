@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private static final String VISIBILITY_ARRAY = "visibilityArray";
     private static final String NOTES_LIST = "notesList";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if(savedInstanceState!= null) {
+        if(savedInstanceState != null) {
             buttonVisibility = savedInstanceState.getBooleanArray(VISIBILITY_ARRAY);
             notes = savedInstanceState.getStringArrayList(NOTES_LIST);
             int i = 0;
@@ -149,13 +148,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public static String getStringFromIntent(Intent intent)
-    {
+    public static String getStringFromIntent(Intent intent) {
         return intent.getStringExtra(NOTE_CONTENT);
     }
 
-    public static int getIntFromIntent(Intent intent)
-    {
+    public static int getIntFromIntent(Intent intent) {
+
         return intent.getIntExtra(INDEX, -1);
     }
 
@@ -163,6 +161,6 @@ public class MainActivity extends AppCompatActivity {
     public void onSaveInstanceState(@NotNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putBooleanArray(VISIBILITY_ARRAY, buttonVisibility);
-        outState.putStringArrayList("notesList", notes);
+        outState.putStringArrayList(NOTES_LIST, notes);
     }
 }

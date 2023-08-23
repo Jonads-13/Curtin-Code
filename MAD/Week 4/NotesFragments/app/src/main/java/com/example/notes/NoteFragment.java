@@ -56,7 +56,6 @@ public class NoteFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
@@ -67,20 +66,25 @@ public class NoteFragment extends Fragment {
 
         MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity())
                 .get(MainActivityData.class);
-        EditText note = rootView.findViewById(R.id.noteContent);
-        Button saveButton = rootView.findViewById(R.id.saveButton);
-
+        EditText note = rootView.findViewById(R.id.note_content);
+        EditText noteTitle = rootView.findViewById(R.id.note_title);
+        Button saveButton = rootView.findViewById(R.id.save_button);
 
 
         if(mainActivityDataViewModel.getNote() != null){
             note.setText(mainActivityDataViewModel.getNote());
         }
 
+        if(mainActivityDataViewModel.getNoteTitle() != null){
+            noteTitle.setText(mainActivityDataViewModel.getNoteTitle());
+        }
+
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mainActivityDataViewModel.setNote(note.getText().toString());
-                mainActivityDataViewModel.setClickedValue(0);
+                mainActivityDataViewModel.setNoteTitle(noteTitle.getText().toString());
+                mainActivityDataViewModel.setClickedValue(R.integer.MENU);
             }
         });
 

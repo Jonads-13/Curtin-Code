@@ -3,6 +3,7 @@ package com.example.notes;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
@@ -64,17 +65,20 @@ public class MenuFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_menu, container, false);
 
         Button addNote = rootView.findViewById(R.id.NoteButton);
-        MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity())
-                .get(MainActivityData.class);
+        com.example.notes.MainActivityData mainActivityDataViewModel = new ViewModelProvider(getActivity())
+                .get(com.example.notes.MainActivityData.class);
 
-        if(mainActivityDataViewModel.getNote() != null) {
-            addNote.setText("Edit Note");
-        }
+        mainActivityDataViewModel.note.observe(getActivity(), new Observer<String>() {
+            @Override
+            public void onChanged(String string) {
+                addNote.setText("Edit Note");
+            }
+        });
 
         addNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mainActivityDataViewModel.setClickedValue(1);
+                mainActivityDataViewModel.setClickedValue(R.integer.NOTE);
             }
         });
 
