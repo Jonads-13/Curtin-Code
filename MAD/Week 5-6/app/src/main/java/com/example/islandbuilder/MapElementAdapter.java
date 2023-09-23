@@ -46,9 +46,16 @@ public class MapElementAdapter extends RecyclerView.Adapter<MapElementVH> {
         holder.bottomRight.setImageResource(element.getSouthEast());
 
         holder.onTop.setOnClickListener(v -> {
-            element.setStructure(viewModel.getSelectedStruct());
-            holder.onTop.setImageResource(element.getStructure().getDrawableId());
-            Log.d("DEBUG", "drawable id: " + element.getStructure().getDrawableId());
+            if(element.getStructure() == null) {
+                element.setStructure(viewModel.getSelectedStruct());
+                holder.onTop.setImageResource(element.getStructure().getDrawableId());
+                Log.d("DEBUG", "drawable id: " + element.getStructure().getDrawableId());
+            }
+            else
+            {
+                viewModel.setSelectedMapElement(element);
+                viewModel.setSelectedMapHolder(holder);
+            }
         });
     }
 

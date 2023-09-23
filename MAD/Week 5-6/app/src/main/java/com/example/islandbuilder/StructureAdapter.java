@@ -1,14 +1,11 @@
 package com.example.islandbuilder;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.snackbar.Snackbar;
 
 public class StructureAdapter extends RecyclerView.Adapter<StructureVH> {
 
@@ -36,9 +33,15 @@ public class StructureAdapter extends RecyclerView.Adapter<StructureVH> {
         Structure structure = this.structureList.get(position);
         holder.structureIcon.setImageResource(structure.getDrawableId());
         holder.structureName.setText(structure.getLabel());
-        Log.d("DEBUG", "row col: ");
         holder.structureIcon.setOnClickListener(v -> {
+            if(viewModel.getSelectedStructVH() != null)
+            {
+                // reset background color
+                viewModel.getSelectedStructVH().structureIcon.setBackgroundColor(0);
+            }
+            viewModel.setSelectedStructVH(holder);
             viewModel.setSelectedStruct(structure);
+            holder.structureIcon.setBackgroundColor(R.color.black);
         });
 
     }

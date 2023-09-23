@@ -10,11 +10,13 @@ public class MainActivity extends AppCompatActivity {
 
     private MapFragment mapFrag = new MapFragment();
     private SelectorFragment selectFrag = new SelectorFragment();
+    private HeaderFragment headerFrag = new HeaderFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        loadNewFrag(R.id.header, headerFrag);
         loadNewFrag(R.id.map, mapFrag);
         loadNewFrag(R.id.selector, selectFrag);
     }
