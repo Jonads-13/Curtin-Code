@@ -44,6 +44,10 @@ public class MapElementAdapter extends RecyclerView.Adapter<MapElementVH> {
         holder.topRight.setImageResource(element.getNorthEast());
         holder.bottomLeft.setImageResource(element.getSouthWest());
         holder.bottomRight.setImageResource(element.getSouthEast());
+        if(element.getStructure() != null)
+        {
+            holder.onTop.setImageResource(element.getStructure().getDrawableId());
+        }
 
         holder.onTop.setOnClickListener(v -> {
             if(element.getStructure() == null) {
