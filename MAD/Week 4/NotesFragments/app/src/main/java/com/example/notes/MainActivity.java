@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
         if(orientation == Configuration.ORIENTATION_PORTRAIT){
             loadFragment(R.id.main_f, menuFrag);
             MainActivityData mainActivityDataViewModel = new ViewModelProvider(this)
-                    .get(com.example.notes.MainActivityData.class);
+                    .get(MainActivityData.class);
             mainActivityDataViewModel.clickedValue.observe(this, new Observer<Integer>() {
                 @Override
                 public void onChanged(Integer integer) {
-                    if(mainActivityDataViewModel.getClickedValue() == R.integer.MENU){
+                    if(mainActivityDataViewModel.getClickedValue() == R.integer.MENU) {
                         loadFragment(R.id.main_f, menuFrag);
                     } else if (mainActivityDataViewModel.getClickedValue() == R.integer.NOTE) {
                         loadFragment(R.id.main_f, noteFrag);
