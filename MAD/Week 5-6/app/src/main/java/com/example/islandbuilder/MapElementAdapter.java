@@ -1,6 +1,7 @@
 package com.example.islandbuilder;
 
 import android.util.Log;
+import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,15 @@ public class MapElementAdapter extends RecyclerView.Adapter<MapElementVH> {
                 viewModel.setSelectedMapElement(element);
                 viewModel.setSelectedMapHolder(holder);
             }
+        });
+
+        holder.onTop.setOnDragListener((v, event) -> {
+                    if(event.getAction() == DragEvent.ACTION_DROP)
+                    {
+                        element.setStructure(viewModel.getSelectedStruct());
+                        holder.onTop.setImageResource(element.getStructure().getDrawableId());
+                    }
+                    return true;
         });
     }
 
