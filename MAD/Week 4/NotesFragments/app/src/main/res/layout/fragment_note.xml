@@ -8,19 +8,30 @@
     tools:context=".NoteFragment">
 
     <EditText
-        android:id="@+id/noteContent"
+        android:id="@+id/note_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Note Title"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/note_content"/>
+
+    <EditText
+        android:id="@+id/note_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:hint="Enter Note Here"
         android:gravity="start"
         android:inputType="textMultiLine"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/note_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/saveButton" />
+        app:layout_constraintBottom_toTopOf="@+id/save_button" />
 
     <Button
-        android:id="@+id/saveButton"
+        android:id="@+id/save_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save"

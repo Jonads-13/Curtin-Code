@@ -6,12 +6,14 @@ import androidx.lifecycle.ViewModel;
 
 public class MainActivityData extends ViewModel {
     public MutableLiveData<Integer> clickedValue;
-    private String note;
+    public MutableLiveData<String> note;
+    private String noteTitle;
 
     public MainActivityData(){
         clickedValue = new MediatorLiveData<>();
-        clickedValue.setValue(0);
-        note = null;
+        clickedValue.setValue(R.integer.MENU);
+        note = new MediatorLiveData<>();
+        noteTitle = null;
     }
 
     public int getClickedValue(){
@@ -21,8 +23,13 @@ public class MainActivityData extends ViewModel {
         clickedValue.setValue(value);
     }
 
-    public String getNote() {return note;}
-    public void setNote(String n){note = n;}
+    public String getNote() {return note.getValue();}
+
+    public void setNote(String n){note.setValue(n);}
+
+    public String getNoteTitle() {return noteTitle;}
+
+    public void setNoteTitle(String n){noteTitle = n;}
 
 
 
