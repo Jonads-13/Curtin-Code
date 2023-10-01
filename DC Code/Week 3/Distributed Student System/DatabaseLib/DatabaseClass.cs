@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Windows.Media.Imaging;
 
 namespace DatabaseLib
@@ -30,21 +31,20 @@ namespace DatabaseLib
             Console.WriteLine("Created Database");
         }
 
-        public bool Search(string query, out int index)
+        public DataStruct Search(string query)
         {
             int i = 0;
-            index = -1;
+            Thread.Sleep(12000);
             while(i < data.Length)
             { 
                 if (query.Equals(data[i].lastName))
                 {
-                    index = i;
-                    return true;
+                    return data[i];
                 }
                 i++;
             }
 
-            return false;
+            return new DataStruct(0, 0, 0, "No Match Found", "", null);
         }
 
         public DataStruct GetCustomerByIndex(int i)

@@ -1,0 +1,52 @@
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\Web API Data Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\Web API Data Server.AssemblyInfoInputs.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\Web API Data Server.AssemblyInfo.cs
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\Web API Data Server.csproj.CoreCompileInputs.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\Web API Data Server.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\Web API Data Server.RazorAssemblyInfo.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\Web API Data Server.RazorAssemblyInfo.cs
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\appsettings.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\Web API Data Server.staticwebassets.runtime.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\Web API Data Server.exe
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\Web API Data Server.deps.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\Web API Data Server.runtimeconfig.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\Web API Data Server.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\Web API Data Server.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\PresentationCore.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\System.Xaml.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\UIAutomationTypes.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\System.Windows.Input.Manipulations.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\UIAutomationProvider.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\System.Deployment.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\Accessibility.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\System.Windows.Forms.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\System.Runtime.Serialization.Formatters.Soap.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\PresentationCore.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\System.Xaml.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\UIAutomationTypes.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\System.Windows.Input.Manipulations.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\UIAutomationProvider.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\System.Deployment.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\Accessibility.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\System.Windows.Forms.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\System.Runtime.Serialization.Formatters.Soap.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\Web API Data Server.csproj.AssemblyReference.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\staticwebassets\msbuild.Web API Data Server.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\staticwebassets\msbuild.build.Web API Data Server.props
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Web API Data Server.props
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Web API Data Server.props
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\scopedcss\bundle\Web API Data Server.styles.css
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\scopedcss\projectbundle\Web API Data Server.bundle.scp.css
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\Web API Data Server.csproj.CopyComplete
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\Web API Data Server.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\refint\Web API Data Server.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\Web API Data Server.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\Web API Data Server.genruntimeconfig.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\obj\Debug\net6.0\ref\Web API Data Server.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\APIClasses.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Data Server\bin\Debug\net6.0\APIClasses.pdb

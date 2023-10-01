@@ -34,7 +34,7 @@ namespace TaskClient
 
     public partial class TaskWindow : Window
     {
-        private BusinessServerInterface foob;
+        private BusinessServerInterface bsInt;
         private string query;
         public TaskWindow()
         {
@@ -45,9 +45,9 @@ namespace TaskClient
             //Set the URL and create the connection!
             string URL = "net.tcp://localhost:8101/BusinessService";
             foobFactory = new ChannelFactory<BusinessServerInterface>(tcp, URL);
-            foob = foobFactory.CreateChannel();
+            bsInt = foobFactory.CreateChannel();
             //Also, tell me how many entries are in the DB.
-            TotalNum.Text = foob.GetNumEntries().ToString();
+            TotalNum.Text = bsInt.GetNumEntries().ToString();
         }
 
         private void SearchIndexButton_Click(object sender, RoutedEventArgs e)
@@ -58,7 +58,7 @@ namespace TaskClient
             {
                 try
                 {
-                    DataStruct temp = foob.GetEntryFromIndex(index - 1);
+                    DataStruct temp = bsInt.GetEntryFromIndex(index - 1);
                     FirstName.Text = temp.firstName;
                     LastName.Text = temp.lastName;
                     AccNo.Text = temp.accNo.ToString();
@@ -92,10 +92,19 @@ namespace TaskClient
         private async void SearchNameButton_Click(object sender, EventArgs e)
         {
             query = ItemName.Text;
+            DataStruct customer;
             Task<DataStruct> task = new Task<DataStruct>(SearchDB);
             task.Start();
+
             ProgressBar.IsIndeterminate = true;
-            DataStruct customer = await task;
+            if (await Task.WhenAny(task, Task.Delay(10000)) == task)
+            {
+                customer = task.Result;
+            }
+            else 
+            {
+                customer = new DataStruct(0, 0, 0, "Something went wrong", "Server timed out", null);
+            }
             UpdateGui(customer);
             ProgressBar.IsIndeterminate = false;
         }
@@ -107,8 +116,7 @@ namespace TaskClient
             {
                 if (NonSymbol(query))
                 {
-                    Thread.Sleep(5000);
-                    return foob.GetEntryFromString(query);
+                    return bsInt.GetEntryFromString(query);
                 }
                 else { return new DataStruct(0,0,0,"No Symbols", "", null); }
             }
@@ -155,7 +163,8 @@ namespace TaskClient
             }
         }
 
-        private bool NonSymbol(String query)
+        // Checks ascii value and makes sure the character is from the alphabet
+        private bool NonSymbol(string query)
         {
             for(int i = 0; i < query.Length; i++)
             {

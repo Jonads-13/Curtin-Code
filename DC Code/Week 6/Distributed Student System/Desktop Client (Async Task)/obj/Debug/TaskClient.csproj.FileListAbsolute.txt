@@ -1,0 +1,67 @@
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\bin\Debug\Desktop Client (Async Task).exe.config
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\bin\Debug\Desktop Client (Async Task).exe
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\bin\Debug\Desktop Client (Async Task).pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\bin\Debug\BusinessLayer.exe
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\bin\Debug\DatabaseInterface.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\bin\Debug\DatabaseLib.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\bin\Debug\BusinessLayer.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\bin\Debug\BusinessLayer.exe.config
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\bin\Debug\DatabaseInterface.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\bin\Debug\DatabaseLib.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\obj\Debug\TaskClient.csproj.AssemblyReference.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\obj\Debug\TaskWindow.g.cs
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\obj\Debug\App.g.cs
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\obj\Debug\Desktop Client (Async Task)_MarkupCompile.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\obj\Debug\Desktop Client (Async Task)_MarkupCompile.lref
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\obj\Debug\TaskWindow.baml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\obj\Debug\Desktop Client (Async Task).g.resources
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\obj\Debug\Desktop_Client__Async_Task_.Properties.Resources.resources
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\obj\Debug\TaskClient.csproj.GenerateResource.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\obj\Debug\TaskClient.csproj.CoreCompileInputs.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\obj\Debug\TaskClient.csproj.CopyComplete
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\obj\Debug\Desktop Client (Async Task).exe
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 3\Distributed Student System\Desktop Client (Async Task)\obj\Debug\Desktop Client (Async Task).pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\Desktop Client (Async Task).exe.config
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\Desktop Client (Async Task).exe
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\Desktop Client (Async Task).pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\DatabaseInterface.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\DatabaseLib.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\DatabaseInterface.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\DatabaseLib.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\obj\Debug\TaskClient.csproj.AssemblyReference.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\obj\Debug\TaskWindow.g.cs
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\obj\Debug\App.g.cs
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\obj\Debug\Desktop Client (Async Task)_MarkupCompile.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\obj\Debug\Desktop Client (Async Task)_MarkupCompile.lref
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\obj\Debug\TaskWindow.baml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\obj\Debug\Desktop Client (Async Task).g.resources
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\obj\Debug\Desktop_Client__Async_Task_.Properties.Resources.resources
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\obj\Debug\TaskClient.csproj.GenerateResource.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\obj\Debug\TaskClient.csproj.CoreCompileInputs.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\obj\Debug\TaskClient.csproj.CopyComplete
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\obj\Debug\Desktop Client (Async Task).exe
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\obj\Debug\Desktop Client (Async Task).pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\RestSharp.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Buffers.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Memory.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Text.Json.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.ValueTuple.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\RestSharp.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Buffers.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Memory.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Text.Json.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\System.ValueTuple.xml
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\APIClasses.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Desktop Client (Async Task)\bin\Debug\APIClasses.pdb

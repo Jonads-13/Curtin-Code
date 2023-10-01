@@ -24,6 +24,7 @@ using DBInterface;
 using DatabaseLib;
 using System.Runtime.Remoting.Messaging;
 using System.Threading;
+using System.Diagnostics;
 
 namespace DelegateClient
 {
@@ -100,26 +101,36 @@ namespace DelegateClient
             search = SearchDB;
             AsyncCallback callback = this.OnSearchCompletion;
             IAsyncResult result = search.BeginInvoke(ItemName.Text, callback, null);
+
         }
 
-        private DataStruct SearchDB(String query)
+        private DataStruct SearchDB(string query)
         {
             if (!int.TryParse(query, out int index))
             {
                 if(NonSymbol(query))
                 {
-                    try
-                    {
+                    Task<DataStruct> task = Task.Run(() => {
                         return foob.GetEntryFromString(query);
-                    }
-                    catch(TimeoutException)
+                    });
+                    if (Task.WhenAny(task, Task.Delay(10000)).Equals(task)) 
                     {
-                        return new DataStruct(0, 0, 0, "Something went wrong", "Server timed out", null);
+                        return task.Result; // returns on success
+                    }
+                    else
+                    {
+                        return new DataStruct(0, 0, 0, "Something went wrong", "Server timed out", null); // returns on server timeout
                     }
                 }
-                else { return new DataStruct(0, 0, 0, "No Symbols", "", null); }
+                else // User entered a symbol
+                { 
+                    return new DataStruct(0, 0, 0, "No Symbols", "", null); 
+                }
             }
-            else { return new DataStruct(0, 0, 0, "Invalid Search", "", null); }
+            else // User entered a number
+            { 
+                return new DataStruct(0, 0, 0, "No Numbers", "", null); 
+            }
         }
 
         private void OnSearchCompletion(IAsyncResult result)
