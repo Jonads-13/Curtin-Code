@@ -19,7 +19,6 @@ using System.Xml.Linq;
 
 using System.ServiceModel;
 using System.IO;
-using DBInterface;
 using System.Runtime.Remoting.Messaging;
 using System.Threading;
 using RestSharp;

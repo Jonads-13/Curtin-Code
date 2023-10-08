@@ -136,10 +136,6 @@
       <Project>{b3ba3230-c3eb-4811-95be-c253fd8e58f2}</Project>
       <Name>APIClasses</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DatabaseInterface\DBInterface.csproj">
-      <Project>{f499288b-9ef2-46b5-b73f-4a24746b7727}</Project>
-      <Name>DBInterface</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

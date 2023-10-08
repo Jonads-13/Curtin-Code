@@ -3,21 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank Server", "Student System Server\Bank Server.csproj", "{83A7C4B8-14C0-49E6-AC28-14210394EECC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseLib", "DatabaseLib\DatabaseLib.csproj", "{D335B132-4BFA-44B7-885F-A1934C4ABBFB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBInterface", "DatabaseInterface\DBInterface.csproj", "{F499288B-9EF2-46B5-B73F-4A24746B7727}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{8E21C4BF-5CD6-4C0D-9FA1-86A8293B1E97}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskClient", "Desktop Client (Async Task)\TaskClient.csproj", "{B9FEF8EE-4382-4C70-820A-74F2A200D32A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web API Data Server", "Web API Data Server\Web API Data Server.csproj", "{68D9E639-3021-4861-8077-87F915D47ABF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIClasses", "APIClasses\APIClasses.csproj", "{B3BA3230-C3EB-4811-95BE-C253FD8E58F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web API Business Server", "Web API Business Server\Web API Business Server.csproj", "{84AD40BF-8B47-47EC-BEC5-97BCBE7ADAAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web API Business Server", "Web API Business Server\Web API Business Server.csproj", "{84AD40BF-8B47-47EC-BEC5-97BCBE7ADAAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,22 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{83A7C4B8-14C0-49E6-AC28-14210394EECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83A7C4B8-14C0-49E6-AC28-14210394EECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83A7C4B8-14C0-49E6-AC28-14210394EECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83A7C4B8-14C0-49E6-AC28-14210394EECC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D335B132-4BFA-44B7-885F-A1934C4ABBFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D335B132-4BFA-44B7-885F-A1934C4ABBFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D335B132-4BFA-44B7-885F-A1934C4ABBFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D335B132-4BFA-44B7-885F-A1934C4ABBFB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F499288B-9EF2-46B5-B73F-4A24746B7727}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F499288B-9EF2-46B5-B73F-4A24746B7727}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F499288B-9EF2-46B5-B73F-4A24746B7727}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F499288B-9EF2-46B5-B73F-4A24746B7727}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E21C4BF-5CD6-4C0D-9FA1-86A8293B1E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E21C4BF-5CD6-4C0D-9FA1-86A8293B1E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E21C4BF-5CD6-4C0D-9FA1-86A8293B1E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E21C4BF-5CD6-4C0D-9FA1-86A8293B1E97}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B9FEF8EE-4382-4C70-820A-74F2A200D32A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B9FEF8EE-4382-4C70-820A-74F2A200D32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9FEF8EE-4382-4C70-820A-74F2A200D32A}.Release|Any CPU.ActiveCfg = Release|Any CPU

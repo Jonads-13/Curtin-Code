@@ -30,7 +30,7 @@ namespace Web_API_Data_Server.models.Account
             Thread.Sleep(5000);
             while(i < data.Count)
             { 
-                if (query.Equals(data[i].LastName))
+                if (query.Equals(data[i].Lname))
                 {
                     return data[i];
                 }
@@ -52,7 +52,7 @@ namespace Web_API_Data_Server.models.Account
 
         public static uint GetAccNoByIndex(int i) 
         {
-            return data[i].AccNo;
+            return data[i].Acct;
         }
 
         public static uint GetPINByIndex(int i)
@@ -62,22 +62,22 @@ namespace Web_API_Data_Server.models.Account
 
         public static int GetBalanceByIndex(int i) 
         {
-            return data[i].Balance;
+            return data[i].Bal;
         }
 
         public static string GetFirstNameByIndex(int i)
         { 
-            return data[i].FirstName; 
+            return data[i].Fname; 
         }
 
         public static string GetLastNameByIndex(int i)
         {
-            return data[i].LastName;
+            return data[i].Lname;
         }
 
         public static byte[] GetPPByIndex(int i)
         {
-            return data[i].ProfilePicture;
+            return data[i].ProfPic;
         }
 
         public static int GetNumRecords()

@@ -20,15 +20,13 @@ namespace Web_API_Data_Server.Controllers
             if (customer == null)
             {
                 Console.WriteLine("id was invalid");
-                throw new HttpRequestException();
+                return NotFound(new RequestException("index was out of bounds", 404));
+ 
             }
             else
             {
                 Console.WriteLine("id was valid");
-                return new ObjectResult(customer)
-                {
-                    StatusCode = 200
-                };
+                return Ok(customer);
             }
         }
 
