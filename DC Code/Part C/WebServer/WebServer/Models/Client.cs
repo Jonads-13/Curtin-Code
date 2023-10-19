@@ -1,8 +1,10 @@
-﻿namespace WebServer.Models
+﻿using System.ServiceModel;
+
+namespace WebServer.Models
 {
     public class Client
     {
-        public int Port { get; set; }
+        public string Port { get; set; }
         public string Host { get; set; }
     }
 }

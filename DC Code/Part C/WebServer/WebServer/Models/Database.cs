@@ -13,5 +13,17 @@
         {
             clients.Add(client);
         }
+
+        public static bool Valid(string port)
+        {
+            foreach (Client c in clients)
+            {
+                if(c.Port == port)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

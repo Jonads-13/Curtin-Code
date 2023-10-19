@@ -15,10 +15,20 @@ namespace WebServer.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]Client client)
+        public IActionResult Post([FromBody] Client client)
         {
             Database.AddClient(client);
             return Ok();
+        }
+
+        [HttpGet]
+        public IActionResult Valid(string port) 
+        {
+            if(Database.Valid(port))
+            {
+                return Ok();
+            }
+            return NotFound();
         }
     }
 }

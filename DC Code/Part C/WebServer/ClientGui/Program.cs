@@ -9,10 +9,10 @@ namespace ClientGui
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Run(string port)
         {
 
-            Console.WriteLine("Business Tier Booting up");
+            Console.WriteLine("Server Booting up");
             //This is the actual host service system
             ServiceHost host;
             //This represents a tcp/ip binding in the Windows network stack
@@ -23,7 +23,7 @@ namespace ClientGui
             accept on any interface. :8100 means this will use port 8100. DataService is a name for the
             actual service, this can be any string.*/
 
-            host.AddServiceEndpoint(typeof(IServer), tcp, "net.tcp://0.0.0.0:8101/BusinessService");
+            host.AddServiceEndpoint(typeof(IServer), tcp, "net.tcp://0.0.0.0:" + port + "/Service");
             //And open the host for business!
             host.Open();
             Console.WriteLine("System Online");

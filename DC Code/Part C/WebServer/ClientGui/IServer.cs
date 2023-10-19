@@ -10,6 +10,13 @@ namespace ClientGui
     [ServiceContract]
     public interface IServer
     {
+        [OperationContract]
+        void Post(Client c);
 
+        [OperationContract]
+        List<Client> Get();
+
+        [OperationContract]
+        bool Valid(string port);
     }
 }
