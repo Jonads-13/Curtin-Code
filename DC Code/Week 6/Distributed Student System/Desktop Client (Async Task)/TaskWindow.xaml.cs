@@ -38,6 +38,7 @@ namespace TaskClient
     {
         private SearchData query;
         private RestClient client;
+        private string indexText;
         public TaskWindow()
         {
             InitializeComponent();
@@ -50,9 +51,36 @@ namespace TaskClient
             TotalNum.Text = response.Content.ToString();
         }
 
-        private void SearchIndexButton_Click(object sender, RoutedEventArgs e)
+        private async void SearchIndexButton_Click(object sender, RoutedEventArgs e)
         {
-            if (int.TryParse(ItemIndex.Text, out int index))
+            DataIntermed customer;
+            Task<DataIntermed> task = new Task<DataIntermed>(IndexSearch);
+            indexText = ItemIndex.Text;
+
+            ProgressBar.IsIndeterminate = true;
+            task.Start();
+            if (await Task.WhenAny(task, Task.Delay(10000)) == task)
+            {
+                customer = task.Result;
+            }
+            else
+            {
+                customer = new DataIntermed()
+                {
+                    Acct = 0,
+                    Pin = 0,
+                    Bal = 0,
+                    Fname = "Something went wrong",
+                    Lname = "Server timed out",
+                    ProfPic = null
+                };
+            }
+            UpdateGui(customer);
+        }
+
+        private DataIntermed IndexSearch()
+        {
+            if (int.TryParse(indexText, out int index))
             {
                 try
                 {
@@ -61,26 +89,32 @@ namespace TaskClient
 
                     DataIntermed customer = JsonConvert.DeserializeObject<DataIntermed>(response.Content);
 
-                    UpdateGui(customer);
+                    return customer;
                 }
                 catch (HttpRequestException)
                 {
-                    UpdateGui(new DataIntermed()
+                    return new DataIntermed()
                     {
-                        Acct = 0, Pin = 0, Bal = 0,
-                        Fname = "Specified index", Lname = "Was Invalid",
+                        Acct = 0,
+                        Pin = 0,
+                        Bal = 0,
+                        Fname = "Specified index",
+                        Lname = "Was Invalid",
                         ProfPic = null
-                    });
+                    };
                 }
             }
             else
             {
-                UpdateGui(new DataIntermed()
+                return new DataIntermed()
                 {
-                    Acct = 0, Pin = 0, Bal = 0,
-                    Fname = "Invalid Search Type", Lname = "Use Other Box",
+                    Acct = 0,
+                    Pin = 0,
+                    Bal = 0,
+                    Fname = "Invalid Search Type",
+                    Lname = "Use Other Box",
                     ProfPic = null
-                });
+                };
             }
         }
 
