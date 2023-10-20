@@ -9,14 +9,27 @@ namespace ClientGui
 {
     [ServiceContract]
     public interface IServer
-    {
+    { 
         [OperationContract]
-        void Post(Client c);
+        Job GetNextJob();
 
         [OperationContract]
-        List<Client> Get();
+        void AddJob(Job j);
 
         [OperationContract]
-        bool Valid(string port);
+        void AddResult(string r);
+
+        [OperationContract]
+        List<string> GetResults();
+
+        [OperationContract]
+        void UpdateJob(int id);
+
+        [OperationContract]
+        string CompleteJob(string pythonCode);
+
+        [OperationContract]
+        string Decode(string data);
+
     }
 }

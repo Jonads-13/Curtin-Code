@@ -21,7 +21,7 @@ namespace WebServer.Controllers
             return Ok();
         }
 
-        [HttpGet]
+        [HttpPut]
         public IActionResult Valid(string port) 
         {
             if(Database.Valid(port))

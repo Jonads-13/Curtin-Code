@@ -1,7 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using IronPython.Hosting;
+using Microsoft.Scripting.Hosting;
+using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -12,39 +15,79 @@ namespace ClientGui
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, UseSynchronizationContext = false)]
     public class Server : IServer
     {
-        public Server() 
+        static List<Job> jobs = new List<Job>();
+        static List<string> results = new List<string>();
+        public static bool run = true;
+
+        public Server() { }
+
+        public void AddJob(Job j)
         {
-            
+            jobs.Add(j);
         }
 
-        public void Post(Client c)
+        public void AddResult(string r)
         {
-            RestClient client = new RestClient("http://localhost:5280");
-            RestRequest request = new RestRequest("/api/Client");
-            request.AddJsonBody(c);
-
-            RestResponse response = client.Post(request);
+            results.Add(r);
         }
 
-        public List<Client> Get()
+        public List<string> GetResults()
         {
-            RestClient client = new RestClient("http://localhost:5280");
-            RestRequest request = new RestRequest("/api/Client");
-
-            RestResponse response = client.Get(request);
-
-            return JsonConvert.DeserializeObject<List<Client>>(response.Content);
+            return results;
         }
 
-        public bool Valid(string port)
+        public Job GetNextJob()
         {
-            RestClient client = new RestClient("http://localhost:5280");
-            RestRequest request = new RestRequest("/api/Client");
-            request.AddQueryParameter("port", port);
+            try
+            {                
+                return jobs.First();
+            }
+            catch(InvalidOperationException)
+            {
+                return null;
+            }
+        }
 
-            RestResponse response = client.Get(request);
+        public void UpdateJob(int id)
+        {
+            Job remove = null;
+            foreach (Job j in jobs)
+            {
+                if(j.Id == id)
+                {
+                    remove = j;
+                }
+            }
+            if(remove != null)
+            {
+                jobs.Remove(remove);
+            }
+        }
 
-            return response.IsSuccessful;
+        public string CompleteJob(string pythonCode) // Runs the python code to do the job
+        {
+            string code = Decode(pythonCode);
+            ScriptEngine engine = Python.CreateEngine();
+            ScriptScope scope = engine.CreateScope();
+            engine.Execute(code, scope);
+
+            dynamic mainFunction = scope.GetVariable("main");
+            var result = mainFunction();
+
+            return code + "\nGives result:\n" + result.ToString();
+        }
+
+
+        public string Decode(string data) // Base 64 Decoding
+        {
+            if (string.IsNullOrEmpty(data))
+            {
+                return data;
+            }
+
+            byte[] encodedBytes = Convert.FromBase64String(data);
+
+            return Encoding.UTF8.GetString(encodedBytes);
         }
     }
 }

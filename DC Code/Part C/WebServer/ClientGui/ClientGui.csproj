@@ -118,6 +118,7 @@
     </ApplicationDefinition>
     <Compile Include="Client.cs" />
     <Compile Include="IServer.cs" />
+    <Compile Include="Job.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Server.cs" />
     <Page Include="MainWindow.xaml">

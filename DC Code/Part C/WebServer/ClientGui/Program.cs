@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -9,10 +10,10 @@ namespace ClientGui
 {
     internal class Program
     {
-        public static void Run(string port)
+        public static async void Run(string port)
         {
 
-            Console.WriteLine("Server Booting up");
+            Debug.WriteLine("Server Booting up");
             //This is the actual host service system
             ServiceHost host;
             //This represents a tcp/ip binding in the Windows network stack
@@ -23,11 +24,13 @@ namespace ClientGui
             accept on any interface. :8100 means this will use port 8100. DataService is a name for the
             actual service, this can be any string.*/
 
-            host.AddServiceEndpoint(typeof(IServer), tcp, "net.tcp://0.0.0.0:" + port + "/Service");
+            host.AddServiceEndpoint(typeof(IServer), tcp, "net.tcp://localhost:" + port + "/JobService");
             //And open the host for business!
             host.Open();
-            Console.WriteLine("System Online");
-            Console.ReadLine();
+            Debug.WriteLine("System Online");
+
+            while (Server.run){ await Task.Delay(500); }
+
             //Don't forget to close the host after you're done!
             host.Close();
         }
