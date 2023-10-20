@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Security.Cryptography;
 
 namespace ClientGui
 {
@@ -32,6 +33,7 @@ namespace ClientGui
         private string port;
         private Random rand;
         private List<Client> connectedClients;
+        private Client current;
         public MainWindow()
         {
             InitializeComponent();
@@ -68,9 +70,15 @@ namespace ClientGui
                     Job tempJob = s.GetNextJob();
                     if (tempJob != null)
                     {
-                        string result = serverInt.CompleteJob(tempJob.PythonCode);
-                        s.UpdateJob(tempJob.Id);
-                        s.AddResult(result);
+                        SHA256 sha256Hash = SHA256.Create();
+                        byte[] hash = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(tempJob.PythonCode));
+                        string result = serverInt.CompleteJob(tempJob.PythonCode, hash);
+                        if (result != null)
+                        {
+                            s.UpdateJob(tempJob.Id);
+                            s.AddResult(result);
+                            current.CompletedJobs++;
+                        }
                     }
                 }
             }
@@ -102,7 +110,7 @@ namespace ClientGui
                 serverIntFactory = new ChannelFactory<IServer>(tcp, URL);
                 serverInt = serverIntFactory.CreateChannel();
 
-                Client c = new Client()
+                current = new Client()
                 {
                     Host = "localhost",
                     Port = port,

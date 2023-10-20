@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,17 +65,25 @@ namespace ClientGui
             }
         }
 
-        public string CompleteJob(string pythonCode) // Runs the python code to do the job
+        public string CompleteJob(string pythonCode, byte[] hash) // Runs the python code to do the job
         {
-            string code = Decode(pythonCode);
-            ScriptEngine engine = Python.CreateEngine();
-            ScriptScope scope = engine.CreateScope();
-            engine.Execute(code, scope);
+            SHA256 sha256 = SHA256.Create();
+            if (hash == sha256.ComputeHash(Encoding.UTF8.GetBytes(pythonCode)))
+            {
+                string code = Decode(pythonCode);
+                ScriptEngine engine = Python.CreateEngine();
+                ScriptScope scope = engine.CreateScope();
+                engine.Execute(code, scope);
 
-            dynamic mainFunction = scope.GetVariable("main");
-            var result = mainFunction();
+                dynamic mainFunction = scope.GetVariable("main");
+                var result = mainFunction();
 
-            return code + "\nGives result:\n" + result.ToString();
+                return code + "\nGives result:\n" + result.ToString();
+            }
+            else 
+            { 
+                return null; 
+            }
         }
 
 

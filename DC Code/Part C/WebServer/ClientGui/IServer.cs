@@ -26,7 +26,7 @@ namespace ClientGui
         void UpdateJob(int id);
 
         [OperationContract]
-        string CompleteJob(string pythonCode);
+        string CompleteJob(string pythonCode, byte[] hash);
 
         [OperationContract]
         string Decode(string data);
