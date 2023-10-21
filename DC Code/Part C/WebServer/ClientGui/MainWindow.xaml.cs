@@ -27,7 +27,7 @@ namespace ClientGui
     {
         private IServer serverInt;
         private ChannelFactory<IServer> serverIntFactory;
-        private List<IServer> connectedServers;
+        private Dictionary<string, IServer> connectedServers;
         private NetTcpBinding tcp;
         private string URL;
         private string port;
@@ -39,7 +39,7 @@ namespace ClientGui
             InitializeComponent();
             rand = new Random();
             connectedClients = new List<Client>();
-            connectedServers = new List<IServer>();
+            connectedServers = new Dictionary<string, IServer>();
             PythonButton.IsEnabled = false;
         }
 
@@ -58,27 +58,53 @@ namespace ClientGui
 
                 foreach (Client c in clients)
                 {
-                    if((!connectedClients.Contains(c)) && (c.Port != port))
+                    Debug.WriteLine("I'm hoping we do this a lot");
+                    if ((!connectedClients.Contains(c)) && (c.Port != port))
                     {
+                        Debug.WriteLine("port not already connected to: " + c.Port);
                         ConnectToClient(c);
                     }
                 }
 
-
-                foreach (IServer s in connectedServers)
+                List<Client> toRemove = new List<Client>();
+                foreach (Client conClient in connectedClients)
                 {
-                    Job tempJob = s.GetNextJob();
-                    if (tempJob != null)
+                    if(!clients.Contains(conClient))
                     {
-                        SHA256 sha256Hash = SHA256.Create();
-                        byte[] hash = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(tempJob.PythonCode));
-                        string result = serverInt.CompleteJob(tempJob.PythonCode, hash);
-                        if (result != null)
+                        toRemove.Add(conClient);
+                    }
+                }
+
+                foreach (Client rm in toRemove)
+                {
+                    connectedClients.Remove(rm);
+                }
+
+                foreach (Client rm in toRemove)
+                {
+                    connectedServers.Remove(rm.Port);
+                }
+
+
+                foreach (IServer s in connectedServers.Values)
+                {
+                    if (!Lock.Locked)
+                    {
+                        Job tempJob = s.GetNextJob();
+
+                        if (tempJob != null)
                         {
-                            s.UpdateJob(tempJob.Id);
-                            s.AddResult(result);
-                            current.CompletedJobs++;
+                            SHA256 sha256Hash = SHA256.Create();
+                            byte[] hash = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(tempJob.PythonCode));
+                            string result = serverInt.CompleteJob(tempJob.PythonCode, hash);
+                            if (result != null)
+                            {
+                                s.UpdateJob(tempJob.Id);
+                                s.AddResult(result);
+                                IncrementNumJobs();
+                            }
                         }
+                        Lock.Locked = false;
                     }
                 }
             }
@@ -86,10 +112,11 @@ namespace ClientGui
 
         private void ConnectToClient(Client c)
         {
+            Debug.WriteLine("please tell me we get here");
             NetTcpBinding temptcp = new NetTcpBinding();
             string tempURL = "net.tcp://localhost:" + c.Port + "/JobService";
             ChannelFactory<IServer> tempFactory = new ChannelFactory<IServer>(temptcp, tempURL);
-            connectedServers.Add(tempFactory.CreateChannel());
+            connectedServers.Add(c.Port, tempFactory.CreateChannel());
             connectedClients.Add(c);
         }
 
@@ -119,7 +146,7 @@ namespace ClientGui
 
                 RestClient client = new RestClient("http://localhost:5280");
                 RestRequest request = new RestRequest("/api/Client");
-                request.AddJsonBody(c);
+                request.AddJsonBody(current);
 
                 RestResponse response = client.Post(request);
                 PortButton.Visibility = Visibility.Hidden;
@@ -202,6 +229,33 @@ namespace ClientGui
             byte[] textBytes = Encoding.UTF8.GetBytes(data);
 
             return Convert.ToBase64String(textBytes);
+        }
+
+
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            DeleteClient();
+        }
+
+
+        private void DeleteClient()
+        {
+            Debug.WriteLine("This called?");
+            RestClient client = new RestClient("http://localhost:5280");
+            RestRequest request = new RestRequest("/api/Client");
+            request.AddJsonBody(current);
+            RestResponse response = client.Delete(request);
+        }
+
+        private void IncrementNumJobs()
+        {
+            Debug.WriteLine("It's this path isn't it");
+            RestClient client = new RestClient("http://localhost:5280");
+            RestRequest request = new RestRequest("/api/Client/Jobs");
+            request.AddQueryParameter("port", port);
+            request.AddJsonBody(current);
+            RestResponse response = client.Put(request);
         }
 
     }

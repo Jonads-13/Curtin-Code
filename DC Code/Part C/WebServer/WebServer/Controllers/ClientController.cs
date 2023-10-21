@@ -30,5 +30,21 @@ namespace WebServer.Controllers
             }
             return NotFound();
         }
+
+        [HttpPut]
+        [Route("Jobs")]
+        public IActionResult Increment(string port)
+        {
+            Console.WriteLine("Do we get to this path?");
+            Database.IncrementNumJobs(port);
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IActionResult Delete([FromBody] Client client)
+        {
+            Database.Delete(client);
+            return Ok();
+        }
     }
 }

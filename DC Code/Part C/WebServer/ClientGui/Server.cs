@@ -39,6 +39,7 @@ namespace ClientGui
 
         public Job GetNextJob()
         {
+            Lock.Locked = true;
             try
             {                
                 return jobs.First();
@@ -68,8 +69,9 @@ namespace ClientGui
         public string CompleteJob(string pythonCode, byte[] hash) // Runs the python code to do the job
         {
             SHA256 sha256 = SHA256.Create();
-            if (hash == sha256.ComputeHash(Encoding.UTF8.GetBytes(pythonCode)))
+            if (hash.SequenceEqual(sha256.ComputeHash(Encoding.UTF8.GetBytes(pythonCode))))
             {
+                Debug.WriteLine("So I'm guessing we never get here?");
                 string code = Decode(pythonCode);
                 ScriptEngine engine = Python.CreateEngine();
                 ScriptScope scope = engine.CreateScope();
@@ -81,7 +83,8 @@ namespace ClientGui
                 return code + "\nGives result:\n" + result.ToString();
             }
             else 
-            { 
+            {
+                Debug.WriteLine("But instead here");
                 return null; 
             }
         }
