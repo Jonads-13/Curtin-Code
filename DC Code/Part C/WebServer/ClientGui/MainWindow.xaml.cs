@@ -96,8 +96,11 @@ namespace ClientGui
                         byte[] hash = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(tempJob.PythonCode));
                         Dispatcher.Invoke(() => { ProgressBar.Visibility = Visibility.Visible; });
                         await Task.Delay(1500);
-                        string result = serverInt.CompleteJob(tempJob.PythonCode, hash);
+                        Task<string> task = new Task<string>(() => serverInt.CompleteJob(tempJob.PythonCode, hash));
+                        task.Start();
+                        await task;
                         Dispatcher.Invoke(() => { ProgressBar.Visibility = Visibility.Hidden; });
+                        string result = task.Result;
                         if (result != null)
                         {
                             s.AddResult(result);
@@ -178,6 +181,7 @@ namespace ClientGui
             };
 
             serverInt.AddJob(newJob);
+            PythonInput.Text = "";
 
         }
 
