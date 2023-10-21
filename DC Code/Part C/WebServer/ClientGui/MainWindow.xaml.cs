@@ -58,7 +58,6 @@ namespace ClientGui
 
                 foreach (Client c in clients)
                 {
-                    Debug.WriteLine("I'm hoping we do this a lot");
                     if ((!connectedClients.Contains(c)) && (c.Port != port))
                     {
                         Debug.WriteLine("port not already connected to: " + c.Port);
@@ -71,6 +70,7 @@ namespace ClientGui
                 {
                     if(!clients.Contains(conClient))
                     {
+                        Debug.WriteLine("should never get here: " + current.Port);
                         toRemove.Add(conClient);
                     }
                 }
@@ -88,23 +88,25 @@ namespace ClientGui
 
                 foreach (IServer s in connectedServers.Values)
                 {
-                    if (!Lock.Locked)
-                    {
-                        Job tempJob = s.GetNextJob();
+                    Job tempJob = s.GetNextJob();
 
-                        if (tempJob != null)
+                    if (tempJob != null)
+                    {
+                        SHA256 sha256Hash = SHA256.Create();
+                        byte[] hash = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(tempJob.PythonCode));
+                        Dispatcher.Invoke(() => { ProgressBar.Visibility = Visibility.Visible; });
+                        await Task.Delay(1500);
+                        string result = serverInt.CompleteJob(tempJob.PythonCode, hash);
+                        Dispatcher.Invoke(() => { ProgressBar.Visibility = Visibility.Hidden; });
+                        if (result != null)
                         {
-                            SHA256 sha256Hash = SHA256.Create();
-                            byte[] hash = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(tempJob.PythonCode));
-                            string result = serverInt.CompleteJob(tempJob.PythonCode, hash);
-                            if (result != null)
-                            {
-                                s.UpdateJob(tempJob.Id);
-                                s.AddResult(result);
-                                IncrementNumJobs();
-                            }
+                            s.AddResult(result);
+                            IncrementNumJobs();
                         }
-                        Lock.Locked = false;
+                        else
+                        {
+                            s.AddJob(tempJob);
+                        }
                     }
                 }
             }
@@ -112,7 +114,7 @@ namespace ClientGui
 
         private void ConnectToClient(Client c)
         {
-            Debug.WriteLine("please tell me we get here");
+            Debug.WriteLine(current.Port + " connecting to: " + c.Port);
             NetTcpBinding temptcp = new NetTcpBinding();
             string tempURL = "net.tcp://localhost:" + c.Port + "/JobService";
             ChannelFactory<IServer> tempFactory = new ChannelFactory<IServer>(temptcp, tempURL);
@@ -200,7 +202,7 @@ namespace ClientGui
             while(true)
             {
                 List<string> results = serverInt.GetResults();
-                await Task.Delay(3000);
+                await Task.Delay(2000);
                 Dispatcher.Invoke(() => { FillResults(results); });
             }
         }

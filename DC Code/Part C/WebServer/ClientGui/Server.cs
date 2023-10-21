@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace ClientGui
 {
-    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, UseSynchronizationContext = false)]
+    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Single, UseSynchronizationContext = false)]
     public class Server : IServer
     {
         static List<Job> jobs = new List<Job>();
@@ -39,15 +39,11 @@ namespace ClientGui
 
         public Job GetNextJob()
         {
-            Lock.Locked = true;
-            try
-            {                
-                return jobs.First();
-            }
-            catch(InvalidOperationException)
-            {
-                return null;
-            }
+            //Lock.Locked = true;              
+            Job temp =  jobs.FirstOrDefault();
+            jobs.Remove(temp);
+            return temp;
+            
         }
 
         public void UpdateJob(int id)

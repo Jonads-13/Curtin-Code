@@ -16,6 +16,7 @@
         <Label Name="ResultsLabel" Content="All Results:" HorizontalAlignment="Left" Margin="449,98,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.792,2.518" />
         <TextBlock Name="Results" HorizontalAlignment="Left" Margin="449,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="300"/>
         <Button Name="PythonButton" Content="Create Job" HorizontalAlignment="Left" Margin="272,101,0,0" VerticalAlignment="Top" Click="PythonButton_Click"/>
+        <ProgressBar Name="ProgressBar" HorizontalAlignment="Left" Height="10" Margin="449,18,0,0" VerticalAlignment="Top" Width="300" IsIndeterminate="True" Visibility="Hidden"/>
 
     </Grid>
 </Window>
