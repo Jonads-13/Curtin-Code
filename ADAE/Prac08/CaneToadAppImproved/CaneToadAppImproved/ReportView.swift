@@ -56,13 +56,7 @@ struct ReportView: View {
                     print("The encoded book bytes:\n\(encodedReports)")
                     try? encodedReports.write(to: archiveURL, options: .noFileProtection)
                 }
-                
-                
-                
-                
-                
-                
-                
+
             }) {
                 VStack {
                         Image(systemName: "paperplane.fill")
