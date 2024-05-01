@@ -8,31 +8,31 @@ namespace Web_API_Data_Server.models.Account
 {
     public class Customer
     {
-        public uint AccNo { get; set; }
+        public uint Acct { get; set; }
         public uint Pin { get; set; }
-        public int Balance { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public byte[] ProfilePicture { get; set; }
+        public int Bal { get; set; }
+        public string Fname { get; set; }
+        public string Lname { get; set; }
+        public byte[] ProfPic { get; set; }
 
         public Customer()
         {
-            AccNo = 0;
+            Acct = 0;
             Pin = 0;
-            Balance = 0;
-            FirstName = ""; 
-            LastName = "";
-            ProfilePicture = new byte[1];
+            Bal = 0;
+            Fname = ""; 
+            Lname = "";
+            ProfPic = new byte[1];
         }
 
         public Customer(uint a, uint p, int b, string f, string l, byte[] pic)
         {
-            AccNo = a;
+            Acct = a;
             Pin = p;
-            Balance = b;
-            FirstName = f; 
-            LastName = l;
-            ProfilePicture = pic;
+            Bal = b;
+            Fname = f; 
+            Lname = l;
+            ProfPic = pic;
         }
     }
 }

@@ -20,18 +20,9 @@ namespace Web_API_Business_Server.Controllers
             RestResponse response = client.Post(request);
             if (response.IsSuccessful)
             {
-                Customer customer = JsonConvert.DeserializeObject<Customer>(response.Content);
+                DataIntermed customer = JsonConvert.DeserializeObject<DataIntermed>(response.Content);
                 Console.WriteLine("customer: " + customer.ToString());
-                DataIntermed temp = new()
-                {
-                    Acct = customer.AccNo,
-                    Bal = customer.Balance,
-                    Pin = customer.Pin,
-                    Fname = customer.FirstName,
-                    Lname = customer.LastName,
-                    ProfPic = customer.ProfilePicture
-                };
-                return Ok(temp);
+                return Ok(customer);
             }
             else
             {

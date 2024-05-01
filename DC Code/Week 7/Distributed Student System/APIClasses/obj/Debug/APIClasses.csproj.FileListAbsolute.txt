@@ -1,0 +1,6 @@
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\APIClasses\bin\Debug\APIClasses.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\APIClasses\bin\Debug\APIClasses.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\APIClasses\obj\Debug\APIClasses.csproj.AssemblyReference.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\APIClasses\obj\Debug\APIClasses.csproj.CoreCompileInputs.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\APIClasses\obj\Debug\APIClasses.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\APIClasses\obj\Debug\APIClasses.pdb

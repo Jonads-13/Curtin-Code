@@ -1,0 +1,78 @@
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\appsettings.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Web API Business Server.staticwebassets.runtime.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Web API Business Server.exe
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Web API Business Server.deps.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Web API Business Server.runtimeconfig.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Web API Business Server.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Web API Business Server.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\RestSharp.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\APIClasses.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\bin\Debug\net6.0\APIClasses.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.csproj.AssemblyReference.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.AssemblyInfoInputs.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.AssemblyInfo.cs
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.csproj.CoreCompileInputs.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.RazorAssemblyInfo.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.RazorAssemblyInfo.cs
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets\msbuild.Web API Business Server.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets\msbuild.build.Web API Business Server.props
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Web API Business Server.props
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Web API Business Server.props
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\scopedcss\bundle\Web API Business Server.styles.css
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\scopedcss\projectbundle\Web API Business Server.bundle.scp.css
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.csproj.CopyComplete
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\refint\Web API Business Server.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.genruntimeconfig.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 6\Distributed Student System\Web API Business Server\obj\Debug\net6.0\ref\Web API Business Server.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\appsettings.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Web API Business Server.staticwebassets.runtime.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Web API Business Server.exe
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Web API Business Server.deps.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Web API Business Server.runtimeconfig.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Web API Business Server.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Web API Business Server.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\RestSharp.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\APIClasses.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\bin\Debug\net6.0\APIClasses.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.csproj.AssemblyReference.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.AssemblyInfoInputs.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.AssemblyInfo.cs
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.csproj.CoreCompileInputs.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.RazorAssemblyInfo.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.RazorAssemblyInfo.cs
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets\msbuild.Web API Business Server.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets\msbuild.build.Web API Business Server.props
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Web API Business Server.props
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Web API Business Server.props
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\scopedcss\bundle\Web API Business Server.styles.css
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\scopedcss\projectbundle\Web API Business Server.bundle.scp.css
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.csproj.CopyComplete
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\refint\Web API Business Server.dll
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.pdb
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\Web API Business Server.genruntimeconfig.cache
+C:\Users\Jake\source\repos\Curtin-Code\DC Code\Week 7\Distributed Student System\Web API Business Server\obj\Debug\net6.0\ref\Web API Business Server.dll

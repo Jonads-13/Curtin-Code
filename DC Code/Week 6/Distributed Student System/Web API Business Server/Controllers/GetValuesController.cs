@@ -17,26 +17,18 @@ namespace Web_API_Business_Server.Controllers
         {
             RestClient client = new("http://localhost:5222");
             RestRequest request = new("api/database/detail/" + id.ToString());
-            try
+            RestResponse response = client.Get(request);
+            if (response.IsSuccessful)
             {
-                RestResponse response = client.Get(request);
-                Customer customer = JsonConvert.DeserializeObject<Customer>(response.Content);
+                DataIntermed customer = JsonConvert.DeserializeObject<DataIntermed>(response.Content);
                 Console.WriteLine("customer: " + customer.ToString());
-                DataIntermed temp = new()
-                {
-                    Acct = customer.AccNo,
-                    Bal = customer.Balance,
-                    Pin = customer.Pin,
-                    Fname = customer.FirstName,
-                    Lname = customer.LastName,
-                    ProfPic = customer.ProfilePicture
-                };
-                return Ok(temp);
+                return Ok(customer);
             }
-            catch(HttpRequestException hre)
+            else 
             {
-                Console.WriteLine(hre.Message + ": " + hre.StackTrace);
-                throw hre;
+                RequestException re = JsonConvert.DeserializeObject<RequestException>(response.Content);
+                Console.WriteLine(re.Message + ": " + re.StatusCode);
+                return BadRequest();
             }
         }
     }

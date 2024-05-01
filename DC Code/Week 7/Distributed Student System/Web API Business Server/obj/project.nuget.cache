@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "6D9NnXCi46Y/aysQ9F4X9pZAB5nGgRwEr9499dz5JXGAiyGPpBa7TYGP60hrVCbFUgcnmTNiaRO+KOVU7TnaYw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Jake\\source\\repos\\Curtin-Code\\DC Code\\Week 7\\Distributed Student System\\Web API Business Server\\Web API Business Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jake\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Jake\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
+    "C:\\Users\\Jake\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Jake\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\Jake\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
