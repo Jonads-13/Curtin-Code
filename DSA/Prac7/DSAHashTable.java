@@ -209,6 +209,8 @@ public class DSAHashTable
 
         while(hashArray[hashIdx].state == 1)
         {
+            System.out.println("loop for a while?");
+            
             if((hashArray[hashIdx].key).equals(inKey))
             {
                 dupe = true;
@@ -458,7 +460,7 @@ public class DSAHashTable
         double lf = loadFactor(); 
         int newLength = hashArray.length;
 
-        if(lf > 0.6)
+        if(lf > 0.7)
         {
             newLength = (hashArray.length) * 2;
             newLength = nextPrime(newLength);

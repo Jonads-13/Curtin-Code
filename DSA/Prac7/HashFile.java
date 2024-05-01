@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.io.PrintWriter;
+import java.util.Arrays;
 
 /*
  * Title:     HashFIle
@@ -121,6 +122,7 @@ public class HashFile
         splitLine = csvRow.split(",");
 
         t.put(splitLine[0], splitLine[1]);
+        System.out.println(Arrays.toString(splitLine));
 
         return t;
     }

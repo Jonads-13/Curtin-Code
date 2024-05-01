@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="output"></div>
+</body>
+<script>
+  var userInput = window.location.href.split('?')[1]; // Get the value from URL parameter
+  document.getElementById('output').innerHTML = userInput // actual version would be dangerous
+  var encodedString = userInput;
+  //  var decodedString = decodeURIComponent(encodedString);
+  //  eval(decodedString); // Insert the value into the DOM
+  eval(userInput)
+</script>
+
+</html>

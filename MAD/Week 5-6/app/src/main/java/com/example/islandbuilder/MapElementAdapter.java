@@ -28,7 +28,6 @@ public class MapElementAdapter extends RecyclerView.Adapter<MapElementVH> {
     @Override
     public MapElementVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-        Log.d("DEBUG", "Is this ever called?");
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.grid_cell, parent, false);
         return new MapElementVH(view, parent);
@@ -45,31 +44,40 @@ public class MapElementAdapter extends RecyclerView.Adapter<MapElementVH> {
         holder.topRight.setImageResource(element.getNorthEast());
         holder.bottomLeft.setImageResource(element.getSouthWest());
         holder.bottomRight.setImageResource(element.getSouthEast());
+
         if(element.getStructure() != null)
         {
             holder.onTop.setImageResource(element.getStructure().getDrawableId());
+            Log.d("DEBUG", " drawable id: " + element.getStructure().getDrawableId());
         }
 
         holder.onTop.setOnClickListener(v -> {
-            if(element.getStructure() == null) {
+            if((element.getStructure() == null) && (element.isBuildable()))
+            {
                 element.setStructure(viewModel.getSelectedStruct());
                 holder.onTop.setImageResource(element.getStructure().getDrawableId());
-                Log.d("DEBUG", "drawable id: " + element.getStructure().getDrawableId());
+                Log.d("DEBUG ONCLICK", "drawable id: " + element.getStructure().getDrawableId());
+                notifyItemChanged(holder.getAbsoluteAdapterPosition());
             }
-            else
+            else if(element.getStructure() != null)
             {
                 viewModel.setSelectedMapElement(element);
                 viewModel.setSelectedMapHolder(holder);
             }
+            Log.d("DEBUG ONCLICK", "row: " + row + " col: " + col);
         });
 
         holder.onTop.setOnDragListener((v, event) -> {
-                    if(event.getAction() == DragEvent.ACTION_DROP)
-                    {
-                        element.setStructure(viewModel.getSelectedStruct());
-                        holder.onTop.setImageResource(element.getStructure().getDrawableId());
-                    }
-                    return true;
+            if(event.getAction() == DragEvent.ACTION_DROP)
+            {
+                if(element.isBuildable())
+                {
+                    element.setStructure(viewModel.getSelectedStruct());
+                    holder.onTop.setImageResource(element.getStructure().getDrawableId());
+                    notifyItemChanged(holder.getAbsoluteAdapterPosition());
+                }
+            }
+            return true;
         });
     }
 

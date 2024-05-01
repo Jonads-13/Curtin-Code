@@ -73,8 +73,11 @@ public class HeaderFragment extends Fragment {
         });
 
         remove.setOnClickListener(v -> {
-            viewModel.getSelectedMapElement().setStructure(null);
-            viewModel.getSelectedMapHolder().onTop.setImageResource(R.color.transparent);
+            if(viewModel.getSelectedMapElement() != null)
+            {
+                viewModel.getSelectedMapElement().setStructure(null);
+                viewModel.getSelectedMapHolder().onTop.setImageResource(R.color.transparent);
+            }
         });
 
         return rootView;

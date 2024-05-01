@@ -80,9 +80,7 @@ public class MapFragment extends Fragment {
         rv.setAdapter(adapter);
 
         viewModel.regenerated.observe(getViewLifecycleOwner(), aBoolean -> {
-            for(int i = 0; i < adapter.getItemCount(); i++) {
-                adapter.notifyItemChanged(i);
-            }
+            adapter.notifyItemRangeChanged(0, adapter.getItemCount());
         });
 
         return rootView;
