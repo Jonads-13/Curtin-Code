@@ -8,8 +8,8 @@ public class SimData
     // Default values for the simulation
     public static final double GRID_WIDTH = 30;
     public static final double GRID_HEIGHT = 30;
-    public static final int NUMBER_OF_AIRPORTS = 10;
-    public static final int NUMBER_OF_PLANES = 5;
+    public static final int NUMBER_OF_AIRPORTS = 20;
+    public static final int NUMBER_OF_PLANES = 20;
     public static final double AIRSPEED = 1.0;
 
     private App app; // App instance
@@ -38,7 +38,7 @@ public class SimData
     }
 
 
-    
+
 
     // Get and airport by its ID
     public Airport getAirport(int id) 

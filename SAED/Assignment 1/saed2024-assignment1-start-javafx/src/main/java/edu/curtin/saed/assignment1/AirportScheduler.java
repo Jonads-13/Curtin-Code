@@ -27,6 +27,7 @@ public class AirportScheduler implements Runnable
                 int dest = airport.getNextFlightRequest(); // Get next request from producer
                 Plane takeOff = airport.getNextPlane(); // Get a plane to do the flight request
                 takeOff.setDestination(dest); 
+                takeOff.setOrigin(airport.getID());
                 data.addToFlightPool(takeOff); // Add to thread pool
             }
         }

@@ -82,7 +82,7 @@ public class App extends Application
         });
 
         // Initial stat display
-        statusText = new Label(String.format("Total Flights Completed: %d Flights in Progress: %d Planes being Serviced: %d", 0,0,0));
+        statusText = new Label(String.format("Total Flights Completed: %d, Flights in Progress: %d, Planes being Serviced: %d", 0,0,0));
         textArea = new TextArea();
         initialise(); // Create all airports and planes
 
@@ -192,7 +192,7 @@ public class App extends Application
             int numCompleted = data.getNumFlightsCompleted();
             int numflights = data.getNumCurrentFlights();
             int numService = data.getNumPlanesInService();
-            statusText.setText(String.format("Total Flights Completed: %d Flights in Progress: %d Planes being Serviced: %d", numCompleted, numflights, numService));
+            statusText.setText(String.format("Total Flights Completed: %d, Flights in Progress: %d, Planes being Serviced: %d", numCompleted, numflights, numService));
             area.requestLayout();
         });
     }

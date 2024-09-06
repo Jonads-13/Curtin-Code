@@ -63,7 +63,7 @@ public class Plane implements Runnable
             {
                 calculateTrajectory(destX, destY); // Move location
                 data.updateDisplay();
-                Thread.sleep(timeToSleep); // wait to move again
+                Thread.sleep(timeToSleep); // Wait to move again
             }
             icon.setShown(false); // Plane is at destination, so hide it
             dest.planeLanded(this); // Begin servicing task
