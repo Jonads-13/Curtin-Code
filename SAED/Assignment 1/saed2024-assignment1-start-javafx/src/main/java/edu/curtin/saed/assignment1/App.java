@@ -54,7 +54,7 @@ public class App extends Application
         // change this to set it up as you require.
         area = new GridArea(SimData.GRID_WIDTH, SimData.GRID_HEIGHT, data);
         area.setGridLines(false); // If desired
-        area.setStyle("-fx-background-color: #006000;");
+        area.setStyle("-fx-background-color: #0094FF;");
 
         // Set up other key parts of the user interface. You'll also want to adjust this.
 
@@ -82,7 +82,7 @@ public class App extends Application
         });
 
         // Initial stat display
-        statusText = new Label(String.format("Total Flights Completed: %d, Flights in Progress: %d, Planes being Serviced: %d", 0,0,0));
+        statusText = new Label(String.format("Total Flights Completed: %d | Flights in Progress: %d | Planes being Serviced: %d", 0,0,0));
         textArea = new TextArea();
         initialise(); // Create all airports and planes
 
@@ -139,7 +139,7 @@ public class App extends Application
                 y,   // y
                 0.0, // rotation (degrees)
                 1.0, // scale
-                App.class.getClassLoader().getResourceAsStream("airport.png"),  // Image (InputStream)
+                App.class.getClassLoader().getResourceAsStream("kame_house.png"),  // Image (InputStream)
                 "Airport " + airportID // caption 
             ); 
             area.getIcons().add(airportIcon); 
@@ -150,8 +150,8 @@ public class App extends Application
             {
                 int planeID = (i * SimData.NUMBER_OF_PLANES + j);
                 GridAreaIcon planeIcon = new GridAreaIcon(
-                    x, y, 45.0, 1.0,
-                    App.class.getClassLoader().getResourceAsStream("plane.png"),
+                    x, y, 0, 1.0,
+                    App.class.getClassLoader().getResourceAsStream("goku_nimbus.png"),
                     "Plane " + planeID // caption
                 );
 
@@ -192,7 +192,7 @@ public class App extends Application
             int numCompleted = data.getNumFlightsCompleted();
             int numflights = data.getNumCurrentFlights();
             int numService = data.getNumPlanesInService();
-            statusText.setText(String.format("Total Flights Completed: %d, Flights in Progress: %d, Planes being Serviced: %d", numCompleted, numflights, numService));
+            statusText.setText(String.format("Total Flights Completed: %d | Flights in Progress: %d | Planes being Serviced: %d", numCompleted, numflights, numService));
             area.requestLayout();
         });
     }

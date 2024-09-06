@@ -10,7 +10,7 @@ public class SimData
     public static final double GRID_HEIGHT = 30;
     public static final int NUMBER_OF_AIRPORTS = 20;
     public static final int NUMBER_OF_PLANES = 20;
-    public static final double AIRSPEED = 1.0;
+    public static final double AIRSPEED = 2.0;
 
     private App app; // App instance
     private Map<Integer, Airport> airports = new HashMap<>(); // Holds all airports in the simulation
