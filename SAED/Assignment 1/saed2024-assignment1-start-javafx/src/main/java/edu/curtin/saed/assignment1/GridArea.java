@@ -40,11 +40,13 @@ public class GridArea extends Pane
     private Color captionColour = Color.WHITE;
     private List<GridAreaIcon> icons = new ArrayList<>();
     private Canvas canvas = null;
+    private SimData data;
 
-    public GridArea(double gridWidth, double gridHeight)
+    public GridArea(double gridWidth, double gridHeight, SimData data)
     {
         this.gridWidth = gridWidth;
         this.gridHeight = gridHeight;
+        this.data = data;
     }
 
     /**
@@ -182,10 +184,12 @@ public class GridArea extends Pane
     }
 
     // Method to prevent creating airports in the same location
-    public boolean isLocationFilled(double x, double y) {
-        for (GridAreaIcon icon : icons) {
-            if((App.isDoubleEqual(icon.getX(), x)) && 
-               (App.isDoubleEqual(icon.getY(), y))) {
+    public boolean isLocationFilled(double x, double y) 
+    {
+        for (GridAreaIcon icon : icons) 
+        {
+            if((data.isDoubleEqual(icon.getX(), x)) && (data.isDoubleEqual(icon.getY(), y))) 
+            {
                 return true;
             }
         }

@@ -1,46 +1,39 @@
 package edu.curtin.saed.assignment1;
 
-import java.util.concurrent.*;
-import java.util.*;
 
-public class AirportScheduler implements Runnable {
-    private Map<Integer, Airport> airports;
-    private ExecutorService flightPool;
+public class AirportScheduler implements Runnable 
+{
+    private Airport airport;
+    private SimData data;
 
-    public AirportScheduler(Map<Integer, Airport> airports) {
-        this.airports = airports;
-        flightPool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+    // Constructor
+    public AirportScheduler(Airport airport, SimData data) 
+    {
+        this.airport = airport;
+        this.data = data;
     }
 
     @Override
-    public void run() {
+    public void run() // Consumer thread
+    {
+        // Producer thread
+        Thread airportThread = new Thread(airport, "airport-thread");
+        airportThread.start();
 
-    }
-
-    private void parentAirport(Airport airport) {
-        Runnable airportParent = () -> {
-            try {
-                while(true) {
-                    int destination = airport.getNextFlightRequest();
-                    Airport dest = airports.get(destination);
-                    Plane takeOff = airport.getNextPlane();
-                    takeOff.setDestination(dest);
-                    flightPool.submit(takeOff);
-                }
-            } 
-            catch(InterruptedException ie) {
-    
+        try 
+        {
+            while(true) 
+            {
+                int dest = airport.getNextFlightRequest(); // Get next request from producer
+                Plane takeOff = airport.getNextPlane(); // Get a plane to do the flight request
+                takeOff.setDestination(dest); 
+                data.addToFlightPool(takeOff); // Add to thread pool
             }
-        };
-        Thread parentThread = new Thread(airportParent, "airport-parent-thread");
-        parentThread.start();
-    }
-
-    public void endEverything() {
-        flightPool.shutdown();
-        for (Airport airport : airports.values()) {
-            airport.endEverything();
+        }
+        catch(InterruptedException ie) 
+        {
+            System.out.println("Scheduler interrupted");
+            airportThread.interrupt(); // Propogate interruption to producer
         }
     }
-    
 }

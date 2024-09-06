@@ -1,6 +1,5 @@
 package edu.curtin.saed.assignment1;
 
-import java.util.*;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -26,35 +25,35 @@ import javafx.stage.Stage;
  */
 public class App extends Application
 {
-    // Default values for the simulation
-    public static final double GRID_WIDTH = 30;
-    public static final double GRID_HEIGHT = 30;
-    public static final int NUMBER_OF_AIRPORTS = 10;
-    public static final int NUMBER_OF_PLANES = 10;
-    public static final double AIRSPEED = 1;
-    public static final int QUEUE_LENGTH = 30;
+    // Promoted to class fields to allow access from anywhere in this class
+    private TextArea textArea;
+    private GridArea area;
+    private Label statusText;
 
-    private static TextArea textArea;
-    private static GridArea area;
+    private SimData data; // Will hold all data needed for the simulation
+    private Thread[] schedulerThreads; // The main threads to manage each airport
 
-    private static Map<Integer, Airport> airports = new HashMap<>();
-    private Map<Integer, Plane> planes = new HashMap<>();
-    private AirportScheduler scheduler = null;
-    private Thread schedulerThread;
+
+
+
 
     public static void main(String[] args)
     {
         launch();
     }
 
+
+
+
     @Override
     public void start(Stage stage)
     {
+        data = new SimData(this);
+        schedulerThreads = new Thread[SimData.NUMBER_OF_AIRPORTS]; // One scheduler per airport
         // Set up the main "top-down" display area. This is an example only, and you should
         // change this to set it up as you require.
-
-        area = new GridArea(GRID_WIDTH, GRID_HEIGHT);
-        // area.setGridLines(false); // If desired
+        area = new GridArea(SimData.GRID_WIDTH, SimData.GRID_HEIGHT, data);
+        area.setGridLines(false); // If desired
         area.setStyle("-fx-background-color: #006000;");
 
         // Set up other key parts of the user interface. You'll also want to adjust this.
@@ -68,33 +67,24 @@ public class App extends Application
             Runnable begin = () -> {
                 beginSimulation();
             };
-            Thread beginThread = new Thread(begin, "begin");
-            beginThread.start();
-            // TODO: start logic
+            new Thread(begin, "begin-thread").start();
+            System.out.println("Begun simulation");
         });
         endBtn.setOnAction((event) ->
         {
             System.out.println("End button pressed");
-            Runnable ending = ()-> {
-                schedulerThread.interrupt();
-                scheduler = null;
-                
-            };
-            Thread endThread = new Thread(ending, "end");
-            endThread.start();
-
-            // TODO: end logic
+            endSimulation();
         });
         stage.setOnCloseRequest((event) ->
         {
             System.out.println("Close button pressed");
-            // TODO: close logic
+            endSimulation();
         });
-        var statusText = new Label("Label Text");
-        textArea = new TextArea();
-        // textArea.appendText("Sidebar\n");
-        // textArea.appendText("Text\n");
 
+        // Initial stat display
+        statusText = new Label(String.format("Total Flights Completed: %d Flights in Progress: %d Planes being Serviced: %d", 0,0,0));
+        textArea = new TextArea();
+        initialise(); // Create all airports and planes
 
         // Below is basically just the GUI "plumbing" (connecting things together).
 
@@ -110,27 +100,37 @@ public class App extends Application
         contentPane.setTop(toolbar);
         contentPane.setCenter(splitPane);
 
-        initialise();
-
         var scene = new Scene(contentPane, 1200, 1000);
         stage.setScene(scene);
         stage.show();
     }
 
-    private double getRandomNumber(double min, double max) {
+
+
+
+    // Used to place airports randomly
+    private double getRandomNumber(double min, double max) 
+    {
         return (Math.random() * (max-min)) + min;
     }
 
-    private void initialise() {
+
+
+
+    // Create airports and planes and place them in the grid area
+    private void initialise() 
+    {
         // Create the specified number of airports at random locations
-        for(int i = 0; i < NUMBER_OF_AIRPORTS; i++) {
-            double x = getRandomNumber(0, GRID_WIDTH-1);
-            double y = getRandomNumber(0, GRID_HEIGHT-1);
+        for(int i = 0; i < SimData.NUMBER_OF_AIRPORTS; i++) 
+        {
+            double x = getRandomNumber(0, SimData.GRID_WIDTH-1);
+            double y = getRandomNumber(0, SimData.GRID_HEIGHT-1);
 
             // Don't put two airports at the same location
-            while(area.isLocationFilled(x, y)) {
-                x = getRandomNumber(0, GRID_WIDTH-1);
-                y = getRandomNumber(0, GRID_HEIGHT-1);
+            while(area.isLocationFilled(x, y)) 
+            {
+                x = getRandomNumber(0, SimData.GRID_WIDTH-1);
+                y = getRandomNumber(0, SimData.GRID_HEIGHT-1);
             }
 
             int airportID = i;
@@ -140,51 +140,93 @@ public class App extends Application
                 0.0, // rotation (degrees)
                 1.0, // scale
                 App.class.getClassLoader().getResourceAsStream("airport.png"),  // Image (InputStream)
-                "Airport " + airportID); // caption 
+                "Airport " + airportID // caption 
+            ); 
             area.getIcons().add(airportIcon); 
-            Airport airport = new Airport(airportID, airportIcon);
-            airports.put(airportID, airport);
+            Airport airport = new Airport(airportID, airportIcon, data);
             
             // Spawn the specified number of planes at each airport
-            for(int j = 0; j < NUMBER_OF_PLANES; j++) {
-                int planeID = (i * NUMBER_OF_PLANES + j);
+            for(int j = 0; j < SimData.NUMBER_OF_PLANES; j++) 
+            {
+                int planeID = (i * SimData.NUMBER_OF_PLANES + j);
                 GridAreaIcon planeIcon = new GridAreaIcon(
                     x, y, 45.0, 1.0,
                     App.class.getClassLoader().getResourceAsStream("plane.png"),
-                    "Plane " + planeID); // caption
-                    planeIcon.setShown(false);
-                area.getIcons().add(planeIcon);
-                Plane plane = new Plane(planeID, planeIcon);
-                planes.put(planeID, plane);
+                    "Plane " + planeID // caption
+                );
+
+                planeIcon.setShown(false); // Hide plane as it's not flying
+                area.getIcons().add(planeIcon); 
+
+                Plane plane = new Plane(planeID, planeIcon, data);
+                airport.addPlane(plane); // Add to airport's plane list
             }
+
+            // Add airport to global data
+            data.addAirport(airportID, airport);
+
+            // Create thread for scheduler that will manage the airport
+            schedulerThreads[i] = new Thread(new AirportScheduler(airport, data), "Airport-scheduler");
         }
     }
 
-    public static void updateLog(String message) {
+
+
+
+    // Add message to the textArea
+    public void updateLog(String message) 
+    {
         Platform.runLater(() -> {
-            textArea.appendText(message + "\n");
+            textArea.appendText(message);
         });
     }
 
-    public static void updateDisplay() {
+
+
+
+    // Update visual position of planes and stats display
+    public void updateDisplay() 
+    {
         Platform.runLater(() -> {
+            // Get latest stats to display
+            int numCompleted = data.getNumFlightsCompleted();
+            int numflights = data.getNumCurrentFlights();
+            int numService = data.getNumPlanesInService();
+            statusText.setText(String.format("Total Flights Completed: %d Flights in Progress: %d Planes being Serviced: %d", numCompleted, numflights, numService));
             area.requestLayout();
         });
     }
 
-    private void beginSimulation() {
-        if(scheduler == null) {
-            scheduler = new AirportScheduler(airports);
-            schedulerThread = new Thread(scheduler, "scheduler-thread");
-            schedulerThread.start();
+
+
+
+    // Start the scheduler threads
+    private void beginSimulation() 
+    {
+        // Only try to start the threads if they aren't running
+        if(!schedulerThreads[0].isAlive()) 
+        {
+            for(Thread thread : schedulerThreads) 
+            {
+                thread.start();
+            }
         }
     }
 
-    public static boolean isDoubleEqual(double a, double b) {
-        return Math.abs(a - b) < 0.0000001;
-    }
 
-    public static Airport getAirport(int id) {
-        return airports.get(id);
+
+
+    // Interrupt the scheduler threads and shutdown the thread pools
+    private void endSimulation() 
+    {
+        // Only try to interrupt the threads if they are running
+        if(schedulerThreads[0].isAlive())
+        {
+            for (Thread thread : schedulerThreads) 
+            {
+                thread.interrupt();
+            }
+        }
+        data.shutdownPools();
     }
 }
