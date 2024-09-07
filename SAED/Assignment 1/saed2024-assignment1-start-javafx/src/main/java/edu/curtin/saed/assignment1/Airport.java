@@ -1,5 +1,6 @@
 package edu.curtin.saed.assignment1;
 
+import java.util.*;
 import java.util.concurrent.*;
 import java.io.*;
 
@@ -17,11 +18,30 @@ public class Airport implements Runnable
 
 
     // Constructor
-    public Airport(int id, GridAreaIcon icon, SimData data) 
+    public Airport(int id, GridAreaIcon icon, SimData data, List<Plane> planes) 
     {
         this.id = id;
         this.icon = icon;
         this.data = data;
+
+        // Put each plane from the normal list into blocking queue
+        for(Plane plane : planes) 
+        {
+            this.planes.add(plane);
+        }
+    }
+
+
+
+
+    public GridAreaIcon getIcon() 
+    {
+        return icon;
+    }
+
+    public int getID() 
+    {
+        return id;
     }
 
 
@@ -74,23 +94,8 @@ public class Airport implements Runnable
 
     }
 
-    // So the app can add planes to the airport without knowing about it being a blocking queue
-    public void addPlane(Plane p) 
-    {
-        planes.add(p);
-    }
 
-    public GridAreaIcon getIcon() 
-    {
-        return icon;
-    }
-
-    public int getID() 
-    {
-        return id;
-    }
-
-
+    
 
 
     // Runnable task to service a plane when it lands

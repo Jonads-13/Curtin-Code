@@ -1,5 +1,6 @@
 package edu.curtin.saed.assignment1;
 
+import java.util.*;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -143,7 +144,9 @@ public class App extends Application
                 "Airport " + airportID // caption 
             ); 
             area.getIcons().add(airportIcon); 
-            Airport airport = new Airport(airportID, airportIcon, data);
+            
+            // List to hold all planes starting at the airport
+            List<Plane> planes = new LinkedList<>();
             
             // Spawn the specified number of planes at each airport
             for(int j = 0; j < SimData.NUMBER_OF_PLANES; j++) 
@@ -154,16 +157,16 @@ public class App extends Application
                     App.class.getClassLoader().getResourceAsStream("goku_nimbus.png"),
                     "Plane " + planeID // caption
                 );
-
+                
                 planeIcon.setShown(false); // Hide plane as it's not flying
                 area.getIcons().add(planeIcon); 
-
+                
                 Plane plane = new Plane(planeID, planeIcon, data);
-                airport.addPlane(plane); // Add to airport's plane list
+                planes.add(plane);
             }
-
-            // Add airport to global data
-            data.addAirport(airportID, airport);
+            
+            Airport airport = new Airport(airportID, airportIcon, data, planes);
+            data.addAirport(airportID, airport); // Add airport to global data
 
             // Create thread for scheduler that will manage the airport
             schedulerThreads[i] = new Thread(new AirportScheduler(airport, data), "Airport-scheduler");
