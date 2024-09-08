@@ -6,8 +6,8 @@ import java.util.concurrent.*;
 public class SimData 
 {
     // Default values for the simulation
-    public static final double GRID_WIDTH = 30;
-    public static final double GRID_HEIGHT = 30;
+    public static final double GRID_WIDTH = 20;
+    public static final double GRID_HEIGHT = 20;
     public static final int NUMBER_OF_AIRPORTS = 20;
     public static final int NUMBER_OF_PLANES = 20;
     public static final double AIRSPEED = 2.0;
