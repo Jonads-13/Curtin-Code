@@ -1,0 +1,5 @@
+Install Lua from https://www.lua.org/download.html
+
+Run the Lua interpreter with the command: lua
+
+Run a Lua file with the interpreter using: lua <filename>.lua
