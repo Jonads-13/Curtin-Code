@@ -13,7 +13,7 @@ function Animal:new(o, name, age, breed, colour)
     return o
 end
 
--- base class methods
+-- Base class methods
 function Animal:move()
     print(self.name .. " is moving")
 end
@@ -21,3 +21,4 @@ end
 function Animal:talk()
     print(self.name .. " is talking")
 end
+
