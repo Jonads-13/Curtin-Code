@@ -1,5 +1,5 @@
 -- Base class definition
-Animal = {name = "", age = 0}
+Animal = {}
 
 -- Base class constructor
 function Animal:new(o, name, age, breed, colour)
