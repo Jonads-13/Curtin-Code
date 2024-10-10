@@ -20,7 +20,7 @@ local ternary = age < 40 and "young" or "old"
 SayHello(string)
 Loop(array)
 
-print(ternary)
+print(ternary) -- young
 
 print(Global) -- This should be illegal
 

@@ -1,4 +1,3 @@
----@diagnostic disable: cast-local-type, undefined-global
 function Add(num1, num2)
     Total = num1 + num2
     local total = num1 + num2

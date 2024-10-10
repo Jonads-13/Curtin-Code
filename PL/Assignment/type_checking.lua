@@ -7,3 +7,5 @@ print(num1 + num2) --> crash for adding number with string
 
 local tab1, tab2 = {}, {}
 print(tab1 + tab2) --> crash for trying to add tables together
+
+print(type(tab1)) --> table
