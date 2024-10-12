@@ -1,0 +1,3 @@
+rootProject.name = "saed_assignment2"
+
+include "game"
