@@ -7,9 +7,7 @@ public class Cell {
     protected int col;
     protected boolean visible;
 
-    public Cell(int row, int col) {
-        this.row = row;
-        this.col = col;
+    public Cell() {
         visible = false;
         label = "   ";
     }

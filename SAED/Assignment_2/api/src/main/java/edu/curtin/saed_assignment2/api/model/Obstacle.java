@@ -6,7 +6,9 @@ public class Obstacle extends Cell {
     private List<String> itemRequirements;
 
     public Obstacle(int row, int col, List<String> requirements) {
-        super(row, col);
+        super();
+        this.row = row;
+        this.col = col;
         this.itemRequirements = requirements;
         label = " O ";
     }

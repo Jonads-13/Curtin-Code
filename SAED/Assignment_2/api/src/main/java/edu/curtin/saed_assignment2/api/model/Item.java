@@ -5,7 +5,9 @@ public class Item extends Cell {
     private String message;
 
     public Item(int row, int col, String name, String message) {
-        super(row, col);
+        super();
+        this.row = row;
+        this.col = col;
         this.name = name;
         this.message = message;
         label = " I ";

@@ -4,6 +4,7 @@ import java.util.List;
 
 import edu.curtin.saed_assignment2.api.model.Cell;
 import edu.curtin.saed_assignment2.api.model.Item;
+import edu.curtin.saed_assignment2.api.plugins.MenuPlugin;
 
 public interface API {
     
@@ -24,4 +25,8 @@ public interface API {
     // Grid square visibility.
     boolean getCellVisbility(int r, int c);
 
+    void registerMenuPlugin(MenuPlugin mp);
+
+    boolean movePlayer(int r, int c) // returns success
+;
 }

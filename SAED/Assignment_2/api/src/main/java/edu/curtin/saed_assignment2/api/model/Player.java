@@ -7,7 +7,9 @@ public class Player extends Cell {
     private final List<Item> inventory;
 
     public Player(int row, int col) {
-        super(row, col);
+        super();
+        this.row = row;
+        this.col = col;
         inventory = new LinkedList<>();
         visible = true;
         label = " P ";

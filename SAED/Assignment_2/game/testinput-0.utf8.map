@@ -2,7 +2,7 @@ size (10,1)
 start (5,0)
 goal (1,0)
 
-plugin edu.ecu.assignment2.cool_plugin
+plugin edu.curtin.gameplugins.Teleport
 
 item  "broken white map|+"    {
 at
