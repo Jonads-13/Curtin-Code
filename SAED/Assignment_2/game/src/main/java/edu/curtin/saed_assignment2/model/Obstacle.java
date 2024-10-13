@@ -1,12 +1,13 @@
-package edu.curtin.saed_assignment2;
+package edu.curtin.saed_assignment2.model;
 
 public class Obstacle extends Cell {
 
     private String[] itemRequirements;
 
-    public Obstacle(int r, int c, String[] requirements) {
-        super(r,c );
+    public Obstacle(int row, int col, String[] requirements) {
+        super(row, col);
         this.itemRequirements = requirements;
+        label = " O ";
     }
 
     public String[] getItemRequirements() {

@@ -1,0 +1,33 @@
+size (10,1)
+start (5,0)
+goal (1,0)
+
+plugin edu.ecu.assignment2.cool_plugin
+
+item  "broken white map|+"    {
+at
+   (  9   ,  0
+)   message   "?NbS+QZd"} obstacle {
+  at (8,0), (2,0)
+  requires "sentient red boot", "broken white map|+"
+}
+
+item "sentient red boot" {
+  at (1,0)
+  message "Haq*p"
+}
+
+script !{
+Htlmcd
+Yb`T[_\J1Msm43i4wl@LhmRQHA'A?~[.
+9oe
+Wmm%jvK>-J7BX\yrL]p:s xT|^[nOuU5JhR8K8'
+7HEP,kMxp-/WQI=3;2x9oi{{:QLc[(CD#&PlN$J 
+}
+
+script !{
+|y+vJF`
+ &l_
+mY`hrr~7q?#
+}
+

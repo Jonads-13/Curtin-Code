@@ -1,0 +1,147 @@
+PARSER_BEGIN(Parser)
+package edu.curtin.saed_assignment2;
+public class Parser 
+{
+    static int rows;
+    static int columns;
+    static int[] start;
+    static int[] goal;
+}
+PARSER_END(Parser)
+
+SKIP : { " " | "\n" | "\r" | "\t" }
+
+TOKEN : {
+    < SIZE: "size" > |
+    < START: "start" > |
+    < GOAL: "goal" > |
+    < ITEM: "item" > |
+    < OBSTACLE: "obstacle" > |
+    < PLUGIN: "plugin" > |
+    < SCRIPT: "script" > |
+    < AT: "at" > |
+    < REQUIRES: "requires" > |
+    < COORDINATE: "(" ([" ","\t","\r","\n"])* (<INT>)+ ([" ","\t","\r","\n"])*"," ([" ","\t","\r","\n"])* (<INT>)+ ([" ","\t","\r","\n"])* ")" > |
+    < MESSAGE: "message" > |
+    < SCRIPT_BODY: "!{"(~[])* "}" > |
+    < PLUGIN_NAME: <IDENTIFIER> ( "." <IDENTIFIER> )* > |
+    < STRING_LITERAL: "\"" (~["\""])* "\"" > |
+    < IDENTIFIER: ["_", "a"-"z", "A"-"Z"] (["_", "a"-"z", "A"-"Z", "0"-"9"])* > |
+    < INT: ("-")? (["0"-"9"])+ >
+}
+
+// Overall parsing
+void dsl() :
+{}
+{
+    ( FileContent() )*
+}
+
+void FileContent() :
+{}
+{
+    ( Size() | Start() | Goal() | ItemDefinition() | ObstacleDefinition() | PluginDefinition() | ScriptDefinition() )
+}
+
+void Size() :
+{}
+{
+    <SIZE> Coordinate() {
+        String sizeCoordinate = token.image;
+        String[] split = sizeCoordinate.replaceAll("[()]","").split(",");
+        rows = Integer.parseInt(split[0].trim());
+        columns = Integer.parseInt(split[1].trim());
+    }
+}
+
+void Start() :
+{}
+{
+    <START> Coordinate() {
+        String startCoordinate = token.image;
+        String[] split = startCoordinate.replaceAll("[()]","").split(",");
+        start = new int[]{Integer.parseInt(split[0]), Integer.parseInt(split[1])};
+    }
+}
+
+void Goal() :
+{}
+{
+    <GOAL> Coordinate() {
+        String goalCoordinate = token.image;
+        String[] split = goalCoordinate.replaceAll("[()]","").split(",");
+        start = new int[]{Integer.parseInt(split[0]), Integer.parseInt(split[1])};
+    }
+}
+
+void ItemDefinition() :
+{}
+{
+    <ITEM> <STRING_LITERAL> "{" AtLocation() Message() "}" {
+        System.out.println("Item definition: " + token.image);
+    }
+}
+
+void ObstacleDefinition() :
+{}
+{
+    <OBSTACLE> "{" AtLocation() RequirementList() "}" {
+        System.out.println("Obstacle definition: " + token.image);
+    }
+}
+
+void PluginDefinition() :
+{}
+{
+    <PLUGIN> <PLUGIN_NAME> {
+        System.out.println("Plugin definition: " + token.image);
+    }
+}
+
+void ScriptDefinition() :
+{}
+{
+    <SCRIPT> <SCRIPT_BODY> {
+        System.out.println("Script definition: " + token.image);
+    }
+}
+
+void RequirementList() :
+{}
+{
+    <REQUIRES> <STRING_LITERAL> ( "," <STRING_LITERAL> )* {
+        System.out.println("Reqiurement list: " + token.image);
+    }
+}
+
+void AtLocation() :
+{}
+{
+    <AT> CoordinateList() {
+        System.out.println("At Location: " + token.image);
+    }
+}
+
+void CoordinateList() :
+{}
+{
+    Coordinate() ( "," Coordinate() )* {
+        System.out.println("Coordinate List: " + token.image);
+    }
+}
+
+void Message() :
+{}
+{
+    <MESSAGE> <STRING_LITERAL> {
+        System.out.println("Message: " + token.image);
+    }
+}
+
+void Coordinate() :
+{}
+{
+    <COORDINATE> {
+        System.out.println("Coordinate: " + token.image);
+    }
+}

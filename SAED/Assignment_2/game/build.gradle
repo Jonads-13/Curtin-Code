@@ -1,5 +1,5 @@
 plugins {
-    id "java"
+    id 'com.intershop.gradle.javacc' version '4.1.3'
     id "application"
     id "pmd"
 }
@@ -12,19 +12,29 @@ application {
     mainClass = "edu.curtin.saed_assignment2.App"
 }
 
+javacc {
+    configs {
+        parser {
+            inputFile = file('src/main/jj/parser.jj')
+            packageName = 'edu.curtin.saed_assignment2'
+        }
+    }
+}
+
 pmd {
     consoleOutput = true
     toolVersion = "7.3.0"
     rulesMinimumPriority = 5
     ruleSets = []
-    ruleSetFiles = files("saed-pmd-rules.xml")
+    ruleSetFiles = files("../saed-pmd-rules.xml")
 }
 
-tasks.withType(JavaCompile) {
-    options.compilerArgs << "-Xlint:all,-serial"
-}
+// tasks.withType(JavaCompile) {
+//     options.compilerArgs << "-Xlint:all,-serial"
+// }
 
 tasks.named("run") {
+    standardInput = System.in
     environment["PATH"] = (
         layout.projectDirectory.dir("comms").dir("bin").toString() 
         + File.pathSeparator

@@ -1,4 +1,4 @@
-package edu.curtin.saed_assignment2;
+package edu.curtin.saed_assignment2.model;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -7,9 +7,11 @@ public class Player extends Cell {
 
     private final List<Item> inventory;
 
-    public Player(int r, int c) {
-        super(r, c);
+    public Player(int row, int col) {
+        super(row, col);
         inventory = new LinkedList<>();
+        visible = true;
+        label = " P ";
     }
 
     public void moveUp() {
@@ -30,5 +32,11 @@ public class Player extends Cell {
 
     public void addToInventory(Item item) {
         inventory.add(item);
+    }
+
+    public void displayInventory() {
+        for(Item item : inventory) {
+            System.out.println(item.getName());
+        }
     }
 }

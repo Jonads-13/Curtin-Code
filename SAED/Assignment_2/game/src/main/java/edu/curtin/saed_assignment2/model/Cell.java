@@ -1,15 +1,17 @@
-package edu.curtin.saed_assignment2;
+package edu.curtin.saed_assignment2.model;
 
 public class Cell {
 
+    protected String label;
     protected int row;
     protected int col;
-    protected boolean visited;
+    protected boolean visible;
 
     public Cell(int row, int col) {
         this.row = row;
         this.col = col;
-        visited = false;
+        visible = false;
+        label = "   ";
     }
 
     public int[] getLocation() {
@@ -32,11 +34,19 @@ public class Cell {
         this.col = col;
     }
 
-    public void setVisited() {
-        visited = true;
+    public void setVisible() {
+        visible = true;
     }
     
-    public boolean getVisited() {
-        return visited;
+    public boolean getVisible() {
+        return visible;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
 }
