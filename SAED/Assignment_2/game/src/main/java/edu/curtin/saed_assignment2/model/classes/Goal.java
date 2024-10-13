@@ -1,4 +1,4 @@
-package edu.curtin.saed_assignment2.model;
+package edu.curtin.saed_assignment2.model.classes;
 
 public class Goal extends Cell {
 

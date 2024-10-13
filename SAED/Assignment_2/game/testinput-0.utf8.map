@@ -13,21 +13,19 @@ at
 }
 
 item "sentient red boot" {
-  at (1,0)
+  at (3,-0)
   message "Haq*p"
 }
 
 script !{
-Htlmcd
-Yb`T[_\J1Msm43i4wl@LhmRQHA'A?~[.
-9oe
-Wmm%jvK>-J7BX\yrL]p:s xT|^[nOuU5JhR8K8'
-7HEP,kMxp-/WQI=3;2x9oi{{:QLc[(CD#&PlN$J 
+class MyCallback(edu.curtin.game.Callback):
+    def handleEvent(e):
+        print(api.getSomeInfo())
 }
 
 script !{
-|y+vJF`
- &l_
-mY`hrr~7q?#
+class MyCallback(edu.curtin.game.Callback):
+    def handleEvent(e):
+        print(api.getSomeInfo())
 }
 

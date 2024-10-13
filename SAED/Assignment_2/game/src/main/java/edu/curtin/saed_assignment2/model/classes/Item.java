@@ -1,4 +1,4 @@
-package edu.curtin.saed_assignment2.model;
+package edu.curtin.saed_assignment2.model.classes;
 
 public class Item extends Cell {
 
@@ -26,5 +26,11 @@ public class Item extends Cell {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        String self = super.toString();
+        return String.format("%s name: %s message: %s", self, name, message);
     }
 }

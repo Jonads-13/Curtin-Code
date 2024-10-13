@@ -1,4 +1,4 @@
-package edu.curtin.saed_assignment2.model;
+package edu.curtin.saed_assignment2.model.classes;
 
 import java.util.List;
 
@@ -20,10 +20,19 @@ public class Obstacle extends Cell {
         this.itemRequirements = requirements;
     }
 
-    public void displayRequirements() {
-        System.out.println("Reqiured to pass this obstacle: ");
+    public String getRequirementsDisplay() {
+        String list = "";
         for (String requirement : itemRequirements) {
-            System.out.println(requirement);
+            list+=requirement + "\n";
         }
+        return list;
     }
+
+    @Override
+    public String toString() {
+        String self = super.toString();
+        return self + " requirements:\n" + getRequirementsDisplay();
+    }
+
+
 }

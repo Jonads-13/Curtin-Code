@@ -1,4 +1,4 @@
-package edu.curtin.saed_assignment2.model;
+package edu.curtin.saed_assignment2.model.classes;
 
 import java.util.LinkedList;
 import java.util.List;

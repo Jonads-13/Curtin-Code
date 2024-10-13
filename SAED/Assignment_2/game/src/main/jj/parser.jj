@@ -1,11 +1,16 @@
 PARSER_BEGIN(Parser)
 package edu.curtin.saed_assignment2;
+
+import java.util.*;
+import edu.curtin.saed_assignment2.model.classes.*;
+import edu.curtin.saed_assignment2.model.GameData;
+
 public class Parser 
 {
-    static int rows;
-    static int columns;
-    static int[] start;
-    static int[] goal;
+    public GameData parse(GameData data) throws ParseException {
+        data = dsl(data);
+        return data;
+    }
 }
 PARSER_END(Parser)
 
@@ -23,126 +28,220 @@ TOKEN : {
     < REQUIRES: "requires" > |
     < COORDINATE: "(" (<WS>)* (<INT>)+ (<WS>)* "," (<WS>)* (<INT>)+ (<WS>)* ")" > |
     < MESSAGE: "message" > |
-    < SCRIPT_BODY: "!{"(~[])* "}" > |
+    < SCRIPT_BODY: "!{" (~["}"])* "}" > |
     < PLUGIN_NAME: <IDENTIFIER> ( "." <IDENTIFIER> )* > |
-    < WS: [" ","\t","\r","\n"] > | 
+    < WS: [" ","\t","\r","\n"] > | // Whitespace
     < STRING_LITERAL: "\"" (~["\""])* "\"" > |
     < IDENTIFIER: ["_", "a"-"z", "A"-"Z"] (["_", "a"-"z", "A"-"Z", "0"-"9"])* > |
     < INT: ("-")? (["0"-"9"])+ >
 }
 
-// Overall parsing
-void dsl() :
+// Start parsing given file
+GameData dsl(GameData data) :
 {}
 {
-    ( FileContent() )*
-}
-
-void FileContent() :
-{}
-{
-    ( Size() | Start() | Goal() | ItemDefinition() | ObstacleDefinition() | PluginDefinition() | ScriptDefinition() )
-}
-
-void Size() :
-{}
-{
-    <SIZE> Coordinate() {
-        String sizeCoordinate = token.image;
-        String[] split = sizeCoordinate.replaceAll("[()]","").split(",");
-        rows = Integer.parseInt(split[0].trim());
-        columns = Integer.parseInt(split[1].trim());
+    ( data=FileContent(data) )* {
+        return data;
     }
 }
 
-void Start() :
-{}
+// Different possible formats
+GameData FileContent(GameData data) :
 {
-    <START> Coordinate() {
-        String startCoordinate = token.image;
-        String[] split = startCoordinate.replaceAll("[()]","").split(",");
-        start = new int[]{Integer.parseInt(split[0]), Integer.parseInt(split[1])};
+    int[] values = null;
+    Player player = null;
+    Goal goal = null;
+    List<Item> tempItems = new LinkedList<Item>();
+    List<Obstacle> tempObstacles = new LinkedList<Obstacle>();
+    String tempPlugin = null;
+    String tempScript = null;
+}
+{
+    ( values=Size() | player=Start() | goal=Goal() | tempItems=ItemDefinition() | 
+    tempObstacles=ObstacleDefinition() | tempPlugin=PluginDefinition() | tempScript=ScriptDefinition() ) {
+        if(values != null) {
+            data.setMap(new Cell[values[0]][values[1]]);
+        }
+        if(player != null) {
+            data.setPlayer(player);
+            data.addSpecialCell(player);
+        }
+        if(goal != null) {
+            data.setGoal(goal);
+            data.addSpecialCell(goal);
+        }
+        if(tempPlugin != null) {
+            data.addPlugin(tempPlugin);
+        }
+        for(Item item : tempItems) {
+            data.addItem(item);
+            data.addSpecialCell(item);
+        }
+        for(Obstacle obstacle : tempObstacles) {
+            data.addObstacle(obstacle);
+            data.addSpecialCell(obstacle);
+        }
+    } {
+        return data;
     }
 }
 
-void Goal() :
-{}
+// Extract the map dimensions
+int[] Size() :
 {
-    <GOAL> Coordinate() {
-        String goalCoordinate = token.image;
-        String[] split = goalCoordinate.replaceAll("[()]","").split(",");
-        start = new int[]{Integer.parseInt(split[0]), Integer.parseInt(split[1])};
+    int[] values;
+}
+{
+    <SIZE> values=Coordinate() {
+        return values;
     }
 }
 
-void ItemDefinition() :
-{}
+// Get the player start location
+Player Start() :
 {
-    <ITEM> <STRING_LITERAL> "{" AtLocation() Message() "}" {
-        System.out.println("Item definition: " + token.image);
+    int[] start;
+}
+{
+    <START> start=Coordinate() {
+        return new Player(start[0], start[1]);
     }
 }
 
-void ObstacleDefinition() :
-{}
+// Get the Goal location
+Goal Goal() :
 {
-    <OBSTACLE> "{" AtLocation() RequirementList() "}" {
-        System.out.println("Obstacle definition: " + token.image);
+    int[] gLocation;
+}
+{
+    <GOAL> gLocation=Coordinate() {
+        return new Goal(gLocation[0], gLocation[1]);
     }
 }
 
-void PluginDefinition() :
-{}
+// Parse item information
+List<Item> ItemDefinition() :
 {
-    <PLUGIN> <PLUGIN_NAME> {
-        System.out.println("Plugin definition: " + token.image);
+    String itemName, itemMessage;
+    Set<int[]> locations;
+    List<Item> items = new LinkedList<Item>();
+}
+{
+    <ITEM> itemName=<STRING_LITERAL>.image "{" locations=AtLocation() itemMessage=Message() "}" {
+        for(int[] coord : locations) {
+            items.add(new Item(coord[0], coord[1], itemName, itemMessage));
+        }
+        return items;
     }
 }
 
-void ScriptDefinition() :
-{}
+// parse obstacle information
+List<Obstacle> ObstacleDefinition() :
 {
-    <SCRIPT> <SCRIPT_BODY> {
-        System.out.println("Script definition: " + token.image);
+    Set<int[]> locations;
+    List<String> requirements;
+    List<Obstacle> obstacles = new LinkedList<Obstacle>();
+}
+{
+    <OBSTACLE> "{" locations=AtLocation() requirements=RequirementList() "}" {
+        for(int[] coord : locations) {
+            obstacles.add(new Obstacle(coord[0], coord[1], requirements));
+        }
+        return obstacles;
     }
 }
 
-void RequirementList() :
-{}
+// Parse plugin references
+String PluginDefinition() :
 {
-    <REQUIRES> <STRING_LITERAL> ( "," <STRING_LITERAL> )* {
-        System.out.println("Reqiurement list: " + token.image);
+    String pluginName;
+}
+{
+    <PLUGIN> pluginName=<PLUGIN_NAME>.image {
+        return pluginName;
     }
 }
 
-void AtLocation() :
-{}
+// Parse script definitions
+String ScriptDefinition() :
 {
-    <AT> CoordinateList() {
-        System.out.println("At Location: " + token.image);
+    String script;
+}
+{
+    <SCRIPT> script=<SCRIPT_BODY>.image {
+        return script;
     }
 }
 
-void CoordinateList() :
-{}
+// Build list of items reqiured to pass an obstacle
+List<String> RequirementList() :
 {
-    Coordinate() ( "," Coordinate() )* {
-        System.out.println("Coordinate List: " + token.image);
+    List<String> requirements = new LinkedList<String>();
+    String requirement;
+}
+{
+    <REQUIRES> requirement=<STRING_LITERAL>.image {
+        requirements.add(requirement);
+    } ( "," requirement=<STRING_LITERAL>.image )* {
+        requirements.add(requirement);
+    } {
+        return requirements;
     }
 }
 
-void Message() :
-{}
+// get list of locations an item, element is
+Set<int[]> AtLocation() :
 {
-    <MESSAGE> <STRING_LITERAL> {
-        System.out.println("Message: " + token.image);
+    Set<int[]> locations;
+}
+{
+    <AT> locations=CoordinateSet() {
+        return locations;
     }
 }
 
-void Coordinate() :
-{}
+// Build set of coordinates
+Set<int[]> CoordinateSet() :
+{
+    // Use a set to prevent duplicate coordinates
+    Set<int[]> set = new HashSet<int[]>();
+    int[] coordinate; // temp storage
+}
+{
+    coordinate=Coordinate() {
+     set.add(coordinate);
+    } ( "," coordinate=Coordinate() )* {
+        set.add(coordinate);
+    } {
+        return set;
+    }
+}
+
+// Get string associated with message tag
+String Message() :
+{
+    String message;
+}
+{
+    <MESSAGE> message=<STRING_LITERAL>.image {
+        return message.replaceAll("\"", "");
+    }
+}
+
+// Location definition
+int[] Coordinate() :
+{
+    int row, col;
+}
 {
     <COORDINATE> {
-        System.out.println("Coordinate: " + token.image);
+        // Get each number
+        String[] split = token.image.replaceAll("[()]","").split(",");
+
+        // parse tokens by removing any whitespace
+        row = Integer.parseInt(split[0].strip()); 
+        col = Integer.parseInt(split[1].strip());
+
+        return new int[]{row, col}; // return useful data
     }
 }

@@ -10,7 +10,7 @@ public class App {
         }
         String filename = args[0];
         Start start = new Start(filename);
-        start.init();
+        start.setup();
     }
 
     private static void usage() {

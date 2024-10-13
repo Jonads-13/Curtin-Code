@@ -1,4 +1,4 @@
-package edu.curtin.saed_assignment2.model;
+package edu.curtin.saed_assignment2.model.classes;
 
 public class Cell {
 
@@ -48,5 +48,10 @@ public class Cell {
 
     public void setLabel(String label) {
         this.label = label;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %d %d", label, row, col);
     }
 }
