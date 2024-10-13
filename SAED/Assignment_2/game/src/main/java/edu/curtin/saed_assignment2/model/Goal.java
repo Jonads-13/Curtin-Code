@@ -4,7 +4,6 @@ public class Goal extends Cell {
 
     public Goal(int row, int col) {
         super(row, col);
-        visible = true;
         label = " G ";
     }
     
