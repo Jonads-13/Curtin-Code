@@ -1,19 +1,20 @@
 package edu.curtin.saed_assignment2;
 
-import java.io.FileInputStream;
-import java.io.IOException;
+import edu.curtin.saed_assignment2.controller.Start;
 
 public class App {
 
     public static void main(String[] args) {
-        String filename = args[0];
-        try(FileInputStream fis = new FileInputStream(filename)) {
-            Parser p = new Parser(fis);
-            p.dsl();
-        } catch (ParseException | IOException e) {
-           System.out.println(e.getMessage());
+        if(args == null) {
+            usage();
         }
-        
+        String filename = args[0];
+        Start start = new Start(filename);
+        start.init();
+    }
+
+    private static void usage() {
+        System.out.println("usage:\n $./graldew run --args=\"<path/to/inputfile>\"");
     }
 
 }
