@@ -21,10 +21,11 @@ TOKEN : {
     < SCRIPT: "script" > |
     < AT: "at" > |
     < REQUIRES: "requires" > |
-    < COORDINATE: "(" ([" ","\t","\r","\n"])* (<INT>)+ ([" ","\t","\r","\n"])*"," ([" ","\t","\r","\n"])* (<INT>)+ ([" ","\t","\r","\n"])* ")" > |
+    < COORDINATE: "(" (<WS>)* (<INT>)+ (<WS>)* "," (<WS>)* (<INT>)+ (<WS>)* ")" > |
     < MESSAGE: "message" > |
     < SCRIPT_BODY: "!{"(~[])* "}" > |
     < PLUGIN_NAME: <IDENTIFIER> ( "." <IDENTIFIER> )* > |
+    < WS: [" ","\t","\r","\n"] > | 
     < STRING_LITERAL: "\"" (~["\""])* "\"" > |
     < IDENTIFIER: ["_", "a"-"z", "A"-"Z"] (["_", "a"-"z", "A"-"Z", "0"-"9"])* > |
     < INT: ("-")? (["0"-"9"])+ >

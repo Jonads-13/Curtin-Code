@@ -37,11 +37,13 @@ public interface ParserConstants {
   /** RegularExpression Id. */
   int PLUGIN_NAME = 17;
   /** RegularExpression Id. */
-  int STRING_LITERAL = 18;
+  int WS = 18;
   /** RegularExpression Id. */
-  int IDENTIFIER = 19;
+  int STRING_LITERAL = 19;
   /** RegularExpression Id. */
-  int INT = 20;
+  int IDENTIFIER = 20;
+  /** RegularExpression Id. */
+  int INT = 21;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -66,6 +68,7 @@ public interface ParserConstants {
     "\"message\"",
     "<SCRIPT_BODY>",
     "<PLUGIN_NAME>",
+    "<WS>",
     "<STRING_LITERAL>",
     "<IDENTIFIER>",
     "<INT>",

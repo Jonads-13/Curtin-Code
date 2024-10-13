@@ -86,19 +86,19 @@ public class Parser implements ParserConstants {
   static final public void ItemDefinition() throws ParseException {
     jj_consume_token(ITEM);
     jj_consume_token(STRING_LITERAL);
-    jj_consume_token(21);
+    jj_consume_token(22);
     AtLocation();
     Message();
-    jj_consume_token(22);
+    jj_consume_token(23);
         System.out.println("Item definition: " + token.image);
   }
 
   static final public void ObstacleDefinition() throws ParseException {
     jj_consume_token(OBSTACLE);
-    jj_consume_token(21);
+    jj_consume_token(22);
     AtLocation();
     RequirementList();
-    jj_consume_token(22);
+    jj_consume_token(23);
         System.out.println("Obstacle definition: " + token.image);
   }
 
@@ -120,14 +120,14 @@ public class Parser implements ParserConstants {
     label_2:
     while (true) {
       switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-      case 23:
+      case 24:
         ;
         break;
       default:
         jj_la1[2] = jj_gen;
         break label_2;
       }
-      jj_consume_token(23);
+      jj_consume_token(24);
       jj_consume_token(STRING_LITERAL);
     }
         System.out.println("Reqiurement list: " + token.image);
@@ -144,14 +144,14 @@ public class Parser implements ParserConstants {
     label_3:
     while (true) {
       switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
-      case 23:
+      case 24:
         ;
         break;
       default:
         jj_la1[3] = jj_gen;
         break label_3;
       }
-      jj_consume_token(23);
+      jj_consume_token(24);
       Coordinate();
     }
         System.out.println("Coordinate List: " + token.image);
@@ -184,7 +184,7 @@ public class Parser implements ParserConstants {
       jj_la1_init_0();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0xfe0,0xfe0,0x800000,0x800000,};
+      jj_la1_0 = new int[] {0xfe0,0xfe0,0x1000000,0x1000000,};
    }
 
   /** Constructor with InputStream. */
@@ -322,7 +322,7 @@ public class Parser implements ParserConstants {
   /** Generate ParseException. */
   static public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[24];
+    boolean[] la1tokens = new boolean[25];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
@@ -336,7 +336,7 @@ public class Parser implements ParserConstants {
         }
       }
     }
-    for (int i = 0; i < 24; i++) {
+    for (int i = 0; i < 25; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;
