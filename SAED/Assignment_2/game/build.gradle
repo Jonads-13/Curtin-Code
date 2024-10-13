@@ -9,7 +9,11 @@ repositories {
 }
 
 application {
-    mainClass = "edu.curtin.saed_assignment2.App"
+    mainClass = "edu.curtin.saed_assignment2.game.App"
+}
+
+dependencies {
+    implementation project(":api")
 }
 
 javacc {

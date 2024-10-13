@@ -70,11 +70,11 @@ goto fail
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\game.jar
+set CLASSPATH=%APP_HOME%\lib\game.jar;%APP_HOME%\lib\api.jar
 
 
 @rem Execute game
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GAME_OPTS%  -classpath "%CLASSPATH%" edu.curtin.saed_assignment2.App %*
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GAME_OPTS%  -classpath "%CLASSPATH%" edu.curtin.saed_assignment2.game.App %*
 
 :end
 @rem End local scope for the variables with windows NT shell

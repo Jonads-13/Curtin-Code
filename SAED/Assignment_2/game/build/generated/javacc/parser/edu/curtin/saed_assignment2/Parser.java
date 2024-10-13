@@ -2,8 +2,8 @@
 package edu.curtin.saed_assignment2;
 
 import java.util.*;
-import edu.curtin.saed_assignment2.model.classes.*;
-import edu.curtin.saed_assignment2.model.GameData;
+import edu.curtin.saed_assignment2.api.model.*;
+import edu.curtin.saed_assignment2.game.model.GameData;
 
 public class Parser implements ParserConstants {
     public GameData parse(GameData data) throws ParseException {
