@@ -7,10 +7,12 @@ import java.text.Normalizer;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Locale;
 
 import edu.curtin.saed_assignment2.ParseException;
 import edu.curtin.saed_assignment2.Parser;
 import edu.curtin.saed_assignment2.api.API;
+import edu.curtin.saed_assignment2.api.LocaleHandler;
 import edu.curtin.saed_assignment2.api.model.Cell;
 import edu.curtin.saed_assignment2.api.model.Item;
 import edu.curtin.saed_assignment2.api.model.Obstacle;
@@ -23,18 +25,20 @@ import edu.curtin.saed_assignment2.game.model.exceptions.FilledLocationException
 import edu.curtin.saed_assignment2.game.model.exceptions.InvalidLocationException;
 import edu.curtin.saed_assignment2.game.view.Display;
 
-public class Start implements API{
+public class Start implements API {
 
     private final String filename;
-    private final Display display;
+    private Display display;
     private GameData data;
     private final List<MenuPlugin> menuPlugins;
+    private final List<LocaleHandler> localeHandlers;
 
     public Start(String f) {
         this.filename = f;
         data = new GameData();
         display = new Display();
         menuPlugins = new LinkedList<>();
+        localeHandlers = new LinkedList<>();
     }
 
     public void setup() {
@@ -76,12 +80,19 @@ public class Start implements API{
                 for(MenuPlugin mp : menuPlugins) {
                     mp.displayMenuOption(); // Any plugin menu options?
                 }
-                String choice = sc.next();
-                if(choice.toUpperCase().equals("Q")) { // User wants to quit
+                String choice = sc.next().toUpperCase();
+                if(choice.equals("Q")) { // User wants to quit
                     finished = true;
                 }
+                else if(choice.equals("L")) {
+                    display.showLocalePrompt();
+                    String code = sc.next();
+                    Locale newLocale = Locale.forLanguageTag(code);
+                    display = new Display(newLocale);
+                    notifyLocaleHandlers(newLocale);
+                }
                 else {
-                    if(move(choice.toUpperCase())) {
+                    if(move(choice)) {
                         data.incrementDays(); 
                         finished = won(); // Check if goal reached
                     }
@@ -92,29 +103,31 @@ public class Start implements API{
 
     private boolean move(String choice) {
         int prevRow = data.getPlayer().getRow(), prevCol = data.getPlayer().getCol();
+        boolean moved = true;
         
         switch(choice) {
             case "W" -> {
-                movePlayer(prevRow-1, prevCol); // Up
+                moved = movePlayer(prevRow-1, prevCol); // Up
             }
             case "A" -> {
-                movePlayer(prevRow, prevCol-1); // Left
+                moved = movePlayer(prevRow, prevCol-1); // Left
             }
             case "S" -> {
-                movePlayer(prevRow+1, prevCol); // Down
+                moved = movePlayer(prevRow+1, prevCol); // Down
             }
             case "D" -> {
-                movePlayer(prevRow, prevCol+1); // Right
+                moved = movePlayer(prevRow, prevCol+1); // Right
             }
             default -> {
                 if(!notifyMenuPlugins(choice)) {
                     display.showWrongInput();
+                    moved = false;
                 }
             }
         }
 
         // If location is the same then the player didn't move
-        return !((prevRow == data.getPlayer().getRow()) && (prevCol == data.getPlayer().getCol()));
+        return moved;
         
     }
 
@@ -169,6 +182,7 @@ public class Start implements API{
 
      public void pickUpItem(Item item) {
         data.getPlayer().addToInventory(item);
+        display.showPickedUpItem(String.format("%s: %s",item.getName(), item.getMessage()));
      }
 
      private void changePlayerLocation(int r, int c) {
@@ -285,5 +299,17 @@ public class Start implements API{
     public boolean notifyPlayerPlugins() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'notifyPlayerPlugins'");
+    }
+
+    @Override
+    public void registerLocaleHandler(LocaleHandler lh) {
+        localeHandlers.add(lh);
+    }
+
+    @Override
+    public void notifyLocaleHandlers(Locale l) {
+        for (LocaleHandler lh : localeHandlers) {
+            lh.notifyLocaleChanged(l);
+        }
     }
 }

@@ -1,6 +1,7 @@
 package edu.curtin.saed_assignment2.api;
 
 import java.util.List;
+import java.util.Locale;
 
 import edu.curtin.saed_assignment2.api.model.Cell;
 import edu.curtin.saed_assignment2.api.model.Item;
@@ -38,6 +39,10 @@ public interface API {
     void registerPlayerPlugin(PlayerPlugin mp);
 
     boolean notifyPlayerPlugins();
+
+    void registerLocaleHandler(LocaleHandler lh);
+
+    void notifyLocaleHandlers(Locale l);
 
     boolean movePlayer(int r, int c); // returns success
 }

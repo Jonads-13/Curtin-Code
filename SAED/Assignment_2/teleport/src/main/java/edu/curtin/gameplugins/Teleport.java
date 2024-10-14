@@ -1,12 +1,14 @@
 package edu.curtin.gameplugins;
 
+import java.util.Locale;
 import java.util.Random;
 import java.util.ResourceBundle;
 
 import edu.curtin.saed_assignment2.api.API;
+import edu.curtin.saed_assignment2.api.LocaleHandler;
 import edu.curtin.saed_assignment2.api.plugins.MenuPlugin;
 
-public class Teleport implements MenuPlugin {
+public class Teleport implements MenuPlugin, LocaleHandler {
 
     private API api;
     private boolean done;
@@ -18,6 +20,7 @@ public class Teleport implements MenuPlugin {
         done = false;
         bundle = ResourceBundle.getBundle("teleport-bundle");
         api.registerMenuPlugin(this);
+        api.registerLocaleHandler(this);
     }
 
     @Override
@@ -40,8 +43,11 @@ public class Teleport implements MenuPlugin {
                     c = getRandomNumber(cols);
                 } while(sameLocation(r, c, pr, pc));
 
-                didStuff =  api.movePlayer(r, c);
-                done = didStuff;
+                if(api.movePlayer(r, c)) {
+                    didStuff = true;
+                    done = true;
+                    System.out.println(String.format("%s %d,%d",bundle.getString("teleported"),r,c));
+                }
             }
         }
         return didStuff;
@@ -52,8 +58,13 @@ public class Teleport implements MenuPlugin {
         System.out.println(bundle.getString("menu_option"));
     }
 
+    @Override
+    public void notifyLocaleChanged(Locale locale) {
+        System.out.println("got here");
+        bundle = ResourceBundle.getBundle("teleport-bundle", locale);
+    }
+
     private boolean sameLocation(int r, int c, int pr, int pc) {
-        System.out.println("called same");
         return ((r == pr) && (c == pc));
     }
 

@@ -1,6 +1,8 @@
 package edu.curtin.saed_assignment2.game.view;
 
-import java.time.LocalDate;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -13,13 +15,16 @@ import edu.curtin.saed_assignment2.game.model.GameData;
 public class Display {
 
     private final ResourceBundle bundle;
+    private final Locale locale;
 
     public Display() {
         bundle = ResourceBundle.getBundle("game-bundle");
+        locale = Locale.getDefault();
     }
 
     public Display(Locale locale) {
         bundle = ResourceBundle.getBundle("game-bundle", locale);
+        this.locale = locale;
     }
     
     public void printScreen(GameData data) {
@@ -37,8 +42,13 @@ public class Display {
                 }
             }
         }
+        ZonedDateTime date = ZonedDateTime.now().plusDays(days);
+        DateTimeFormatter dtf = DateTimeFormatter
+            .ofLocalizedDateTime(FormatStyle.SHORT)
+            .withLocale(locale);
+        String dateFmt = dtf.format(date);
 
-        String top = String.format("%s%s, %s%d", bundle.getString("date"), LocalDate.now().plusDays(days), bundle.getString("days"), days);
+        String top = String.format("%s%s, %s%d", bundle.getString("date"), dateFmt, bundle.getString("days"), days);
         System.out.println(top);
 
         // Display player inventory
@@ -79,6 +89,14 @@ public class Display {
 
     public void showPlayerWon() {
         System.out.println(bundle.getString("won"));
+    }
+
+    public void showLocalePrompt() {
+        System.out.println(bundle.getString("locale_prompt"));
+    }
+
+    public void showPickedUpItem(String item) {
+        System.out.println(bundle.getString("acquired") + item);
     }
 }
 
