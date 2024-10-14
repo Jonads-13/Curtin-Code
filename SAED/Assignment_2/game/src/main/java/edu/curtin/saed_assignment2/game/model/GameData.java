@@ -91,9 +91,6 @@ public class GameData implements API {
         return moved;
     }
 
-
-
-
     public Cell[][] getMap() {
         return map;
     }

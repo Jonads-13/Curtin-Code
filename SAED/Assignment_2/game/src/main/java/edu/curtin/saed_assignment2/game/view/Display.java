@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import edu.curtin.saed_assignment2.api.model.Cell;
 import edu.curtin.saed_assignment2.api.model.Item;
+import edu.curtin.saed_assignment2.api.model.Obstacle;
 import edu.curtin.saed_assignment2.api.model.Player;
 import edu.curtin.saed_assignment2.game.model.GameData;
 
@@ -14,11 +15,11 @@ public class Display {
     private final ResourceBundle bundle;
 
     public Display() {
-        bundle = ResourceBundle.getBundle("bundle");
+        bundle = ResourceBundle.getBundle("game-bundle");
     }
 
     public Display(Locale locale) {
-        bundle = ResourceBundle.getBundle("bundle", locale);
+        bundle = ResourceBundle.getBundle("game-bundle", locale);
     }
     
     public void printScreen(GameData data) {
@@ -55,6 +56,29 @@ public class Display {
 
     public String getFilledMessage() {
         return bundle.getString("filled_location");
+    }
+
+    public void showWrongInput() {
+        System.out.println(bundle.getString("invalid_choice"));
+    }
+
+    public void showBlockedByObstacle(Obstacle o) {
+        System.out.println(bundle.getString("obstacle_blocking"));
+        for(String requirement : o.getItemRequirements()) {
+            System.out.println(requirement);
+        }
+    }
+
+    public void showTraversedObstacle() {
+        System.out.println(bundle.getString("obstacle_traversed"));
+    }
+
+    public void showInvalidDirection() {
+        System.out.println(bundle.getString("invalid_direction"));
+    }
+
+    public void showPlayerWon() {
+        System.out.println(bundle.getString("won"));
     }
 }
 
