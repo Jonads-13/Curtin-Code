@@ -4,15 +4,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 import edu.curtin.saed_assignment2.ParseException;
-import edu.curtin.saed_assignment2.api.API;
 import edu.curtin.saed_assignment2.api.model.Cell;
 import edu.curtin.saed_assignment2.api.model.Goal;
 import edu.curtin.saed_assignment2.api.model.Item;
 import edu.curtin.saed_assignment2.api.model.Obstacle;
 import edu.curtin.saed_assignment2.api.model.Player;
-import edu.curtin.saed_assignment2.api.plugins.MenuPlugin;
 
-public class GameData implements API {
+public class GameData {
     
     private Cell[][] map;
     private final List<Cell> specialCells;
@@ -22,7 +20,6 @@ public class GameData implements API {
     private final List<Obstacle> obstacles;
     private final List<String> plugins;
     private final List<String> scripts;
-    private final List<MenuPlugin> menuPlugins;
     private int days;
 
     public GameData() {
@@ -34,75 +31,8 @@ public class GameData implements API {
         obstacles = new LinkedList<>();
         plugins = new LinkedList<>();
         scripts = new LinkedList<>();
-        menuPlugins = new LinkedList<>();
         days = 0;
     }
-
-
-
-    // Interface methods
-
-    @Override
-    public int[] getPlayerLocation() {
-        return new int[]{player.getRow(), player.getCol()};
-    }
-
-    @Override
-    public List<Item> getPlayerInventory() {
-        return player.getInventory();
-    }
-
-    @Override
-    public Item getMostRecentItem() {
-        return player.getInventory().getLast();
-    }
-
-    @Override
-    public int[] getMapSize() {
-        return new int[]{map.length, map[0].length};
-    }
-
-    @Override
-    public Cell getMapCell(int r, int c) {
-        return map[r][c];
-    }
-
-    @Override
-    public boolean getCellVisbility(int r, int c) {
-        return map[r][c].getVisible();
-    }
-
-    @Override
-    public void registerMenuPlugin(MenuPlugin mp) {
-        menuPlugins.add(mp);
-    }
-
-    @Override
-    public boolean movePlayer(int r, int c) {
-        boolean moved = false;
-        if(validLocation(r, c)) {
-            map[r][c] = player;
-            map[player.getRow()][player.getCol()] = new Cell();
-            player.setRow(r); 
-            player.setCol(c);
-            showAroundPlayer();
-            moved = true;
-        }
-        return moved;
-    }
-
-    @Override
-    public boolean notifyMenuPlugins(String choice) {
-        boolean didStuff = false;
-        for(MenuPlugin mp : menuPlugins) {
-            if(mp.takeAction(choice)) {
-                didStuff = true;
-            }
-        }
-        return didStuff;
-    }
-
-
 
     public Cell[][] getMap() {
         return map;
@@ -233,9 +163,5 @@ public class GameData implements API {
 
     public int getDays() {
         return days;
-    }
-
-    public List<MenuPlugin> getMenuPlugins() {
-        return menuPlugins;
     }
 }

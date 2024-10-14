@@ -17,6 +17,7 @@ public class Teleport implements MenuPlugin {
         this.api = api;
         done = false;
         bundle = ResourceBundle.getBundle("teleport-bundle");
+        api.registerMenuPlugin(this);
     }
 
     @Override
@@ -29,20 +30,17 @@ public class Teleport implements MenuPlugin {
         else {
             if(choice.toLowerCase().equals("t")) {
                 int[] location = api.getPlayerLocation();
-                int pr = location[0], pc = location[1];
                 int[] mapSize = api.getMapSize();
+                int pr = location[0], pc = location[1];
                 int rows = mapSize[0], cols = mapSize[1];
-                int x = -1, y = -1; // Deliberate bad location
+                int r, c;
 
-                while(!validLocation(x, y, rows, cols) || sameLocation(x, y, pr, pc)) 
-                {
-                    x = getRandomNumber(rows);
-                    y = getRandomNumber(cols);
-                }
+                do {
+                    r = getRandomNumber(rows);
+                    c = getRandomNumber(cols);
+                } while(sameLocation(r, c, pr, pc));
 
-                api.movePlayer(x, y);
-
-                didStuff = true;
+                didStuff =  api.movePlayer(r, c);
                 done = didStuff;
             }
         }
@@ -54,11 +52,8 @@ public class Teleport implements MenuPlugin {
         System.out.println(bundle.getString("menu_option"));
     }
 
-    private boolean validLocation(int r, int c, int rows, int cols) {
-        return (((r < rows) && (r >= 0)) && ((c < cols) && (c >= 0)));
-    }
-
     private boolean sameLocation(int r, int c, int pr, int pc) {
+        System.out.println("called same");
         return ((r == pr) && (c == pc));
     }
 

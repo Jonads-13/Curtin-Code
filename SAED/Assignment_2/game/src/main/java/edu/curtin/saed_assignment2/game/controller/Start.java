@@ -4,31 +4,37 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.text.Normalizer;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 import edu.curtin.saed_assignment2.ParseException;
 import edu.curtin.saed_assignment2.Parser;
+import edu.curtin.saed_assignment2.api.API;
 import edu.curtin.saed_assignment2.api.model.Cell;
 import edu.curtin.saed_assignment2.api.model.Item;
 import edu.curtin.saed_assignment2.api.model.Obstacle;
 import edu.curtin.saed_assignment2.api.model.Player;
+import edu.curtin.saed_assignment2.api.plugins.InventoryPlugin;
 import edu.curtin.saed_assignment2.api.plugins.MenuPlugin;
+import edu.curtin.saed_assignment2.api.plugins.PlayerPlugin;
 import edu.curtin.saed_assignment2.game.model.GameData;
 import edu.curtin.saed_assignment2.game.model.exceptions.FilledLocationException;
 import edu.curtin.saed_assignment2.game.model.exceptions.InvalidLocationException;
 import edu.curtin.saed_assignment2.game.view.Display;
 
-public class Start {
+public class Start implements API{
 
     private final String filename;
     private final Display display;
     private GameData data;
+    private final List<MenuPlugin> menuPlugins;
 
     public Start(String f) {
         this.filename = f;
         data = new GameData();
         display = new Display();
+        menuPlugins = new LinkedList<>();
     }
 
     public void setup() {
@@ -57,8 +63,7 @@ public class Start {
                 try {
                     Class<?> pluginClass = Class.forName(name);
                     MenuPlugin pluginObj = (MenuPlugin) pluginClass.getConstructor().newInstance();
-                    pluginObj.start(data);
-                    data.registerMenuPlugin(pluginObj);
+                    pluginObj.start(this);
                 }
                 catch(ClassNotFoundException | IllegalAccessException | IllegalArgumentException | 
                         InstantiationException | NoSuchMethodException | SecurityException | InvocationTargetException e) {
@@ -66,20 +71,19 @@ public class Start {
                 }
             }
 
-            while(!finished) {
+            while(!finished) { // Play game
                 display.printScreen(data);
-                List<MenuPlugin> mps = data.getMenuPlugins();
-                for(MenuPlugin mp : mps) {
-                    mp.displayMenuOption();
+                for(MenuPlugin mp : menuPlugins) {
+                    mp.displayMenuOption(); // Any plugin menu options?
                 }
                 String choice = sc.next();
-                if(choice.toUpperCase().equals("Q")) {
+                if(choice.toUpperCase().equals("Q")) { // User wants to quit
                     finished = true;
                 }
                 else {
                     if(move(choice.toUpperCase())) {
-                        data.incrementDays();
-                        finished = won();
+                        data.incrementDays(); 
+                        finished = won(); // Check if goal reached
                     }
                 }
             }
@@ -91,27 +95,19 @@ public class Start {
         
         switch(choice) {
             case "W" -> {
-                if(canMove(prevRow-1, prevCol)) {
-                    data.movePlayer(prevRow-1, prevCol);
-                }
+                movePlayer(prevRow-1, prevCol); // Up
             }
             case "A" -> {
-                if(canMove(prevRow, prevCol-1)) {
-                    data.movePlayer(prevRow, prevCol-1);
-                }
+                movePlayer(prevRow, prevCol-1); // Left
             }
             case "S" -> {
-                if(canMove(prevRow+1, prevCol)) {
-                    data.movePlayer(prevRow+1, prevCol);
-                }
+                movePlayer(prevRow+1, prevCol); // Down
             }
             case "D" -> {
-                if(canMove(prevRow, prevCol+1)) {
-                    data.movePlayer(prevRow, prevCol+1);
-                }
+                movePlayer(prevRow, prevCol+1); // Right
             }
             default -> {
-                if(!data.notifyMenuPlugins(choice)) {
+                if(!notifyMenuPlugins(choice)) {
                     display.showWrongInput();
                 }
             }
@@ -137,58 +133,157 @@ public class Start {
         return won;
     }
 
-    public boolean canMove(int r, int c) {
-        boolean canMove = false;
+     public boolean traversedObstacle(Obstacle o) {
+         Player player = data.getPlayer();
+         List<String> requirements = o.getItemRequirements();
+         List<Item> inventory = player.getInventory();
+         int i = requirements.size(); // Max number of loop iterations
+         boolean cont = true; // To exit early if need be
+
+         // Loop while there are still items to check
+         while ((i > 0) && (cont)) {
+            int temp = i; // Store this to check against later
+            String normalisedRequirement = Normalizer.normalize(requirements.get(i-1), Normalizer.Form.NFC);
+            for(Item item : inventory) { // Loop through inventory looking for required item
+                String normalisedName = Normalizer.normalize(item.getName(), Normalizer.Form.NFC);
+                    if(normalisedRequirement.equals(normalisedName)) {
+                        i--; // One item found in inventory
+                    }
+            }
+            // If i changed then we can continue checking, otherwise we need to leave
+            cont = (temp != i);
+        }
+
+        boolean traversed;
+        if(i == 0) { // Found all requirements in player inventory
+            display.showTraversedObstacle();
+            traversed = true;
+        }
+        else {
+            display.showBlockedByObstacle(o);
+            traversed = false;
+        }
+
+        return traversed;
+     }
+
+     public void pickUpItem(Item item) {
+        data.getPlayer().addToInventory(item);
+     }
+
+     private void changePlayerLocation(int r, int c) {
         Cell[][] map = data.getMap();
+        Player player = data.getPlayer();
+
+        map[r][c] = player;
+        Cell replace = new Cell();
+        replace.setVisible();
+        map[player.getRow()][player.getCol()] = replace;
+        player.setRow(r); 
+        player.setCol(c);
+        data.showAroundPlayer();
+     }
+
+
+    // Interface methods
+
+    @Override
+    public int[] getPlayerLocation() {
+        return new int[]{data.getPlayer().getRow(), data.getPlayer().getCol()};
+    }
+
+    @Override
+    public List<Item> getPlayerInventory() {
+        return data.getPlayer().getInventory();
+    }
+
+    @Override
+    public Item getMostRecentItem() {
+        return data.getPlayer().getInventory().getLast();
+    }
+
+    @Override
+    public int[] getMapSize() {
+        return new int[]{data.getMap().length, data.getMap()[0].length};
+    }
+
+    @Override
+    public Cell getMapCell(int r, int c) {
+        return data.getMap()[r][c];
+    }
+
+    @Override
+    public boolean getCellVisbility(int r, int c) {
+        return data.getMap()[r][c].getVisible();
+    }
+
+    @Override
+    public void registerMenuPlugin(MenuPlugin mp) {
+        menuPlugins.add(mp);
+    }
+
+    @Override
+    public boolean movePlayer(int r, int c) {
+        boolean moved = false;
+        Cell[][] map = data.getMap();
+
         if(data.validLocation(r, c)) {
             switch (map[r][c]) {
                 case Obstacle obstacle -> { 
-                    canMove = traverseObstacle(obstacle);
+                    if(traversedObstacle(obstacle)) {
+                        changePlayerLocation(r, c);
+                        moved = true;
+                    }
                 }
                 case Item item -> {
                     pickUpItem(item); 
-                    canMove = true;
+                    changePlayerLocation(r, c);
+                    moved = true;
                 }
                 default -> {
-                    canMove = true;
+                    changePlayerLocation(r, c);
+                    moved = true;
                 }
             }
         }
         else {
             display.showInvalidDirection();
         }
+        return moved;
+    }
 
-        return canMove;
-     }
-
-     public boolean traverseObstacle(Obstacle o) {
-        boolean traverse = false;
-        Player player = data.getPlayer();
-        List<String> requirements = o.getItemRequirements();
-        List<Item> inventory = player.getInventory();
-
-        for(String requirement : requirements) {
-            String normalisedRequirement = Normalizer.normalize(requirement, Normalizer.Form.NFC);
-            for(Item item : inventory) {
-                String normalisedName = Normalizer.normalize(item.getName(), Normalizer.Form.NFC);
-                    if(normalisedRequirement.equals(normalisedName)) {
-                        traverse = true;
-                        break;
-                    }
-            }
-            if(traverse) { 
-                display.showTraversedObstacle();
-                break;
-            }
-            else {
-                display.showBlockedByObstacle(o);
+    @Override
+    public boolean notifyMenuPlugins(String choice) {
+        boolean didStuff = false;
+        for(MenuPlugin mp : menuPlugins) {
+            if(mp.takeAction(choice)) {
+                didStuff = true;
             }
         }
+        return didStuff;
+    }
 
-        return traverse;
-     }
+    @Override
+    public void registerInventoryPlugin(InventoryPlugin mp) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'registerInventoryPlugin'");
+    }
 
-     public void pickUpItem(Item item) {
-        data.getPlayer().addToInventory(item);
-     }
+    @Override
+    public boolean notifyInventoryPlugins() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'notifyInventoryPlugins'");
+    }
+
+    @Override
+    public void registerPlayerPlugin(PlayerPlugin mp) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'registerPlayerPlugin'");
+    }
+
+    @Override
+    public boolean notifyPlayerPlugins() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'notifyPlayerPlugins'");
+    }
 }

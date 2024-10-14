@@ -4,7 +4,9 @@ import java.util.List;
 
 import edu.curtin.saed_assignment2.api.model.Cell;
 import edu.curtin.saed_assignment2.api.model.Item;
+import edu.curtin.saed_assignment2.api.plugins.InventoryPlugin;
 import edu.curtin.saed_assignment2.api.plugins.MenuPlugin;
+import edu.curtin.saed_assignment2.api.plugins.PlayerPlugin;
 
 public interface API {
     
@@ -29,6 +31,13 @@ public interface API {
 
     boolean notifyMenuPlugins(String choice);
 
-    boolean movePlayer(int r, int c) // returns success
-;
+    void registerInventoryPlugin(InventoryPlugin mp);
+
+    boolean notifyInventoryPlugins();
+
+    void registerPlayerPlugin(PlayerPlugin mp);
+
+    boolean notifyPlayerPlugins();
+
+    boolean movePlayer(int r, int c); // returns success
 }
