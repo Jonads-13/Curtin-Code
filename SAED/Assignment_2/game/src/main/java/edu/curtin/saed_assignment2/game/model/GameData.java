@@ -91,6 +91,19 @@ public class GameData implements API {
         return moved;
     }
 
+    @Override
+    public boolean notifyMenuPlugins(String choice) {
+        boolean didStuff = false;
+        for(MenuPlugin mp : menuPlugins) {
+            if(mp.takeAction(choice)) {
+                didStuff = true;
+            }
+        }
+        return didStuff;
+    }
+
+
+
     public Cell[][] getMap() {
         return map;
     }

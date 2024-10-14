@@ -77,7 +77,7 @@ public class Start {
                     finished = true;
                 }
                 else {
-                    if(move(choice.toUpperCase(), mps)) {
+                    if(move(choice.toUpperCase())) {
                         data.incrementDays();
                         finished = won();
                     }
@@ -86,9 +86,8 @@ public class Start {
         }
     }
 
-    private boolean move(String choice, List<MenuPlugin> mps) {
+    private boolean move(String choice) {
         int prevRow = data.getPlayer().getRow(), prevCol = data.getPlayer().getCol();
-        boolean pluginDidStuff = false;
         
         switch(choice) {
             case "W" -> {
@@ -112,14 +111,7 @@ public class Start {
                 }
             }
             default -> {
-                for(MenuPlugin mp : mps) {
-                    if(mp.takeAction(choice)) {
-                        pluginDidStuff = true;
-                        break; 
-                    }
-                }
-
-                if(!pluginDidStuff) {
+                if(!data.notifyMenuPlugins(choice)) {
                     display.showWrongInput();
                 }
             }

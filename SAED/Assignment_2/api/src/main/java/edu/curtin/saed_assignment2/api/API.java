@@ -27,6 +27,8 @@ public interface API {
 
     void registerMenuPlugin(MenuPlugin mp);
 
+    boolean notifyMenuPlugins(String choice);
+
     boolean movePlayer(int r, int c) // returns success
 ;
 }
