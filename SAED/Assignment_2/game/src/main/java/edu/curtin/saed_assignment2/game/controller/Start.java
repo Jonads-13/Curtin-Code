@@ -46,6 +46,7 @@ public class Start implements API {
             Parser p = new Parser(fis);
             data = p.parse(data);
             data.initialiseMap();
+            initialisePlugins();
             beginGame();
         } 
         catch (ParseException | IOException e) {
@@ -63,20 +64,9 @@ public class Start implements API {
         boolean finished = false;
 
         try (Scanner sc = new Scanner(System.in)) {
-            for(String name : data.getPlugins()) {
-                try {
-                    Class<?> pluginClass = Class.forName(name);
-                    MenuPlugin pluginObj = (MenuPlugin) pluginClass.getConstructor().newInstance();
-                    pluginObj.start(this);
-                }
-                catch(ClassNotFoundException | IllegalAccessException | IllegalArgumentException | 
-                        InstantiationException | NoSuchMethodException | SecurityException | InvocationTargetException e) {
-                    System.out.println(e);
-                }
-            }
+            display.printScreen(data); // Initial screen print
 
             while(!finished) { // Play game
-                display.printScreen(data);
                 for(MenuPlugin mp : menuPlugins) {
                     mp.displayMenuOption(); // Any plugin menu options?
                 }
@@ -90,13 +80,16 @@ public class Start implements API {
                     Locale newLocale = Locale.forLanguageTag(code);
                     display = new Display(newLocale);
                     notifyLocaleHandlers(newLocale);
+                    display.printScreen(data); //Update map
                 }
                 else {
-                    if(move(choice)) {
-                        data.incrementDays(); 
+                    if(move(choice)) { // 
+                        data.incrementDays(); // Move to the next day
                         finished = won(); // Check if goal reached
                     }
+                    display.printScreen(data); //Update map
                 }
+                
             }
         }
     }
@@ -196,6 +189,39 @@ public class Start implements API {
         player.setRow(r); 
         player.setCol(c);
         data.showAroundPlayer();
+     }
+
+     private void initialisePlugins() {
+        initMenuPlugins();
+        initPlayerPlugins();
+     }
+
+     private void initMenuPlugins() {
+        for(String name : data.getPlugins()) {
+            try {
+                Class<?> pluginClass = Class.forName(name);
+                MenuPlugin pluginObj = (MenuPlugin) pluginClass.getConstructor().newInstance();
+                pluginObj.start(this);
+            }
+            catch(ClassNotFoundException | ClassCastException | IllegalAccessException | IllegalArgumentException | 
+                    InstantiationException | NoSuchMethodException | SecurityException | InvocationTargetException e) {
+                System.out.println(e);
+            }
+        }
+     }
+
+     private void initPlayerPlugins() {
+        for(String name : data.getPlugins()) {
+            try {
+                Class<?> pluginClass = Class.forName(name);
+                PlayerPlugin pluginObj = (PlayerPlugin) pluginClass.getConstructor().newInstance();
+                pluginObj.start(this);
+            }
+            catch(ClassNotFoundException | ClassCastException | IllegalAccessException | IllegalArgumentException | 
+                    InstantiationException | NoSuchMethodException | SecurityException | InvocationTargetException e) {
+                System.out.println(e);
+            }
+        }
      }
 
 

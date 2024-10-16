@@ -4,6 +4,12 @@ public class Item extends Cell {
     private String name;
     private String message;
 
+    public Item(String name, String message) {
+        super();
+        this.name = name;
+        this.message = message;
+    }
+
     public Item(int row, int col, String name, String message) {
         super();
         this.row = row;

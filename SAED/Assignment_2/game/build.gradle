@@ -15,6 +15,7 @@ application {
 dependencies {
     implementation project(":api")
     implementation project(":teleport")
+    implementation project(":prize")
 }
 
 javacc {

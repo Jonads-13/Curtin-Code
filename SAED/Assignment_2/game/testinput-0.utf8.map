@@ -17,6 +17,8 @@ item "sentient red boot" {
   message "Haq*p"
 }
 
+plugin edu.curtin.gameplugins.Prize
+
 script !{
 class MyCallback(edu.curtin.game.Callback):
     def handleEvent(e):
