@@ -5,7 +5,7 @@ import java.util.Locale;
 
 import edu.curtin.saed_assignment2.api.model.Cell;
 import edu.curtin.saed_assignment2.api.model.Item;
-import edu.curtin.saed_assignment2.api.plugins.InventoryPlugin;
+import edu.curtin.saed_assignment2.api.plugins.InventoryHandler;
 import edu.curtin.saed_assignment2.api.plugins.MenuPlugin;
 import edu.curtin.saed_assignment2.api.plugins.PlayerPlugin;
 
@@ -28,15 +28,19 @@ public interface API {
     // Grid square visibility.
     boolean getCellVisbility(int r, int c);
 
+    int[] getGoalLocation();
+
+    void setCellVisibility(int r, int c, boolean visible);
+
     void registerMenuPlugin(MenuPlugin mp);
 
     boolean notifyMenuPlugins(String choice);
 
-    void registerInventoryPlugin(InventoryPlugin mp);
+    void registerInventoryHandler(InventoryHandler ih);
 
-    boolean notifyInventoryPlugins();
+    boolean notifyInventoryHandlers();
 
-    void registerPlayerPlugin(PlayerPlugin mp);
+    void registerPlayerPlugin(PlayerPlugin pp);
 
     void notifyPlayerPlugins(boolean didAction);
 

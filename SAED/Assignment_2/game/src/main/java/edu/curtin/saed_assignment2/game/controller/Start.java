@@ -17,7 +17,7 @@ import edu.curtin.saed_assignment2.api.model.Cell;
 import edu.curtin.saed_assignment2.api.model.Item;
 import edu.curtin.saed_assignment2.api.model.Obstacle;
 import edu.curtin.saed_assignment2.api.model.Player;
-import edu.curtin.saed_assignment2.api.plugins.InventoryPlugin;
+import edu.curtin.saed_assignment2.api.plugins.InventoryHandler;
 import edu.curtin.saed_assignment2.api.plugins.MenuPlugin;
 import edu.curtin.saed_assignment2.api.plugins.PlayerPlugin;
 import edu.curtin.saed_assignment2.game.model.GameData;
@@ -239,8 +239,18 @@ public class Start implements API {
     }
 
     @Override
+    public int[] getGoalLocation() {
+        return data.getGoal().getLocation();
+    }
+
+    @Override
     public boolean getCellVisbility(int r, int c) {
         return data.getMap()[r][c].getVisible();
+    }
+
+    @Override
+    public void setCellVisibility(int r, int c, boolean visbile) {
+        //data.get
     }
 
     @Override
@@ -293,13 +303,13 @@ public class Start implements API {
     }
 
     @Override
-    public void registerInventoryPlugin(InventoryPlugin mp) {
+    public void registerInventoryHandler(InventoryHandler ih) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'registerInventoryPlugin'");
     }
 
     @Override
-    public boolean notifyInventoryPlugins() {
+    public boolean notifyInventoryHandlers() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'notifyInventoryPlugins'");
     }

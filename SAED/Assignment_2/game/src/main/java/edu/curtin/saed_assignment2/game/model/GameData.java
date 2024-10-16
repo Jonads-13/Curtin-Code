@@ -9,6 +9,8 @@ import edu.curtin.saed_assignment2.api.model.Goal;
 import edu.curtin.saed_assignment2.api.model.Item;
 import edu.curtin.saed_assignment2.api.model.Obstacle;
 import edu.curtin.saed_assignment2.api.model.Player;
+import edu.curtin.saed_assignment2.game.model.exceptions.InvalidLocationException;
+import edu.curtin.saed_assignment2.game.model.exceptions.FilledLocationException;
 
 public class GameData {
     
@@ -62,11 +64,11 @@ public class GameData {
             int r = cell.getRow(), c = cell.getCol();
             if(!validLocation(r, c)) { // out of bounds?
                 String message = (map.length-1) + "," + (map[0].length-1) + "\n" + r + "," + c;
-                throw new ParseException(message);
+                throw new InvalidLocationException(message);
             }
 
             if(locationFilled(cell.getRow(), cell.getCol())) { // Already filled location?
-                throw new ParseException(r + "," + c);
+                throw new FilledLocationException(r + "," + c);
             }
 
             // No thrown exceptions so we can place the cell in the map
