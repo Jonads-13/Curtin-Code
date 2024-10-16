@@ -4,5 +4,4 @@ import edu.curtin.saed_assignment2.api.API;
 
 public interface PlayerPlugin {
     void start(API api);
-    void takeAction(boolean didAction);
 }

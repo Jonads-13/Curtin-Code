@@ -16,6 +16,7 @@ dependencies {
     implementation project(":api")
     implementation project(":teleport")
     implementation project(":prize")
+    implementation "org.python:jython-standalone:2.7.1"
 }
 
 javacc {

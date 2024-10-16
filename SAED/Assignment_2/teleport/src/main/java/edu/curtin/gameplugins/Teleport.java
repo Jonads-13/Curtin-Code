@@ -5,10 +5,11 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 import edu.curtin.saed_assignment2.api.API;
-import edu.curtin.saed_assignment2.api.LocaleHandler;
+import edu.curtin.saed_assignment2.api.handlers.LocaleHandler;
+import edu.curtin.saed_assignment2.api.handlers.MenuHandler;
 import edu.curtin.saed_assignment2.api.plugins.MenuPlugin;
 
-public class Teleport implements MenuPlugin, LocaleHandler {
+public class Teleport implements MenuPlugin, MenuHandler, LocaleHandler {
 
     private API api;
     private boolean done;
@@ -19,7 +20,7 @@ public class Teleport implements MenuPlugin, LocaleHandler {
         this.api = api;
         done = false;
         bundle = ResourceBundle.getBundle("teleport-bundle");
-        api.registerMenuPlugin(this);
+        api.registerMenuHandler(this);
         api.registerLocaleHandler(this);
     }
 

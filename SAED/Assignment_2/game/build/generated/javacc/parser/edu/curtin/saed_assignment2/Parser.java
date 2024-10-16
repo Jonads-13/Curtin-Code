@@ -85,6 +85,9 @@ public class Parser implements ParserConstants {
         if(tempPlugin != null) {
             data.addPlugin(tempPlugin);
         }
+        if(tempScript != null) {
+            data.addScript(tempScript);
+        }
         for(Item item : tempItems) {
             data.addItem(item);
             data.addSpecialCell(item);
@@ -174,6 +177,7 @@ public class Parser implements ParserConstants {
     String script;
     jj_consume_token(SCRIPT);
     script = jj_consume_token(SCRIPT_BODY).image;
+    jj_consume_token(23);
         {if (true) return script;}
     throw new Error("Missing return statement in function");
   }

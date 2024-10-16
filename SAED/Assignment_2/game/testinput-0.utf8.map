@@ -20,14 +20,40 @@ item "sentient red boot" {
 plugin edu.curtin.gameplugins.Prize
 
 script !{
-class MyCallback(edu.curtin.game.Callback):
-    def handleEvent(e):
-        print(api.getSomeInfo())
+from edu.curtin.saed_assignment2.api.handlers import PlayerHandler
+from edu.curtin.saed_assignment2.api.model import Obstacle
+import time
+
+print("Starting up penalty script...")
+current = time.time() * 1000
+class Penalty(PlayerHandler):
+    def takeAction(self, didAction, prevLocation, newLocation):
+        global current
+        if ((time.time() * 1000) - current) > 5000 :
+            prevRow = prevLocation[0]
+            prevCol = prevLocation[1]
+            penalty_obstacle = Obstacle(prevRow, prevCol, ["Unobtanium"])
+            penalty_obstacle.setVisible();
+            api.setMapCell(penalty_obstacle, prevRow, prevCol)
+        current = time.time() * 1000
+        
+penalty = Penalty()
+api.registerPlayerHandler(penalty)
 }
 
 script !{
-class MyCallback(edu.curtin.game.Callback):
-    def handleEvent(e):
-        print(api.getSomeInfo())
+from edu.curtin.saed_assignment2.api.handlers import InventoryHandler
+
+print("Starting reveal script")
+class Reveal(InventoryHandler):
+    def takeAction(self, item):
+        name = item.getName()
+        map_upper = "Map"
+        map_lower = "map"
+        if map_upper in name or map_lower in name:
+            goalLocation = api.getGoalLocation()
+            api.setCellVisibility(goalLocation[0], goalLocation[1], True)
+reveal = Reveal()
+api.registerInventoryHandler(reveal)
 }
 

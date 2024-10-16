@@ -32,8 +32,8 @@ public class Cell {
         this.col = col;
     }
 
-    public void setVisible() {
-        visible = true;
+    public void setVisiblity(boolean visibility) {
+        visible = visibility;
     }
     
     public boolean getVisible() {

@@ -70,7 +70,7 @@ goto fail
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\game.jar;%APP_HOME%\lib\teleport.jar;%APP_HOME%\lib\prize.jar;%APP_HOME%\lib\api.jar
+set CLASSPATH=%APP_HOME%\lib\game.jar;%APP_HOME%\lib\teleport.jar;%APP_HOME%\lib\prize.jar;%APP_HOME%\lib\api.jar;%APP_HOME%\lib\jython-standalone-2.7.1.jar
 
 
 @rem Execute game

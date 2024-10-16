@@ -115,7 +115,7 @@ case "$( uname )" in                #(
   NONSTOP* )        nonstop=true ;;
 esac
 
-CLASSPATH=$APP_HOME/lib/game.jar:$APP_HOME/lib/teleport.jar:$APP_HOME/lib/prize.jar:$APP_HOME/lib/api.jar
+CLASSPATH=$APP_HOME/lib/game.jar:$APP_HOME/lib/teleport.jar:$APP_HOME/lib/prize.jar:$APP_HOME/lib/api.jar:$APP_HOME/lib/jython-standalone-2.7.1.jar
 
 
 # Determine the Java command to use to start the JVM.

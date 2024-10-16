@@ -131,10 +131,10 @@ public class GameData {
         int r = player.getRow(), c = player.getCol();
 
         // If the cell is within bounds, make it visible
-        if(validLocation(r-1, c)) { map[r-1][c].setVisible(); }
-        if(validLocation(r+1, c)) { map[r+1][c].setVisible(); }
-        if(validLocation(r, c-1)) { map[r][c-1].setVisible(); }
-        if(validLocation(r, c+1)) { map[r][c+1].setVisible(); }
+        if(validLocation(r-1, c)) { map[r-1][c].setVisiblity(true); }
+        if(validLocation(r+1, c)) { map[r+1][c].setVisiblity(true); }
+        if(validLocation(r, c-1)) { map[r][c-1].setVisiblity(true); }
+        if(validLocation(r, c+1)) { map[r][c+1].setVisiblity(true); }
     }
 
     private boolean locationFilled(int r, int c) {

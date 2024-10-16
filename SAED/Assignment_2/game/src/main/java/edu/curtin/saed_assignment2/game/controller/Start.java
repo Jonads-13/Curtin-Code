@@ -8,16 +8,19 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Locale;
+import org.python.util.*;
 
 import edu.curtin.saed_assignment2.ParseException;
 import edu.curtin.saed_assignment2.Parser;
 import edu.curtin.saed_assignment2.api.API;
-import edu.curtin.saed_assignment2.api.LocaleHandler;
+import edu.curtin.saed_assignment2.api.handlers.InventoryHandler;
+import edu.curtin.saed_assignment2.api.handlers.LocaleHandler;
+import edu.curtin.saed_assignment2.api.handlers.MenuHandler;
+import edu.curtin.saed_assignment2.api.handlers.PlayerHandler;
 import edu.curtin.saed_assignment2.api.model.Cell;
 import edu.curtin.saed_assignment2.api.model.Item;
 import edu.curtin.saed_assignment2.api.model.Obstacle;
 import edu.curtin.saed_assignment2.api.model.Player;
-import edu.curtin.saed_assignment2.api.plugins.InventoryHandler;
 import edu.curtin.saed_assignment2.api.plugins.MenuPlugin;
 import edu.curtin.saed_assignment2.api.plugins.PlayerPlugin;
 import edu.curtin.saed_assignment2.game.model.GameData;
@@ -30,16 +33,18 @@ public class Start implements API {
     private final String filename;
     private Display display;
     private GameData data;
-    private final List<MenuPlugin> menuPlugins;
-    private final List<PlayerPlugin> playerPlugins;
+    private final List<MenuHandler> menuHandlers;
+    private final List<PlayerHandler> playerHandlers;
+    private final List<InventoryHandler> inventoryHandlers;
     private final List<LocaleHandler> localeHandlers;
 
     public Start(String f) {
         this.filename = f;
         data = new GameData();
         display = new Display();
-        menuPlugins = new LinkedList<>();
-        playerPlugins = new LinkedList<>();
+        menuHandlers = new LinkedList<>();
+        playerHandlers = new LinkedList<>();
+        inventoryHandlers = new LinkedList<>();
         localeHandlers = new LinkedList<>();
     }
 
@@ -48,8 +53,6 @@ public class Start implements API {
             Parser p = new Parser(fis);
             data = p.parse(data);
             data.initialiseMap();
-            initialisePlugins();
-            beginGame();
         } 
         catch (ParseException | IOException e) {
             System.out.println(e.getMessage());
@@ -60,6 +63,12 @@ public class Start implements API {
         catch (FilledLocationException fle) {
             System.out.println(display.getFilledMessage() + fle.getMessage());
         }
+
+        try(PythonInterpreter interpreter = new PythonInterpreter()) {
+            initialiseScripts(interpreter);
+            initialisePlugins();
+            beginGame();
+        }
     }
 
     private void beginGame() {
@@ -69,7 +78,7 @@ public class Start implements API {
             
             while(!finished) { // Play game
                 display.printScreen(data); // Display game state
-                for(MenuPlugin mp : menuPlugins) {
+                for(MenuHandler mp : menuHandlers) {
                     mp.displayMenuOption(); // Any plugin menu options?
                 }
                 String choice = sc.next().toUpperCase();
@@ -89,7 +98,6 @@ public class Start implements API {
                         finished = won(); // Check if goal reached
                     }
                 }
-                
             }
         }
     }
@@ -112,7 +120,7 @@ public class Start implements API {
                 moved = movePlayer(prevRow, prevCol+1); // Right
             }
             default -> {
-                if(!notifyMenuPlugins(choice)) {
+                if(!notifyMenuHandlers(choice)) {
                     display.showWrongInput();
                     moved = false;
                 }
@@ -143,7 +151,7 @@ public class Start implements API {
          Player player = data.getPlayer();
          List<String> requirements = o.getItemRequirements();
          List<Item> inventory = player.getInventory();
-         int i = requirements.size(); // Number of items the player needs to acquire
+         int i = requirements.size(); // Number of items the player needs to hold
 
          // Loop while there are still items to check
          for(String requirement : requirements) {
@@ -151,7 +159,7 @@ public class Start implements API {
             for(Item item : inventory) { // Loop through inventory looking for required item
                 String normalisedName = Normalizer.normalize(item.getName(), Normalizer.Form.NFC);
                     if(normalisedRequirement.equals(normalisedName)) {
-                        i--; // One item found in inventory
+                        i--; // item found in inventory
                    }
             }
         }
@@ -180,11 +188,18 @@ public class Start implements API {
 
         map[r][c] = player;
         Cell replace = new Cell();
-        replace.setVisible();
+        replace.setVisiblity(true);
         map[player.getRow()][player.getCol()] = replace;
         player.setRow(r); 
         player.setCol(c);
         data.showAroundPlayer();
+     }
+
+     private void initialiseScripts(PythonInterpreter interpreter) {
+        for (String script : data.getScripts()) {
+            interpreter.set("api", this);
+            interpreter.exec(script);
+        }
      }
 
      private void initialisePlugins() {
@@ -239,6 +254,11 @@ public class Start implements API {
     }
 
     @Override
+    public void setMapCell(Cell newCell, int r, int c) {
+        data.getMap()[r][c] = newCell;
+    }
+
+    @Override
     public int[] getGoalLocation() {
         return data.getGoal().getLocation();
     }
@@ -249,19 +269,21 @@ public class Start implements API {
     }
 
     @Override
-    public void setCellVisibility(int r, int c, boolean visbile) {
-        //data.get
+    public void setCellVisibility(int r, int c, boolean visible) {
+        data.getMap()[r][c].setVisiblity(visible);
     }
 
     @Override
-    public void registerMenuPlugin(MenuPlugin mp) {
-        menuPlugins.add(mp);
+    public void registerMenuHandler(MenuHandler mh) {
+        menuHandlers.add(mh);
     }
 
     @Override
     public boolean movePlayer(int r, int c) {
         boolean moved = false;
         Cell[][] map = data.getMap();
+        int[] prevLocation = getPlayerLocation();
+        int[] newLocation = new int[]{r, c};
 
         if(data.validLocation(r, c)) {
             switch (map[r][c]) {
@@ -269,19 +291,20 @@ public class Start implements API {
                     if(traversedObstacle(obstacle)) {
                         changePlayerLocation(r, c);
                         moved = true;
-                        notifyPlayerPlugins(true);
+                        notifyPlayerHandlers(true, prevLocation, newLocation);
                     }
                 }
                 case Item item -> {
                     pickUpItem(item); 
                     changePlayerLocation(r, c);
                     moved = true;
-                    notifyPlayerPlugins(true);
+                    notifyPlayerHandlers(true, prevLocation, newLocation);
+                    notifyInventoryHandlers(item);
                 }
                 default -> {
                     changePlayerLocation(r, c);
                     moved = true;
-                    notifyPlayerPlugins(false);
+                    notifyPlayerHandlers(false, prevLocation, newLocation);
                 }
             }
         }
@@ -292,9 +315,9 @@ public class Start implements API {
     }
 
     @Override
-    public boolean notifyMenuPlugins(String choice) {
+    public boolean notifyMenuHandlers(String choice) {
         boolean didStuff = false;
-        for(MenuPlugin mp : menuPlugins) {
+        for(MenuHandler mp : menuHandlers) {
             if(mp.takeAction(choice)) {
                 didStuff = true;
             }
@@ -304,25 +327,25 @@ public class Start implements API {
 
     @Override
     public void registerInventoryHandler(InventoryHandler ih) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'registerInventoryPlugin'");
+       inventoryHandlers.add(ih);
     }
 
     @Override
-    public boolean notifyInventoryHandlers() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'notifyInventoryPlugins'");
+    public void notifyInventoryHandlers(Item item) {
+        for (InventoryHandler ih : inventoryHandlers) {
+            ih.takeAction(item);
+        }
     }
 
     @Override
-    public void registerPlayerPlugin(PlayerPlugin pp) {
-        playerPlugins.add(pp);
+    public void registerPlayerHandler(PlayerHandler ph) {
+        playerHandlers.add(ph);
     }
 
     @Override
-    public void notifyPlayerPlugins(boolean didAction) {
-        for(PlayerPlugin pp : playerPlugins) {
-            pp.takeAction(didAction);
+    public void notifyPlayerHandlers(boolean didAction, int[] prevLocation, int[] newLocation) {
+        for(PlayerHandler ph : playerHandlers) {
+            ph.takeAction(didAction, prevLocation, newLocation);
         }
     }
 

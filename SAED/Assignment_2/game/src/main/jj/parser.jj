@@ -28,7 +28,7 @@ TOKEN : {
     < REQUIRES: "requires" > |
     < COORDINATE: "(" (<WS>)* (<INT>)+ (<WS>)* "," (<WS>)* (<INT>)+ (<WS>)* ")" > |
     < MESSAGE: "message" > |
-    < SCRIPT_BODY: "!{" (~["}"])* "}" > |
+    < SCRIPT_BODY: "!{" (~["}"])* > |
     < PLUGIN_NAME: <IDENTIFIER> ( "." <IDENTIFIER> )* > |
     < WS: [" ","\t","\r","\n"] > | // Whitespace
     < STRING_LITERAL: "\"" (~["\""])* "\"" > |
@@ -72,6 +72,9 @@ GameData FileContent(GameData data) :
         }
         if(tempPlugin != null) {
             data.addPlugin(tempPlugin);
+        }
+        if(tempScript != null) {
+            data.addScript(tempScript);
         }
         for(Item item : tempItems) {
             data.addItem(item);
@@ -169,7 +172,7 @@ String ScriptDefinition() :
     String script;
 }
 {
-    <SCRIPT> script=<SCRIPT_BODY>.image {
+    <SCRIPT> script=<SCRIPT_BODY>.image "}" {
         return script;
     }
 }

@@ -5,11 +5,12 @@ import java.util.ResourceBundle;
 import java.util.List;
 
 import edu.curtin.saed_assignment2.api.API;
+import edu.curtin.saed_assignment2.api.handlers.LocaleHandler;
+import edu.curtin.saed_assignment2.api.handlers.PlayerHandler;
 import edu.curtin.saed_assignment2.api.plugins.PlayerPlugin;
-import edu.curtin.saed_assignment2.api.LocaleHandler;
 import edu.curtin.saed_assignment2.api.model.Item;
 
-public class Prize implements PlayerPlugin, LocaleHandler {
+public class Prize implements PlayerPlugin, PlayerHandler, LocaleHandler {
     
     private API api;
     private int count;
@@ -23,7 +24,7 @@ public class Prize implements PlayerPlugin, LocaleHandler {
         count = 0;
         itemGiven = false;
         bundle = ResourceBundle.getBundle("prize-bundle");
-        api.registerPlayerPlugin(this);
+        api.registerPlayerHandler(this);
     }
 
     @Override
@@ -32,7 +33,7 @@ public class Prize implements PlayerPlugin, LocaleHandler {
     }
 
     @Override
-    public void takeAction(boolean didAction) {
+    public void takeAction(boolean didAction, int[] prevLocation, int[] newLocation) {
         if(!itemGiven) {
             if(didAction) {
                 count++;

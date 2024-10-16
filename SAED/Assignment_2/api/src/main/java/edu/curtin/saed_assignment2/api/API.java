@@ -3,11 +3,12 @@ package edu.curtin.saed_assignment2.api;
 import java.util.List;
 import java.util.Locale;
 
+import edu.curtin.saed_assignment2.api.handlers.InventoryHandler;
+import edu.curtin.saed_assignment2.api.handlers.LocaleHandler;
+import edu.curtin.saed_assignment2.api.handlers.MenuHandler;
+import edu.curtin.saed_assignment2.api.handlers.PlayerHandler;
 import edu.curtin.saed_assignment2.api.model.Cell;
 import edu.curtin.saed_assignment2.api.model.Item;
-import edu.curtin.saed_assignment2.api.plugins.InventoryHandler;
-import edu.curtin.saed_assignment2.api.plugins.MenuPlugin;
-import edu.curtin.saed_assignment2.api.plugins.PlayerPlugin;
 
 public interface API {
     
@@ -25,6 +26,8 @@ public interface API {
     // Grid square contents—any item, obstacle or goal at any given location;
     Cell getMapCell(int r, int c);
 
+    void setMapCell(Cell newCell, int r, int c);
+
     // Grid square visibility.
     boolean getCellVisbility(int r, int c);
 
@@ -32,17 +35,17 @@ public interface API {
 
     void setCellVisibility(int r, int c, boolean visible);
 
-    void registerMenuPlugin(MenuPlugin mp);
+    void registerMenuHandler(MenuHandler mh);
 
-    boolean notifyMenuPlugins(String choice);
+    boolean notifyMenuHandlers(String choice);
 
     void registerInventoryHandler(InventoryHandler ih);
 
-    boolean notifyInventoryHandlers();
+    void notifyInventoryHandlers(Item item);
 
-    void registerPlayerPlugin(PlayerPlugin pp);
+    void registerPlayerHandler(PlayerHandler ph);
 
-    void notifyPlayerPlugins(boolean didAction);
+    void notifyPlayerHandlers(boolean didAction, int[] prevLocation, int[] newLocation);
 
     void registerLocaleHandler(LocaleHandler lh);
 
