@@ -7,10 +7,10 @@ import java.util.List;
 import edu.curtin.saed_assignment2.api.API;
 import edu.curtin.saed_assignment2.api.handlers.LocaleHandler;
 import edu.curtin.saed_assignment2.api.handlers.PlayerHandler;
-import edu.curtin.saed_assignment2.api.plugins.PlayerPlugin;
+import edu.curtin.saed_assignment2.api.plugins.Plugin;
 import edu.curtin.saed_assignment2.api.model.Item;
 
-public class Prize implements PlayerPlugin, PlayerHandler, LocaleHandler {
+public class Prize implements Plugin, PlayerHandler, LocaleHandler {
     
     private API api;
     private int count;
@@ -25,11 +25,12 @@ public class Prize implements PlayerPlugin, PlayerHandler, LocaleHandler {
         itemGiven = false;
         bundle = ResourceBundle.getBundle("prize-bundle");
         api.registerPlayerHandler(this);
+        api.registerLocaleHandler(this);
     }
 
     @Override
     public void notifyLocaleChanged(Locale locale) {
-        bundle = ResourceBundle.getBundle("prize-plugin", locale);
+        bundle = ResourceBundle.getBundle("prize-bundle", locale);
     }
 
     @Override

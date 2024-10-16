@@ -24,6 +24,8 @@ public class GameData {
     private final List<String> scripts;
     private int days;
 
+
+    // Constructor
     public GameData() {
         map = new Cell[10][10];
         specialCells = new LinkedList<>();
@@ -36,24 +38,40 @@ public class GameData {
         days = 0;
     }
 
+
     public Cell[][] getMap() {
         return map;
     }
+
+
+
+
 
     public void setMap(Cell[][] map) {
         this.map = map;
     }
 
+
+
+
     public List<Cell> getSpecialCells() {
         return specialCells;
     }
+
+
+
 
     public void addSpecialCell(Cell specialCell) {
         specialCells.add(specialCell);
     }
 
+
+
+
+
+
     public void initialiseMap() throws ParseException {
-        for (Cell[] row : map) {
+        for (Cell[] row : map) { // Create Cell object at each map index
             for (int i = 0; i < row.length; i++) {
                 row[i] = new Cell();
             }
@@ -78,65 +96,120 @@ public class GameData {
         showAroundPlayer();
     }
 
+
+
+
     public Player getPlayer() {
         return player;
     }
+
+
+
+
 
     public void setPlayer(Player player) {
         this.player = player;
     }
 
+
+
+
+
     public Goal getGoal() {
         return goal;
     }
+
+
+
+
 
     public void setGoal(Goal goal) {
         this.goal = goal;
     }
 
+
+
+
+
     public List<Item> getItems() {
         return items;
     }
+
+
+
+
 
     public void addItem(Item item) {
         items.add(item);
     }
 
+
+
+
+
     public List<Obstacle> getObstacles() {
         return obstacles;
     }
+
+
+
+
 
     public void addObstacle(Obstacle obstacle) {
         obstacles.add(obstacle);
     }
 
+
+
+
+
     public List<String> getPlugins() {
         return plugins;
     }
+
+
+
+
 
     public void addPlugin(String plugin) {
         plugins.add(plugin);
     }
 
+
+
+
+
     public List<String> getScripts() {
         return scripts;
     }
 
+
+
+
+
     public void addScript(String script) {
         scripts.add(script);
     }
+
+
+
+
 
     // Change cells around player to be visible
     public void showAroundPlayer() {
         int r = player.getRow(), c = player.getCol();
 
         // If the cell is within bounds, make it visible
-        if(validLocation(r-1, c)) { map[r-1][c].setVisiblity(true); }
-        if(validLocation(r+1, c)) { map[r+1][c].setVisiblity(true); }
-        if(validLocation(r, c-1)) { map[r][c-1].setVisiblity(true); }
-        if(validLocation(r, c+1)) { map[r][c+1].setVisiblity(true); }
+        if(validLocation(r-1, c)) { map[r-1][c].setVisibility(true); }
+        if(validLocation(r+1, c)) { map[r+1][c].setVisibility(true); }
+        if(validLocation(r, c-1)) { map[r][c-1].setVisibility(true); }
+        if(validLocation(r, c+1)) { map[r][c+1].setVisibility(true); }
     }
 
+
+
+
+    // Check if a map element already  has a special cell there
     private boolean locationFilled(int r, int c) {
         boolean filled = false;
 
@@ -148,6 +221,10 @@ public class GameData {
         return filled;
     }
 
+
+
+
+    // Check location is within map bounds
     public boolean validLocation(int r, int c) {
         boolean valid = false;
 
@@ -159,9 +236,16 @@ public class GameData {
         return valid;
     }
 
+
+
+
     public void incrementDays() {
         days++;
     }
+
+
+
+    
 
     public int getDays() {
         return days;

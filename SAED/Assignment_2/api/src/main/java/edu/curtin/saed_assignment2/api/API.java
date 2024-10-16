@@ -28,6 +28,8 @@ public interface API {
 
     void setMapCell(Cell newCell, int r, int c);
 
+    Cell[][] getMap();
+
     // Grid square visibility.
     boolean getCellVisbility(int r, int c);
 

@@ -7,9 +7,9 @@ import java.util.ResourceBundle;
 import edu.curtin.saed_assignment2.api.API;
 import edu.curtin.saed_assignment2.api.handlers.LocaleHandler;
 import edu.curtin.saed_assignment2.api.handlers.MenuHandler;
-import edu.curtin.saed_assignment2.api.plugins.MenuPlugin;
+import edu.curtin.saed_assignment2.api.plugins.Plugin;
 
-public class Teleport implements MenuPlugin, MenuHandler, LocaleHandler {
+public class Teleport implements Plugin, MenuHandler, LocaleHandler {
 
     private API api;
     private boolean done;
@@ -61,7 +61,6 @@ public class Teleport implements MenuPlugin, MenuHandler, LocaleHandler {
 
     @Override
     public void notifyLocaleChanged(Locale locale) {
-        System.out.println("got here");
         bundle = ResourceBundle.getBundle("teleport-bundle", locale);
     }
 

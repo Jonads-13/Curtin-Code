@@ -15,6 +15,9 @@ public class App {
         }
     }
 
+
+
+    // Display how to use the program to the user
     private static void usage() {
         System.out.println("usage:\n$./graldew run --args=\"<path/to/inputfile>\"");
     }

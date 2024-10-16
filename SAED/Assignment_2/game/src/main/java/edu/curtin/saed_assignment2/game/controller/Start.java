@@ -2,6 +2,7 @@ package edu.curtin.saed_assignment2.game.controller;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.text.Normalizer;
 import java.util.LinkedList;
@@ -21,8 +22,7 @@ import edu.curtin.saed_assignment2.api.model.Cell;
 import edu.curtin.saed_assignment2.api.model.Item;
 import edu.curtin.saed_assignment2.api.model.Obstacle;
 import edu.curtin.saed_assignment2.api.model.Player;
-import edu.curtin.saed_assignment2.api.plugins.MenuPlugin;
-import edu.curtin.saed_assignment2.api.plugins.PlayerPlugin;
+import edu.curtin.saed_assignment2.api.plugins.Plugin;
 import edu.curtin.saed_assignment2.game.model.GameData;
 import edu.curtin.saed_assignment2.game.model.exceptions.FilledLocationException;
 import edu.curtin.saed_assignment2.game.model.exceptions.InvalidLocationException;
@@ -38,6 +38,9 @@ public class Start implements API {
     private final List<InventoryHandler> inventoryHandlers;
     private final List<LocaleHandler> localeHandlers;
 
+
+
+    // Constructor
     public Start(String f) {
         this.filename = f;
         data = new GameData();
@@ -48,34 +51,59 @@ public class Start implements API {
         localeHandlers = new LinkedList<>();
     }
 
+
+
+
+
+
+    // Initialise data structures for use throughout the game
     public void setup() {
         try (FileInputStream fis = new FileInputStream(filename)) {
-            Parser p = new Parser(fis);
+            Parser p;
+
+            // Determine which file encding to read
+            if(filename.contains("utf8")) {
+                p = new Parser(new InputStreamReader(fis, "UTF-8"));
+            }
+            else if(filename.contains("utf16")) {
+                p = new Parser(new InputStreamReader(fis, "UTF-16"));
+            }
+            else if(filename.contains("utf32")) {
+                p = new Parser(new InputStreamReader(fis, "UTF-32"));
+            }
+            else {
+                throw new ParseException("Invalid File Format");
+            }
             data = p.parse(data);
             data.initialiseMap();
+
+            // Run any python scripts in the input file
+            try(PythonInterpreter interpreter = new PythonInterpreter()) {
+                initialiseScripts(interpreter);
+                initialisePlugins();
+                beginGame(); // Let's play
+            }
         } 
         catch (ParseException | IOException e) {
             System.out.println(e.getMessage());
         }
-        catch (InvalidLocationException ile) {
+        catch (InvalidLocationException ile) { // File format was fine, but data was not
             System.out.println(display.getInvalidMessage() + ile.getMessage());
         }
-        catch (FilledLocationException fle) {
+        catch (FilledLocationException fle) { // File format was fine, but data was not
             System.out.println(display.getFilledMessage() + fle.getMessage());
-        }
-
-        try(PythonInterpreter interpreter = new PythonInterpreter()) {
-            initialiseScripts(interpreter);
-            initialisePlugins();
-            beginGame();
         }
     }
 
+
+
+
+
+    // Game loop logic
     private void beginGame() {
         boolean finished = false;
 
         try (Scanner sc = new Scanner(System.in)) {
-            
             while(!finished) { // Play game
                 display.printScreen(data); // Display game state
                 for(MenuHandler mp : menuHandlers) {
@@ -85,23 +113,30 @@ public class Start implements API {
                 if(choice.equals("Q")) { // User wants to quit
                     finished = true;
                 }
-                else if(choice.equals("L")) {
+                else if(choice.equals("L")) { // Change locale
                     display.showLocalePrompt();
                     String code = sc.next();
-                    Locale newLocale = Locale.forLanguageTag(code);
+                    Locale newLocale = Locale.forLanguageTag(code); // Get new locale
                     display = new Display(newLocale);
-                    notifyLocaleHandlers(newLocale);
+                    notifyLocaleHandlers(newLocale); // tell any plugins that the locale has changed
                 }
                 else {
-                    if(move(choice)) { // 
+                    if(move(choice)) {
                         data.incrementDays(); // Move to the next day
-                        finished = won(); // Check if goal reached
+                        finished = won(data.getDays()); // Check if goal reached
                     }
                 }
             }
         }
     }
 
+
+
+
+
+
+
+    // Try to move the player
     private boolean move(String choice) {
         int prevRow = data.getPlayer().getRow(), prevCol = data.getPlayer().getCol();
         boolean moved = true;
@@ -119,20 +154,24 @@ public class Start implements API {
             case "D" -> {
                 moved = movePlayer(prevRow, prevCol+1); // Right
             }
-            default -> {
-                if(!notifyMenuHandlers(choice)) {
+            default -> { // Not direction, plugin menu option?
+                if(!notifyMenuHandlers(choice)) { // If no plugins did anything
                     display.showWrongInput();
                     moved = false;
                 }
             }
         }
 
-        // If location is the same then the player didn't move
-        return moved;
-        
+        return moved;   
     }
 
-    private boolean won() {
+
+
+
+
+
+    // Check if the player has reached the goal
+    private boolean won(int days) {
         int pr = data.getPlayer().getRow();
         int pc = data.getPlayer().getCol();
         int gr = data.getGoal().getRow();
@@ -141,26 +180,32 @@ public class Start implements API {
 
         if((pr==gr) && (pc==gc)) {
             won = true;
-            display.showPlayerWon();
+            display.showPlayerWon(days);
         }
 
         return won;
     }
 
-     public boolean traversedObstacle(Obstacle o) {
-         Player player = data.getPlayer();
-         List<String> requirements = o.getItemRequirements();
-         List<Item> inventory = player.getInventory();
-         int i = requirements.size(); // Number of items the player needs to hold
+    
 
-         // Loop while there are still items to check
-         for(String requirement : requirements) {
+
+
+
+    // Check if the player has the required items to traverse the obstacle
+    public boolean traversedObstacle(Obstacle o) {
+        Player player = data.getPlayer();
+        List<String> requirements = o.getItemRequirements();
+        List<Item> inventory = player.getInventory();
+        int i = requirements.size(); // Number of items the player needs to hold
+
+        // Loop while there are still items to check
+        for(String requirement : requirements) {
             String normalisedRequirement = Normalizer.normalize(requirement, Normalizer.Form.NFC);
             for(Item item : inventory) { // Loop through inventory looking for required item
                 String normalisedName = Normalizer.normalize(item.getName(), Normalizer.Form.NFC);
-                    if(normalisedRequirement.equals(normalisedName)) {
-                        i--; // item found in inventory
-                   }
+                if(normalisedRequirement.equals(normalisedName)) {
+                    i--; // item found in inventory
+                }
             }
         }
 
@@ -169,51 +214,70 @@ public class Start implements API {
             display.showTraversedObstacle();
             traversed = true;
         }
-        else {
+        else { // Missing required items
             display.showBlockedByObstacle(o);
             traversed = false;
         }
 
         return traversed;
-     }
+    }
 
-     public void pickUpItem(Item item) {
+
+
+
+    // Player moved over an item
+    public void pickUpItem(Item item) {
         data.getPlayer().addToInventory(item);
         display.showPickedUpItem(String.format("%s: %s",item.getName(), item.getMessage()));
-     }
+    }
 
-     private void changePlayerLocation(int r, int c) {
+
+
+
+    // Move the player location
+    private void changePlayerLocation(int r, int c) {
         Cell[][] map = data.getMap();
         Player player = data.getPlayer();
 
-        map[r][c] = player;
+        map[r][c] = player; // Place player at new location
+
+        // Blank cell for where the player came from
         Cell replace = new Cell();
-        replace.setVisiblity(true);
-        map[player.getRow()][player.getCol()] = replace;
+        replace.setVisibility(true);
+        map[player.getRow()][player.getCol()] = replace; 
+
+        // Set new player location
         player.setRow(r); 
         player.setCol(c);
         data.showAroundPlayer();
-     }
+    }
 
-     private void initialiseScripts(PythonInterpreter interpreter) {
+
+
+
+    // Start all python scripts from input file
+    private void initialiseScripts(PythonInterpreter interpreter) {
         for (String script : data.getScripts()) {
             interpreter.set("api", this);
             interpreter.exec(script);
         }
-     }
+    }
 
-     private void initialisePlugins() {
+
+
+
+
+    // Create all plugins from input file
+    private void initialisePlugins() {
         for(String name : data.getPlugins()) {
             try {
                 Class<?> pluginClass = Class.forName(name);
                 switch(pluginClass.getConstructor().newInstance()) { // Attempt to cast plugin to each specified interface
-                    case MenuPlugin menuPlugin-> {
-                        menuPlugin.start(this);
+                    case Plugin plugin-> {
+                        plugin.start(this);
+                        display.showPluginStarted(plugin.getClass().getName());
                     }
-                    case PlayerPlugin playerPlugin -> {
-                        playerPlugin.start(this);
-                    }
-                    default -> {
+                    default -> { // No plugin interface specified
                         display.showInvalidPlugin(name);
                     }
                 }
@@ -223,7 +287,7 @@ public class Start implements API {
                 System.out.println(e);
             }
         }
-     }
+    }
 
 
     // Interface methods
@@ -259,6 +323,11 @@ public class Start implements API {
     }
 
     @Override
+    public Cell[][] getMap() {
+        return data.getMap();
+    }
+
+    @Override
     public int[] getGoalLocation() {
         return data.getGoal().getLocation();
     }
@@ -270,7 +339,7 @@ public class Start implements API {
 
     @Override
     public void setCellVisibility(int r, int c, boolean visible) {
-        data.getMap()[r][c].setVisiblity(visible);
+        data.getMap()[r][c].setVisibility(visible);
     }
 
     @Override
