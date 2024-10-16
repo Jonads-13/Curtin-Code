@@ -163,6 +163,13 @@ public class Display {
     public void showPluginStarted(String pluginName) {
         System.out.println(bundle.getString("plugin_started") + pluginName);
     }
+
+
+
+
+    public void showQuitMessage() {
+        System.out.println(bundle.getString("quit_message"));
+    }
 }
 
        

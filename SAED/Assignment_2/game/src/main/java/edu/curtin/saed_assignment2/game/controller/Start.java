@@ -112,6 +112,7 @@ public class Start implements API {
                 String choice = sc.next().toUpperCase();
                 if(choice.equals("Q")) { // User wants to quit
                     finished = true;
+                    display.showQuitMessage();
                 }
                 else if(choice.equals("L")) { // Change locale
                     display.showLocalePrompt();
