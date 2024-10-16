@@ -1,4 +1,4 @@
-size (10,1)
+size (10,10)
 start (5,0)
 goal (1,0)
 
@@ -7,13 +7,13 @@ plugin edu.curtin.gameplugins.Teleport
 item  "broken white map|+"    {
 at
    (  9   ,  0
-)   message   "?NbS+QZd"} obstacle {
+) , (5,4), (2,3)  message   "?NbS+QZd"} obstacle {
   at (8,0), (2,0)
   requires "sentient red boot", "broken white map|+"
 }
 
 item "sentient red boot" {
-  at (3,-0)
+  at (3,0), (1,1), (0,0)
   message "Haq*p"
 }
 

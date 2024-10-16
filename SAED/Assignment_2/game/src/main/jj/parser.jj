@@ -127,8 +127,9 @@ List<Item> ItemDefinition() :
     List<Item> items = new LinkedList<Item>();
 }
 {
-    <ITEM> itemName=<STRING_LITERAL>.image "{" locations=AtLocation() itemMessage=Message() "}" {
+    <ITEM> itemName=stringLiteral() "{" locations=AtLocation() itemMessage=Message() "}" {
         for(int[] coord : locations) {
+            // strip quotes off of string
             items.add(new Item(coord[0], coord[1], itemName, itemMessage));
         }
         return items;
@@ -180,10 +181,10 @@ List<String> RequirementList() :
     String requirement;
 }
 {
-    <REQUIRES> requirement=<STRING_LITERAL>.image {
+    <REQUIRES> requirement=stringLiteral() {
         requirements.add(requirement);
-    } ( "," requirement=<STRING_LITERAL>.image )* {
-        requirements.add(requirement);
+    } ( "," requirement=stringLiteral() )* {
+        requirements.add(requirement); // strip quotes off of string
     } {
         return requirements;
     }
@@ -223,7 +224,7 @@ String Message() :
     String message;
 }
 {
-    <MESSAGE> message=<STRING_LITERAL>.image {
+    <MESSAGE> message=stringLiteral() {
         return message.replaceAll("\"", "");
     }
 }
@@ -243,5 +244,15 @@ int[] Coordinate() :
         col = Integer.parseInt(split[1].strip());
 
         return new int[]{row, col}; // return useful data
+    }
+}
+
+String stringLiteral() : 
+{
+    String str;
+}
+{
+    str = <STRING_LITERAL>.image {
+        return str.replaceAll("\"", "");
     }
 }

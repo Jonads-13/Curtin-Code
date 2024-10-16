@@ -35,12 +35,13 @@ public class Display {
         for(Cell[] row : map) {
             for (Cell cell : row) {
                 if(cell.getVisible()) {
-                    System.out.println(cell.getLabel());
+                    System.out.print(cell.getLabel());
                 }
                 else {
-                    System.out.println("###");
+                    System.out.print(" # ");
                 }
             }
+            System.out.println();
         }
         ZonedDateTime date = ZonedDateTime.now().plusDays(days);
         DateTimeFormatter dtf = DateTimeFormatter
@@ -48,7 +49,7 @@ public class Display {
             .withLocale(locale);
         String dateFmt = dtf.format(date);
 
-        String top = String.format("%s%s, %s%d", bundle.getString("date"), dateFmt, bundle.getString("days"), days);
+        String top = String.format("%s%s, %s%d\n", bundle.getString("date"), dateFmt, bundle.getString("days"), days);
         System.out.println(top);
 
         // Display player inventory
@@ -56,7 +57,8 @@ public class Display {
         for(Item item : p.getInventory()) {
             System.out.println(item.getName() + ": " + item.getMessage());
         }
-        System.out.println(bundle.getString("movement_prompt"));
+        System.out.println();
+        System.out.print(bundle.getString("movement_prompt"));
     }
 
     public String getInvalidMessage() {
@@ -97,6 +99,10 @@ public class Display {
 
     public void showPickedUpItem(String item) {
         System.out.println(bundle.getString("acquired") + item);
+    }
+
+    public void showInvalidPlugin(String plugin) {
+        System.out.println(bundle.getString("missing_plugin") + plugin);
     }
 }
 

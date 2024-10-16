@@ -55,7 +55,7 @@ public class Teleport implements MenuPlugin, LocaleHandler {
 
     @Override
     public void displayMenuOption() {
-        System.out.println(bundle.getString("menu_option"));
+        System.out.print(bundle.getString("menu_option"));
     }
 
     @Override

@@ -31,6 +31,7 @@ public class Start implements API {
     private Display display;
     private GameData data;
     private final List<MenuPlugin> menuPlugins;
+    private final List<PlayerPlugin> playerPlugins;
     private final List<LocaleHandler> localeHandlers;
 
     public Start(String f) {
@@ -38,6 +39,7 @@ public class Start implements API {
         data = new GameData();
         display = new Display();
         menuPlugins = new LinkedList<>();
+        playerPlugins = new LinkedList<>();
         localeHandlers = new LinkedList<>();
     }
 
@@ -64,9 +66,9 @@ public class Start implements API {
         boolean finished = false;
 
         try (Scanner sc = new Scanner(System.in)) {
-            display.printScreen(data); // Initial screen print
-
+            
             while(!finished) { // Play game
+                display.printScreen(data); // Display game state
                 for(MenuPlugin mp : menuPlugins) {
                     mp.displayMenuOption(); // Any plugin menu options?
                 }
@@ -80,14 +82,12 @@ public class Start implements API {
                     Locale newLocale = Locale.forLanguageTag(code);
                     display = new Display(newLocale);
                     notifyLocaleHandlers(newLocale);
-                    display.printScreen(data); //Update map
                 }
                 else {
                     if(move(choice)) { // 
                         data.incrementDays(); // Move to the next day
                         finished = won(); // Check if goal reached
                     }
-                    display.printScreen(data); //Update map
                 }
                 
             }
@@ -143,25 +143,21 @@ public class Start implements API {
          Player player = data.getPlayer();
          List<String> requirements = o.getItemRequirements();
          List<Item> inventory = player.getInventory();
-         int i = requirements.size(); // Max number of loop iterations
-         boolean cont = true; // To exit early if need be
+         int i = requirements.size(); // Number of items the player needs to acquire
 
          // Loop while there are still items to check
-         while ((i > 0) && (cont)) {
-            int temp = i; // Store this to check against later
-            String normalisedRequirement = Normalizer.normalize(requirements.get(i-1), Normalizer.Form.NFC);
+         for(String requirement : requirements) {
+            String normalisedRequirement = Normalizer.normalize(requirement, Normalizer.Form.NFC);
             for(Item item : inventory) { // Loop through inventory looking for required item
                 String normalisedName = Normalizer.normalize(item.getName(), Normalizer.Form.NFC);
                     if(normalisedRequirement.equals(normalisedName)) {
                         i--; // One item found in inventory
-                    }
+                   }
             }
-            // If i changed then we can continue checking, otherwise we need to leave
-            cont = (temp != i);
         }
 
         boolean traversed;
-        if(i == 0) { // Found all requirements in player inventory
+        if(i <= 0) { // Found all requirements in player inventory
             display.showTraversedObstacle();
             traversed = true;
         }
@@ -192,32 +188,22 @@ public class Start implements API {
      }
 
      private void initialisePlugins() {
-        initMenuPlugins();
-        initPlayerPlugins();
-     }
-
-     private void initMenuPlugins() {
         for(String name : data.getPlugins()) {
             try {
                 Class<?> pluginClass = Class.forName(name);
-                MenuPlugin pluginObj = (MenuPlugin) pluginClass.getConstructor().newInstance();
-                pluginObj.start(this);
+                switch(pluginClass.getConstructor().newInstance()) { // Attempt to cast plugin to each specified interface
+                    case MenuPlugin menuPlugin-> {
+                        menuPlugin.start(this);
+                    }
+                    case PlayerPlugin playerPlugin -> {
+                        playerPlugin.start(this);
+                    }
+                    default -> {
+                        display.showInvalidPlugin(name);
+                    }
+                }
             }
-            catch(ClassNotFoundException | ClassCastException | IllegalAccessException | IllegalArgumentException | 
-                    InstantiationException | NoSuchMethodException | SecurityException | InvocationTargetException e) {
-                System.out.println(e);
-            }
-        }
-     }
-
-     private void initPlayerPlugins() {
-        for(String name : data.getPlugins()) {
-            try {
-                Class<?> pluginClass = Class.forName(name);
-                PlayerPlugin pluginObj = (PlayerPlugin) pluginClass.getConstructor().newInstance();
-                pluginObj.start(this);
-            }
-            catch(ClassNotFoundException | ClassCastException | IllegalAccessException | IllegalArgumentException | 
+            catch(ClassNotFoundException | IllegalAccessException | IllegalArgumentException | 
                     InstantiationException | NoSuchMethodException | SecurityException | InvocationTargetException e) {
                 System.out.println(e);
             }
@@ -273,16 +259,19 @@ public class Start implements API {
                     if(traversedObstacle(obstacle)) {
                         changePlayerLocation(r, c);
                         moved = true;
+                        notifyPlayerPlugins(true);
                     }
                 }
                 case Item item -> {
                     pickUpItem(item); 
                     changePlayerLocation(r, c);
                     moved = true;
+                    notifyPlayerPlugins(true);
                 }
                 default -> {
                     changePlayerLocation(r, c);
                     moved = true;
+                    notifyPlayerPlugins(false);
                 }
             }
         }
@@ -316,15 +305,15 @@ public class Start implements API {
     }
 
     @Override
-    public void registerPlayerPlugin(PlayerPlugin mp) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'registerPlayerPlugin'");
+    public void registerPlayerPlugin(PlayerPlugin pp) {
+        playerPlugins.add(pp);
     }
 
     @Override
-    public boolean notifyPlayerPlugins() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'notifyPlayerPlugins'");
+    public void notifyPlayerPlugins(boolean didAction) {
+        for(PlayerPlugin pp : playerPlugins) {
+            pp.takeAction(didAction);
+        }
     }
 
     @Override

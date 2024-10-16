@@ -130,12 +130,13 @@ public class Parser implements ParserConstants {
     Set<int[]> locations;
     List<Item> items = new LinkedList<Item>();
     jj_consume_token(ITEM);
-    itemName = jj_consume_token(STRING_LITERAL).image;
+    itemName = stringLiteral();
     jj_consume_token(22);
     locations = AtLocation();
     itemMessage = Message();
     jj_consume_token(23);
         for(int[] coord : locations) {
+            // strip quotes off of string
             items.add(new Item(coord[0], coord[1], itemName, itemMessage));
         }
         {if (true) return items;}
@@ -182,7 +183,7 @@ public class Parser implements ParserConstants {
     List<String> requirements = new LinkedList<String>();
     String requirement;
     jj_consume_token(REQUIRES);
-    requirement = jj_consume_token(STRING_LITERAL).image;
+    requirement = stringLiteral();
         requirements.add(requirement);
     label_2:
     while (true) {
@@ -195,9 +196,10 @@ public class Parser implements ParserConstants {
         break label_2;
       }
       jj_consume_token(24);
-      requirement = jj_consume_token(STRING_LITERAL).image;
+      requirement = stringLiteral();
     }
-        requirements.add(requirement);
+        requirements.add(requirement); // strip quotes off of string
+
         {if (true) return requirements;}
     throw new Error("Missing return statement in function");
   }
@@ -240,7 +242,7 @@ public class Parser implements ParserConstants {
   static final public String Message() throws ParseException {
     String message;
     jj_consume_token(MESSAGE);
-    message = jj_consume_token(STRING_LITERAL).image;
+    message = stringLiteral();
         {if (true) return message.replaceAll("\u005c"", "");}
     throw new Error("Missing return statement in function");
   }
@@ -258,6 +260,13 @@ public class Parser implements ParserConstants {
 
         {if (true) return new int[]{row, col};} // return useful data
 
+    throw new Error("Missing return statement in function");
+  }
+
+  static final public String stringLiteral() throws ParseException {
+    String str;
+    str = jj_consume_token(STRING_LITERAL).image;
+        {if (true) return str.replaceAll("\u005c"", "");}
     throw new Error("Missing return statement in function");
   }
 

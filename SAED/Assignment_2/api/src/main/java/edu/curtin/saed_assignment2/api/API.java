@@ -38,7 +38,7 @@ public interface API {
 
     void registerPlayerPlugin(PlayerPlugin mp);
 
-    boolean notifyPlayerPlugins();
+    void notifyPlayerPlugins(boolean didAction);
 
     void registerLocaleHandler(LocaleHandler lh);
 
