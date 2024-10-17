@@ -25,7 +25,7 @@ public class Teleport implements Plugin, MenuHandler, LocaleHandler {
     }
 
     @Override
-    public boolean takeAction(String choice) {
+    public boolean handleMenuOptionSelected(String choice) {
         boolean didStuff = false;
 
         if(done) {
@@ -55,12 +55,12 @@ public class Teleport implements Plugin, MenuHandler, LocaleHandler {
     }
 
     @Override
-    public void displayMenuOption() {
+    public void handleMenuDisplayed() {
         System.out.print(bundle.getString("menu_option"));
     }
 
     @Override
-    public void notifyLocaleChanged(Locale locale) {
+    public void handleLocaleChanged(Locale locale) {
         bundle = ResourceBundle.getBundle("teleport-bundle", locale);
     }
 

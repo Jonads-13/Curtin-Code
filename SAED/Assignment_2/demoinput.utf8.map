@@ -27,7 +27,7 @@ import time
 print("Loading penalty script...")
 current = time.time() * 1000
 class Penalty(PlayerHandler):
-    def takeAction(self, didAction, prevLocation, newLocation):
+    def handlePlayerMoved(self, prevLocation, newLocation):
         global current
         if ((time.time() * 1000) - current) > 5000 :
             prevRow = prevLocation[0]
@@ -37,6 +37,12 @@ class Penalty(PlayerHandler):
             api.setMapCell(penalty_obstacle, prevRow, prevCol)
 
         current = time.time() * 1000
+    
+    def handlePlayerTraversedObstacle(self, obstacle):
+        str = "script does nothing for this callback"
+    
+    def handlePlayerPickedUpItem(self, obstacle):
+        str = "script does nothing for this callback"
         
 penalty = Penalty()
 api.registerPlayerHandler(penalty)
@@ -44,13 +50,13 @@ print("Penalty script loaded")
 }
 
 script !{
-from edu.curtin.saed_assignment2.api.handlers import InventoryHandler
+from edu.curtin.saed_assignment2.api.handlers import PlayerHandler
 from edu.curtin.saed_assignment2.api.model import Goal, Item
 import unicodedata
 
 print("Loading reveal script...")
-class Reveal(InventoryHandler):
-    def takeAction(self, item):
+class Reveal(PlayerHandler):
+    def handlePlayerPickedUpItem(self, item):
         name = unicodedata.normalize("NFC", item.getName())
         map_upper = unicodedata.normalize("NFC", "Map")
         map_lower = unicodedata.normalize("NFC", "map")
@@ -61,10 +67,18 @@ class Reveal(InventoryHandler):
                 for cell in row:
                     # Only show the goal and items, not obstacles
                     if isinstance(cell, Goal) or isinstance(cell, Item):
-                        cell.setVisibility(True)
-            
+                        api.setCellVisibility(cell.getRow(), cell.getCol(), True)
+    
+    
+    def handlePlayerMoved(self, prevLocation, newLocation):
+        str = "script does nothing for this callback"
+        
+    
+    def handlePlayerTraversedObstacle(self, obstacle):
+        str = "script does nothing for this callback"
+
 reveal = Reveal()
-api.registerInventoryHandler(reveal)
+api.registerPlayerHandler(reveal)
 print("Reveal script loaded")
 }
 

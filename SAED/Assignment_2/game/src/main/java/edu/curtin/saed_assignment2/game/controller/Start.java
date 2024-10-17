@@ -14,7 +14,6 @@ import org.python.util.*;
 import edu.curtin.saed_assignment2.ParseException;
 import edu.curtin.saed_assignment2.Parser;
 import edu.curtin.saed_assignment2.api.API;
-import edu.curtin.saed_assignment2.api.handlers.InventoryHandler;
 import edu.curtin.saed_assignment2.api.handlers.LocaleHandler;
 import edu.curtin.saed_assignment2.api.handlers.MenuHandler;
 import edu.curtin.saed_assignment2.api.handlers.PlayerHandler;
@@ -35,7 +34,6 @@ public class Start implements API {
     private GameData data;
     private final List<MenuHandler> menuHandlers;
     private final List<PlayerHandler> playerHandlers;
-    private final List<InventoryHandler> inventoryHandlers;
     private final List<LocaleHandler> localeHandlers;
 
 
@@ -47,7 +45,6 @@ public class Start implements API {
         display = new Display();
         menuHandlers = new LinkedList<>();
         playerHandlers = new LinkedList<>();
-        inventoryHandlers = new LinkedList<>();
         localeHandlers = new LinkedList<>();
     }
 
@@ -106,9 +103,8 @@ public class Start implements API {
         try (Scanner sc = new Scanner(System.in)) {
             while(!finished) { // Play game
                 display.printScreen(data); // Display game state
-                for(MenuHandler mp : menuHandlers) {
-                    mp.displayMenuOption(); // Any plugin menu options?
-                }
+                notifyMenuDisplayed(); // Plugins display their menu options
+
                 String choice = sc.next().toUpperCase();
                 if(choice.equals("Q")) { // User wants to quit
                     finished = true;
@@ -119,7 +115,7 @@ public class Start implements API {
                     String code = sc.next();
                     Locale newLocale = Locale.forLanguageTag(code); // Get new locale
                     display = new Display(newLocale);
-                    notifyLocaleHandlers(newLocale); // tell any plugins that the locale has changed
+                    notifyLocaleChanged(newLocale); // tell any plugins that the locale has changed
                 }
                 else {
                     if(move(choice)) {
@@ -156,7 +152,7 @@ public class Start implements API {
                 moved = movePlayer(prevRow, prevCol+1); // Right
             }
             default -> { // Not direction, plugin menu option?
-                if(!notifyMenuHandlers(choice)) { // If no plugins did anything
+                if(!notifyMenuOptionSelected(choice)) { // If no plugins did anything
                     display.showWrongInput();
                     moved = false;
                 }
@@ -291,6 +287,8 @@ public class Start implements API {
     }
 
 
+
+
     // Interface methods
 
     @Override
@@ -348,6 +346,10 @@ public class Start implements API {
         menuHandlers.add(mh);
     }
 
+
+
+
+
     @Override
     public boolean movePlayer(int r, int c) {
         boolean moved = false;
@@ -361,20 +363,21 @@ public class Start implements API {
                     if(traversedObstacle(obstacle)) {
                         changePlayerLocation(r, c);
                         moved = true;
-                        notifyPlayerHandlers(true, prevLocation, newLocation);
+                        notifyPlayerTraversedObstacle(obstacle);
+                        notifyPlayerMoved(prevLocation, newLocation);
                     }
                 }
                 case Item item -> {
                     pickUpItem(item); 
                     changePlayerLocation(r, c);
                     moved = true;
-                    notifyPlayerHandlers(true, prevLocation, newLocation);
-                    notifyInventoryHandlers(item);
+                    notifyPlayerPickedUpItem(item);
+                    notifyPlayerMoved(prevLocation, newLocation);
                 }
                 default -> {
                     changePlayerLocation(r, c);
                     moved = true;
-                    notifyPlayerHandlers(false, prevLocation, newLocation);
+                    notifyPlayerMoved(prevLocation, newLocation);
                 }
             }
         }
@@ -384,11 +387,16 @@ public class Start implements API {
         return moved;
     }
 
+
+
+
+
+
     @Override
-    public boolean notifyMenuHandlers(String choice) {
+    public boolean notifyMenuOptionSelected(String choice) {
         boolean didStuff = false;
         for(MenuHandler mp : menuHandlers) {
-            if(mp.takeAction(choice)) {
+            if(mp.handleMenuOptionSelected(choice)) {
                 didStuff = true;
             }
         }
@@ -396,14 +404,9 @@ public class Start implements API {
     }
 
     @Override
-    public void registerInventoryHandler(InventoryHandler ih) {
-       inventoryHandlers.add(ih);
-    }
-
-    @Override
-    public void notifyInventoryHandlers(Item item) {
-        for (InventoryHandler ih : inventoryHandlers) {
-            ih.takeAction(item);
+    public void notifyMenuDisplayed() {
+        for(MenuHandler mp : menuHandlers) {
+            mp.handleMenuDisplayed(); // Any plugin menu options?
         }
     }
 
@@ -413,9 +416,23 @@ public class Start implements API {
     }
 
     @Override
-    public void notifyPlayerHandlers(boolean didAction, int[] prevLocation, int[] newLocation) {
+    public void notifyPlayerMoved(int[] prevLocation, int[] newLocation) {
         for(PlayerHandler ph : playerHandlers) {
-            ph.takeAction(didAction, prevLocation, newLocation);
+            ph.handlePlayerMoved(prevLocation, newLocation);
+        }
+    }
+
+    @Override
+    public void notifyPlayerPickedUpItem(Item item) {
+        for(PlayerHandler ph : playerHandlers) {
+            ph.handlePlayerPickedUpItem(item);
+        }
+    }
+
+    @Override
+    public void notifyPlayerTraversedObstacle(Obstacle o) {
+        for(PlayerHandler ph : playerHandlers) {
+            ph.handlePlayerTraversedObstacle(o);
         }
     }
 
@@ -425,9 +442,19 @@ public class Start implements API {
     }
 
     @Override
-    public void notifyLocaleHandlers(Locale l) {
+    public void notifyLocaleChanged(Locale l) {
         for (LocaleHandler lh : localeHandlers) {
-            lh.notifyLocaleChanged(l);
+            lh.handleLocaleChanged(l);
         }
+    }
+
+
+
+
+
+
+    @Override
+    public void addToPlayerInventory(Item item) {
+        data.getPlayer().addToInventory(item);
     }
 }

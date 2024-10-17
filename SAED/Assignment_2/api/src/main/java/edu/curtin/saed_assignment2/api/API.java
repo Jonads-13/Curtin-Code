@@ -3,12 +3,12 @@ package edu.curtin.saed_assignment2.api;
 import java.util.List;
 import java.util.Locale;
 
-import edu.curtin.saed_assignment2.api.handlers.InventoryHandler;
 import edu.curtin.saed_assignment2.api.handlers.LocaleHandler;
 import edu.curtin.saed_assignment2.api.handlers.MenuHandler;
 import edu.curtin.saed_assignment2.api.handlers.PlayerHandler;
 import edu.curtin.saed_assignment2.api.model.Cell;
 import edu.curtin.saed_assignment2.api.model.Item;
+import edu.curtin.saed_assignment2.api.model.Obstacle;
 
 public interface API {
     
@@ -17,6 +17,8 @@ public interface API {
 
     // The player’s inventory (including the ability to see which item was the most recently acquired);
     List<Item> getPlayerInventory();
+    
+    void addToPlayerInventory(Item item);
 
     Item getMostRecentItem();
 
@@ -39,19 +41,21 @@ public interface API {
 
     void registerMenuHandler(MenuHandler mh);
 
-    boolean notifyMenuHandlers(String choice);
+    boolean notifyMenuOptionSelected(String choice);
 
-    void registerInventoryHandler(InventoryHandler ih);
-
-    void notifyInventoryHandlers(Item item);
-
+    void notifyMenuDisplayed();
+    
     void registerPlayerHandler(PlayerHandler ph);
 
-    void notifyPlayerHandlers(boolean didAction, int[] prevLocation, int[] newLocation);
+    void notifyPlayerPickedUpItem(Item item);
+
+    void notifyPlayerTraversedObstacle(Obstacle obstacle);
+
+    void notifyPlayerMoved(int[] prevLocation, int[] newLocation);
 
     void registerLocaleHandler(LocaleHandler lh);
 
-    void notifyLocaleHandlers(Locale l);
+    void notifyLocaleChanged(Locale l);
 
     boolean movePlayer(int r, int c); // returns success
 }

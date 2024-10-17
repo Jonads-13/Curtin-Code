@@ -2,13 +2,13 @@ package edu.curtin.gameplugins;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
-import java.util.List;
 
 import edu.curtin.saed_assignment2.api.API;
 import edu.curtin.saed_assignment2.api.handlers.LocaleHandler;
 import edu.curtin.saed_assignment2.api.handlers.PlayerHandler;
 import edu.curtin.saed_assignment2.api.plugins.Plugin;
 import edu.curtin.saed_assignment2.api.model.Item;
+import edu.curtin.saed_assignment2.api.model.Obstacle;
 
 public class Prize implements Plugin, PlayerHandler, LocaleHandler {
     
@@ -29,24 +29,38 @@ public class Prize implements Plugin, PlayerHandler, LocaleHandler {
     }
 
     @Override
-    public void notifyLocaleChanged(Locale locale) {
+    public void handleLocaleChanged(Locale locale) {
         bundle = ResourceBundle.getBundle("prize-bundle", locale);
     }
 
     @Override
-    public void takeAction(boolean didAction, int[] prevLocation, int[] newLocation) {
+    public void handlePlayerMoved(int[] prevLocation, int[] newLocation) {
+       // This plugin does nothing on this action
+    }
+
+    @Override
+    public void handlePlayerTraversedObstacle(Obstacle obstacle) {
         if(!itemGiven) {
-            if(didAction) {
-                count++;
-                if(count == 5)
-                {
-                    List<Item> playerInventory = api.getPlayerInventory();
-                    Item prize = new Item(bundle.getString("prize_name"), bundle.getString("prize_message"));
-                    playerInventory.add(prize);
-                    System.out.println(bundle.getString("prize_acquired"));
-                    itemGiven = true;
-                }
-            }
+            count++;
+            check();
+        }
+    }
+
+    @Override
+    public void handlePlayerPickedUpItem(Item item) {
+        if(!itemGiven) {
+            count++;
+            check();
+        }
+    }
+
+    private void check() {
+        if(count == 5)
+        {
+            Item prize = new Item(bundle.getString("prize_name"), bundle.getString("prize_message"));
+            api.addToPlayerInventory(prize);
+            System.out.println(bundle.getString("prize_acquired"));
+            itemGiven = true;
         }
     }
 }
