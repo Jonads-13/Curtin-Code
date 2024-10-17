@@ -9,16 +9,19 @@ import edu.curtin.saed_assignment2.api.handlers.LocaleHandler;
 import edu.curtin.saed_assignment2.api.handlers.MenuHandler;
 import edu.curtin.saed_assignment2.api.plugins.Plugin;
 
+// Plugin to add the random teleport functionality
 public class Teleport implements Plugin, MenuHandler, LocaleHandler {
 
     private API api;
     private boolean done;
+    private Random rand;
     private ResourceBundle bundle;
 
     @Override
     public void start(API api) {
         this.api = api;
         done = false;
+        rand = new Random();
         bundle = ResourceBundle.getBundle("teleport-bundle");
         api.registerMenuHandler(this);
         api.registerLocaleHandler(this);
@@ -26,9 +29,9 @@ public class Teleport implements Plugin, MenuHandler, LocaleHandler {
 
     @Override
     public boolean handleMenuOptionSelected(String choice) {
-        boolean didStuff = false;
+        boolean didStuff = false; // If this plugin took action on the menu choice
 
-        if(done) {
+        if(done) { // Already used teleport option before?
             System.out.println(bundle.getString("completed"));
         }
         else {
@@ -39,11 +42,12 @@ public class Teleport implements Plugin, MenuHandler, LocaleHandler {
                 int rows = mapSize[0], cols = mapSize[1];
                 int r, c;
 
-                do {
+                do { // Loop until a random location is chosen that isn't the players current location
                     r = getRandomNumber(rows);
                     c = getRandomNumber(cols);
                 } while(sameLocation(r, c, pr, pc));
 
+                // Attempt to move the player. If couldn't move, ie obstacle, then doesn't count as teleport
                 if(api.movePlayer(r, c)) {
                     didStuff = true;
                     done = true;
@@ -64,13 +68,16 @@ public class Teleport implements Plugin, MenuHandler, LocaleHandler {
         bundle = ResourceBundle.getBundle("teleport-bundle", locale);
     }
 
+
+    // Checks if two coordinates are the same
     private boolean sameLocation(int r, int c, int pr, int pc) {
         return ((r == pr) && (c == pc));
     }
 
+
+    // Get a random integer
     private int getRandomNumber(int max) 
     {
-        Random rand = new Random();
         return rand.nextInt(max);
     }
 }

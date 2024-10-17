@@ -12,31 +12,36 @@ import edu.curtin.saed_assignment2.api.model.Player;
 import edu.curtin.saed_assignment2.game.model.exceptions.InvalidLocationException;
 import edu.curtin.saed_assignment2.game.model.exceptions.FilledLocationException;
 
+// Class to act as database for the game
 public class GameData {
     
     private Cell[][] map;
-    private final List<Cell> specialCells;
     private Player player;
     private Goal goal;
+    private int days;
     private final List<Item> items;
     private final List<Obstacle> obstacles;
+    private final List<Cell> specialCells;
     private final List<String> plugins;
     private final List<String> scripts;
-    private int days;
 
 
     // Constructor
     public GameData() {
+        // Default values, will either be overwritten or game is stopped
         map = new Cell[10][10];
-        specialCells = new LinkedList<>();
         player = new Player(0,0);
         goal = new Goal(5,5);
+        days = 0;
         items = new LinkedList<>();
         obstacles = new LinkedList<>();
+        specialCells = new LinkedList<>();
         plugins = new LinkedList<>();
         scripts = new LinkedList<>();
-        days = 0;
     }
+
+
+
 
 
     public Cell[][] getMap() {
@@ -69,7 +74,7 @@ public class GameData {
 
 
 
-
+    // Fill the map with all the specified types of Cells
     public void initialiseMap() throws ParseException {
         for (Cell[] row : map) { // Create Cell object at each map index
             for (int i = 0; i < row.length; i++) {
@@ -209,7 +214,7 @@ public class GameData {
 
 
 
-    // Check if a map element already  has a special cell there
+    // Check if a map element already has a special cell there
     private boolean locationFilled(int r, int c) {
         boolean filled = false;
 

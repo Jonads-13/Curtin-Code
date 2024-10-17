@@ -357,12 +357,14 @@ public class Start implements API {
         int[] prevLocation = getPlayerLocation();
         int[] newLocation = new int[]{r, c};
 
-        if(data.validLocation(r, c)) {
-            switch (map[r][c]) {
+        if(data.validLocation(r, c)) { // Can the player actually move to the destination
+            switch (map[r][c]) { // Which Cell instance is the destination
                 case Obstacle obstacle -> { 
-                    if(traversedObstacle(obstacle)) {
+                    if(traversedObstacle(obstacle)) { // Attempt to traverse the obstacle
                         changePlayerLocation(r, c);
                         moved = true;
+
+                        // Notify handlers/scripts
                         notifyPlayerTraversedObstacle(obstacle);
                         notifyPlayerMoved(prevLocation, newLocation);
                     }
@@ -371,19 +373,24 @@ public class Start implements API {
                     pickUpItem(item); 
                     changePlayerLocation(r, c);
                     moved = true;
+
+                    // Notify handlers/scripts
                     notifyPlayerPickedUpItem(item);
                     notifyPlayerMoved(prevLocation, newLocation);
                 }
-                default -> {
+                default -> { // Nothing special, just move player
                     changePlayerLocation(r, c);
                     moved = true;
+
+                    // Notify handlers/scripts
                     notifyPlayerMoved(prevLocation, newLocation);
                 }
             }
         }
-        else {
+        else { // Tried to go outside the map
             display.showInvalidDirection();
         }
+
         return moved;
     }
 
@@ -396,6 +403,7 @@ public class Start implements API {
     public boolean notifyMenuOptionSelected(String choice) {
         boolean didStuff = false;
         for(MenuHandler mp : menuHandlers) {
+            // See if each handler has a case for the menu choice
             if(mp.handleMenuOptionSelected(choice)) {
                 didStuff = true;
             }
@@ -447,11 +455,6 @@ public class Start implements API {
             lh.handleLocaleChanged(l);
         }
     }
-
-
-
-
-
 
     @Override
     public void addToPlayerInventory(Item item) {

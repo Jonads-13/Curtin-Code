@@ -10,6 +10,7 @@ import edu.curtin.saed_assignment2.api.plugins.Plugin;
 import edu.curtin.saed_assignment2.api.model.Item;
 import edu.curtin.saed_assignment2.api.model.Obstacle;
 
+// Plugin to add the special reward item functionality
 public class Prize implements Plugin, PlayerHandler, LocaleHandler {
     
     private API api;
@@ -21,7 +22,7 @@ public class Prize implements Plugin, PlayerHandler, LocaleHandler {
     public void start(API api)
     {
         this.api = api;
-        count = 0;
+        count = 0; // items + obstacles
         itemGiven = false;
         bundle = ResourceBundle.getBundle("prize-bundle");
         api.registerPlayerHandler(this);
@@ -54,6 +55,7 @@ public class Prize implements Plugin, PlayerHandler, LocaleHandler {
         }
     }
 
+    // Can we give the player the item yet?
     private void check() {
         if(count == 5)
         {
